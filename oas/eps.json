@@ -506,13 +506,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Slot"
                                 },
-                                "example": "{\n  \"resourceType\": \"Slot\"\n}"
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Slot"
                                 },
-                                "example": "<Slot xmlns=\"http://hl7.org/fhir\"></Slot>"
+                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
                             }
                         }
                     }
@@ -548,13 +548,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/HealthcareService"
                                 },
-                                "example": "{\n  \"resourceType\": \"HealthcareService\"\n}"
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/HealthcareService"
                                 },
-                                "example": "<HealthcareService xmlns=\"http://hl7.org/fhir\"></HealthcareService>"
+                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
                             }
                         }
                     }
