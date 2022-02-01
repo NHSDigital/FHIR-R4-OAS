@@ -21,8 +21,8 @@ export class BodyComponent implements OnInit {
     SwaggerUIBundle({
       urls: [
         {
-          name: 'Test',
-          url: 'https://petstore.swagger.io/v2/swagger.json'
+          name: 'eRS',
+          url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eps.json'
         }
       ],
       domNode: this.swaggerDom.nativeElement,
