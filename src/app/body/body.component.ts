@@ -28,6 +28,9 @@ export class BodyComponent implements OnInit {
       domNode: this.swaggerDom.nativeElement,
       deepLinking: true,
       presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+      plugins: [
+        SwaggerUIBundle.plugins.DownloadUrl
+      ],
       layout: 'StandaloneLayout'
     });
   }
