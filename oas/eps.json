@@ -1,0 +1,772 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "description": "API definition for eRS\n\n | API Documentation |\n |-----|\n  |[e-Referral Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
+    "contact": {}
+  },
+  "servers": [
+    {}
+  ],
+  "tags": [
+    {
+      "name": "System Level Operations",
+      "description": "Server-level operations"
+    },
+    {
+      "name": "Appointment",
+      "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for documentation. Resource type: Appointment"
+    },
+    {
+      "name": "ServiceRequest",
+      "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for documentation. Resource type: ServiceRequest"
+    },
+    {
+      "name": "Task",
+      "description": "See [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md) for documentation. Resource type: Task"
+    },
+    {
+      "name": "Slot",
+      "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for documentation. Resource type: Slot"
+    },
+    {
+      "name": "HealthcareService",
+      "description": "See [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md) for documentation. Resource type: HealthcareService"
+    },
+    {
+      "name": "DocumentReference",
+      "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for documentation. Resource type: DocumentReference"
+    },
+    {
+      "name": "List",
+      "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for documentation. Resource type: List"
+    },
+    {
+      "name": "Binary",
+      "description": "See [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md) for documentation. Resource type: Binary"
+    }
+  ],
+  "paths": {
+    "/metadata": {
+      "get": {
+        "tags": [
+          "System Level Operations"
+        ],
+        "summary": "server-capabilities: Fetch the server FHIR CapabilityStatement",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilityStatement"
+                },
+                "example": "{\n  \"resourceType\": \"CapabilityStatement\"\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilityStatement"
+                },
+                "example": "<CapabilityStatement xmlns=\"http://hl7.org/fhir\"></CapabilityStatement>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Appointment": {
+      "post": {
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "create-type: Create a new Appointment instance",
+        "description": "[A016 - Book or defer appointment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a016-book-or-defer-appointment)",
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              },
+              "example": "{\n  \"resourceType\": \"Appointment\"\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              },
+              "example": "<Appointment xmlns=\"http://hl7.org/fhir\"></Appointment>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceRequest/{id}": {
+      "get": {
+        "tags": [
+          "ServiceRequest"
+        ],
+        "summary": "read-instance: Read ServiceRequest instance",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceRequest"
+                },
+                "example": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"id\": \"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\n  \"meta\": {\n    \"versionId\": \"5\"\n  },\n  \"contained\": [ {\n    \"resourceType\": \"PractitionerRole\",\n    \"id\": \"pr\",\n    \"practitioner\": {\n      \"identifier\": {\n        \"system\": \"http://fhir.nhs.net/Id/sds-user-id\",\n        \"value\": \"921600556514\"\n      }\n    },\n    \"organization\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"R68\"\n      }\n    }\n  } ],\n  \"identifier\": [ {\n    \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n    \"value\": \"000000070000\"\n  } ],\n  \"status\": \"active\",\n  \"intent\": \"plan\",\n  \"category\": [ {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"409063005\",\n      \"display\": \"Counselling\"\n    } ]\n  } ],\n  \"priority\": \"routine\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\n      \"code\": \"HEART_FAILURE\"\n    } ]\n  },\n  \"orderDetail\": [ {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\",\n      \"code\": \"ALL_AVAILABLE_FOR_BOOKING\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\",\n      \"code\": \"CARDIOLOGY\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-Options\",\n      \"code\": \"ageAndGenderAppropriate\"\n    } ]\n  } ],\n  \"subject\": {\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/nhs-number\",\n      \"value\": \"9912003888\"\n    }\n  },\n  \"requester\": {\n    \"reference\": \"#pr\"\n  },\n  \"performer\": [ {\n    \"type\": \"HealthcareService\",\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/ers-service\",\n      \"value\": \"11014\"\n    },\n    \"display\": \"Cardiology Advice Service\"\n  } ],\n  \"supportingInfo\": [ {\n    \"reference\": \"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"\n  } ],\n  \"note\": [ {\n    \"text\": \"Please advise me on this patient who ...(information about patient)\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceRequest"
+                },
+                "example": "<ServiceRequest xmlns=\"http://hl7.org/fhir\">\n   <id value=\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\"></id>\n   <meta>\n      <versionId value=\"5\"></versionId>\n   </meta>\n   <contained>\n      <PractitionerRole xmlns=\"http://hl7.org/fhir\">\n         <id value=\"pr\"></id>\n         <practitioner>\n            <identifier>\n               <system value=\"http://fhir.nhs.net/Id/sds-user-id\"></system>\n               <value value=\"921600556514\"></value>\n            </identifier>\n         </practitioner>\n         <organization>\n            <identifier>\n               <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n               <value value=\"R68\"></value>\n            </identifier>\n         </organization>\n      </PractitionerRole>\n   </contained>\n   <identifier>\n      <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n      <value value=\"000000070000\"></value>\n   </identifier>\n   <status value=\"active\"></status>\n   <intent value=\"plan\"></intent>\n   <category>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"409063005\"></code>\n         <display value=\"Counselling\"></display>\n      </coding>\n   </category>\n   <priority value=\"routine\"></priority>\n   <code>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\"></system>\n         <code value=\"HEART_FAILURE\"></code>\n      </coding>\n   </code>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\"></system>\n         <code value=\"ALL_AVAILABLE_FOR_BOOKING\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\"></system>\n         <code value=\"CARDIOLOGY\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-Options\"></system>\n         <code value=\"ageAndGenderAppropriate\"></code>\n      </coding>\n   </orderDetail>\n   <subject>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/nhs-number\"></system>\n         <value value=\"9912003888\"></value>\n      </identifier>\n   </subject>\n   <requester>\n      <reference value=\"#pr\"></reference>\n   </requester>\n   <performer>\n      <type value=\"HealthcareService\"></type>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/ers-service\"></system>\n         <value value=\"11014\"></value>\n      </identifier>\n      <display value=\"Cardiology Advice Service\"></display>\n   </performer>\n   <supportingInfo>\n      <reference value=\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"></reference>\n   </supportingInfo>\n   <note>\n      <text value=\"Please advise me on this patient who ...(information about patient)\"></text>\n   </note>\n</ServiceRequest>"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ServiceRequest"
+        ],
+        "summary": "update-instance: Update an existing ServiceRequest instance, or create using a client-assigned ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceRequest"
+              },
+              "example": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"id\": \"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\n  \"meta\": {\n    \"versionId\": \"5\"\n  },\n  \"contained\": [ {\n    \"resourceType\": \"PractitionerRole\",\n    \"id\": \"pr\",\n    \"practitioner\": {\n      \"identifier\": {\n        \"system\": \"http://fhir.nhs.net/Id/sds-user-id\",\n        \"value\": \"921600556514\"\n      }\n    },\n    \"organization\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"R68\"\n      }\n    }\n  } ],\n  \"identifier\": [ {\n    \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n    \"value\": \"000000070000\"\n  } ],\n  \"status\": \"active\",\n  \"intent\": \"plan\",\n  \"category\": [ {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"409063005\",\n      \"display\": \"Counselling\"\n    } ]\n  } ],\n  \"priority\": \"routine\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\n      \"code\": \"HEART_FAILURE\"\n    } ]\n  },\n  \"orderDetail\": [ {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\",\n      \"code\": \"ALL_AVAILABLE_FOR_BOOKING\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\",\n      \"code\": \"CARDIOLOGY\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-Options\",\n      \"code\": \"ageAndGenderAppropriate\"\n    } ]\n  } ],\n  \"subject\": {\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/nhs-number\",\n      \"value\": \"9912003888\"\n    }\n  },\n  \"requester\": {\n    \"reference\": \"#pr\"\n  },\n  \"performer\": [ {\n    \"type\": \"HealthcareService\",\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/ers-service\",\n      \"value\": \"11014\"\n    },\n    \"display\": \"Cardiology Advice Service\"\n  } ],\n  \"supportingInfo\": [ {\n    \"reference\": \"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"\n  } ],\n  \"note\": [ {\n    \"text\": \"Please advise me on this patient who ...(information about patient)\"\n  } ]\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceRequest"
+              },
+              "example": "<ServiceRequest xmlns=\"http://hl7.org/fhir\">\n   <id value=\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\"></id>\n   <meta>\n      <versionId value=\"5\"></versionId>\n   </meta>\n   <contained>\n      <PractitionerRole xmlns=\"http://hl7.org/fhir\">\n         <id value=\"pr\"></id>\n         <practitioner>\n            <identifier>\n               <system value=\"http://fhir.nhs.net/Id/sds-user-id\"></system>\n               <value value=\"921600556514\"></value>\n            </identifier>\n         </practitioner>\n         <organization>\n            <identifier>\n               <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n               <value value=\"R68\"></value>\n            </identifier>\n         </organization>\n      </PractitionerRole>\n   </contained>\n   <identifier>\n      <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n      <value value=\"000000070000\"></value>\n   </identifier>\n   <status value=\"active\"></status>\n   <intent value=\"plan\"></intent>\n   <category>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"409063005\"></code>\n         <display value=\"Counselling\"></display>\n      </coding>\n   </category>\n   <priority value=\"routine\"></priority>\n   <code>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\"></system>\n         <code value=\"HEART_FAILURE\"></code>\n      </coding>\n   </code>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\"></system>\n         <code value=\"ALL_AVAILABLE_FOR_BOOKING\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\"></system>\n         <code value=\"CARDIOLOGY\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-Options\"></system>\n         <code value=\"ageAndGenderAppropriate\"></code>\n      </coding>\n   </orderDetail>\n   <subject>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/nhs-number\"></system>\n         <value value=\"9912003888\"></value>\n      </identifier>\n   </subject>\n   <requester>\n      <reference value=\"#pr\"></reference>\n   </requester>\n   <performer>\n      <type value=\"HealthcareService\"></type>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/ers-service\"></system>\n         <value value=\"11014\"></value>\n      </identifier>\n      <display value=\"Cardiology Advice Service\"></display>\n   </performer>\n   <supportingInfo>\n      <reference value=\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"></reference>\n   </supportingInfo>\n   <note>\n      <text value=\"Please advise me on this patient who ...(information about patient)\"></text>\n   </note>\n</ServiceRequest>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ServiceRequest": {
+      "get": {
+        "tags": [
+          "ServiceRequest"
+        ],
+        "summary": "search-type: Search for ServiceRequest instances",
+        "description": "This is a search type",
+        "parameters": [
+          {
+            "name": "patient:identifier",
+            "in": "query",
+            "description": "The patient identifier (e.g. NHS Number) that the service request is about",
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bundle"
+                },
+                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 1,\n  \"entry\": [ {\n    \"resource\": {\n      \"resourceType\": \"ServiceRequest\",\n      \"id\": \"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\n      \"meta\": {\n        \"versionId\": \"5\"\n      },\n      \"contained\": [ {\n        \"resourceType\": \"PractitionerRole\",\n        \"id\": \"pr\",\n        \"practitioner\": {\n          \"identifier\": {\n            \"system\": \"http://fhir.nhs.net/Id/sds-user-id\",\n            \"value\": \"921600556514\"\n          }\n        },\n        \"organization\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"R68\"\n          }\n        }\n      } ],\n      \"identifier\": [ {\n        \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n        \"value\": \"000000070000\"\n      } ],\n      \"status\": \"active\",\n      \"intent\": \"plan\",\n      \"category\": [ {\n        \"coding\": [ {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"409063005\",\n          \"display\": \"Counselling\"\n        } ]\n      } ],\n      \"priority\": \"routine\",\n      \"code\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\n          \"code\": \"HEART_FAILURE\"\n        } ]\n      },\n      \"orderDetail\": [ {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\",\n          \"code\": \"ALL_AVAILABLE_FOR_BOOKING\"\n        } ]\n      }, {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\",\n          \"code\": \"CARDIOLOGY\"\n        } ]\n      }, {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-Options\",\n          \"code\": \"ageAndGenderAppropriate\"\n        } ]\n      } ],\n      \"subject\": {\n        \"identifier\": {\n          \"system\": \"http://fhir.nhs.net/Id/nhs-number\",\n          \"value\": \"9912003888\"\n        }\n      },\n      \"requester\": {\n        \"reference\": \"#pr\"\n      },\n      \"performer\": [ {\n        \"type\": \"HealthcareService\",\n        \"identifier\": {\n          \"system\": \"http://fhir.nhs.net/Id/ers-service\",\n          \"value\": \"11014\"\n        },\n        \"display\": \"Cardiology Advice Service\"\n      } ],\n      \"supportingInfo\": [ {\n        \"reference\": \"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"\n      } ],\n      \"note\": [ {\n        \"text\": \"Please advise me on this patient who ...(information about patient)\"\n      } ]\n    }\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bundle"
+                },
+                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"1\"></total>\n   <entry>\n      <resource>\n         <ServiceRequest xmlns=\"http://hl7.org/fhir\">\n            <id value=\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\"></id>\n            <meta>\n               <versionId value=\"5\"></versionId>\n            </meta>\n            <contained>\n               <PractitionerRole xmlns=\"http://hl7.org/fhir\">\n                  <id value=\"pr\"></id>\n                  <practitioner>\n                     <identifier>\n                        <system value=\"http://fhir.nhs.net/Id/sds-user-id\"></system>\n                        <value value=\"921600556514\"></value>\n                     </identifier>\n                  </practitioner>\n                  <organization>\n                     <identifier>\n                        <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                        <value value=\"R68\"></value>\n                     </identifier>\n                  </organization>\n               </PractitionerRole>\n            </contained>\n            <identifier>\n               <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n               <value value=\"000000070000\"></value>\n            </identifier>\n            <status value=\"active\"></status>\n            <intent value=\"plan\"></intent>\n            <category>\n               <coding>\n                  <system value=\"http://snomed.info/sct\"></system>\n                  <code value=\"409063005\"></code>\n                  <display value=\"Counselling\"></display>\n               </coding>\n            </category>\n            <priority value=\"routine\"></priority>\n            <code>\n               <coding>\n                  <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\"></system>\n                  <code value=\"HEART_FAILURE\"></code>\n               </coding>\n            </code>\n            <orderDetail>\n               <coding>\n                  <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\"></system>\n                  <code value=\"ALL_AVAILABLE_FOR_BOOKING\"></code>\n               </coding>\n            </orderDetail>\n            <orderDetail>\n               <coding>\n                  <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\"></system>\n                  <code value=\"CARDIOLOGY\"></code>\n               </coding>\n            </orderDetail>\n            <orderDetail>\n               <coding>\n                  <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-Options\"></system>\n                  <code value=\"ageAndGenderAppropriate\"></code>\n               </coding>\n            </orderDetail>\n            <subject>\n               <identifier>\n                  <system value=\"http://fhir.nhs.net/Id/nhs-number\"></system>\n                  <value value=\"9912003888\"></value>\n               </identifier>\n            </subject>\n            <requester>\n               <reference value=\"#pr\"></reference>\n            </requester>\n            <performer>\n               <type value=\"HealthcareService\"></type>\n               <identifier>\n                  <system value=\"http://fhir.nhs.net/Id/ers-service\"></system>\n                  <value value=\"11014\"></value>\n               </identifier>\n               <display value=\"Cardiology Advice Service\"></display>\n            </performer>\n            <supportingInfo>\n               <reference value=\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"></reference>\n            </supportingInfo>\n            <note>\n               <text value=\"Please advise me on this patient who ...(information about patient)\"></text>\n            </note>\n         </ServiceRequest>\n      </resource>\n   </entry>\n</Bundle>"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceRequest"
+        ],
+        "summary": "create-type: Create a new ServiceRequest instance",
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceRequest"
+              },
+              "example": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"id\": \"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\n  \"meta\": {\n    \"versionId\": \"5\"\n  },\n  \"contained\": [ {\n    \"resourceType\": \"PractitionerRole\",\n    \"id\": \"pr\",\n    \"practitioner\": {\n      \"identifier\": {\n        \"system\": \"http://fhir.nhs.net/Id/sds-user-id\",\n        \"value\": \"921600556514\"\n      }\n    },\n    \"organization\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"R68\"\n      }\n    }\n  } ],\n  \"identifier\": [ {\n    \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n    \"value\": \"000000070000\"\n  } ],\n  \"status\": \"active\",\n  \"intent\": \"plan\",\n  \"category\": [ {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"409063005\",\n      \"display\": \"Counselling\"\n    } ]\n  } ],\n  \"priority\": \"routine\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\n      \"code\": \"HEART_FAILURE\"\n    } ]\n  },\n  \"orderDetail\": [ {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\",\n      \"code\": \"ALL_AVAILABLE_FOR_BOOKING\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\",\n      \"code\": \"CARDIOLOGY\"\n    } ]\n  }, {\n    \"coding\": [ {\n      \"system\": \"https://fhir.nhs.uk/CodeSystem/eRS-Options\",\n      \"code\": \"ageAndGenderAppropriate\"\n    } ]\n  } ],\n  \"subject\": {\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/nhs-number\",\n      \"value\": \"9912003888\"\n    }\n  },\n  \"requester\": {\n    \"reference\": \"#pr\"\n  },\n  \"performer\": [ {\n    \"type\": \"HealthcareService\",\n    \"identifier\": {\n      \"system\": \"http://fhir.nhs.net/Id/ers-service\",\n      \"value\": \"11014\"\n    },\n    \"display\": \"Cardiology Advice Service\"\n  } ],\n  \"supportingInfo\": [ {\n    \"reference\": \"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"\n  } ],\n  \"note\": [ {\n    \"text\": \"Please advise me on this patient who ...(information about patient)\"\n  } ]\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceRequest"
+              },
+              "example": "<ServiceRequest xmlns=\"http://hl7.org/fhir\">\n   <id value=\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\"></id>\n   <meta>\n      <versionId value=\"5\"></versionId>\n   </meta>\n   <contained>\n      <PractitionerRole xmlns=\"http://hl7.org/fhir\">\n         <id value=\"pr\"></id>\n         <practitioner>\n            <identifier>\n               <system value=\"http://fhir.nhs.net/Id/sds-user-id\"></system>\n               <value value=\"921600556514\"></value>\n            </identifier>\n         </practitioner>\n         <organization>\n            <identifier>\n               <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n               <value value=\"R68\"></value>\n            </identifier>\n         </organization>\n      </PractitionerRole>\n   </contained>\n   <identifier>\n      <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n      <value value=\"000000070000\"></value>\n   </identifier>\n   <status value=\"active\"></status>\n   <intent value=\"plan\"></intent>\n   <category>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"409063005\"></code>\n         <display value=\"Counselling\"></display>\n      </coding>\n   </category>\n   <priority value=\"routine\"></priority>\n   <code>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\"></system>\n         <code value=\"HEART_FAILURE\"></code>\n      </coding>\n   </code>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-CommissioningProvisioning\"></system>\n         <code value=\"ALL_AVAILABLE_FOR_BOOKING\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\"></system>\n         <code value=\"CARDIOLOGY\"></code>\n      </coding>\n   </orderDetail>\n   <orderDetail>\n      <coding>\n         <system value=\"https://fhir.nhs.uk/CodeSystem/eRS-Options\"></system>\n         <code value=\"ageAndGenderAppropriate\"></code>\n      </coding>\n   </orderDetail>\n   <subject>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/nhs-number\"></system>\n         <value value=\"9912003888\"></value>\n      </identifier>\n   </subject>\n   <requester>\n      <reference value=\"#pr\"></reference>\n   </requester>\n   <performer>\n      <type value=\"HealthcareService\"></type>\n      <identifier>\n         <system value=\"http://fhir.nhs.net/Id/ers-service\"></system>\n         <value value=\"11014\"></value>\n      </identifier>\n      <display value=\"Cardiology Advice Service\"></display>\n   </performer>\n   <supportingInfo>\n      <reference value=\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"></reference>\n   </supportingInfo>\n   <note>\n      <text value=\"Please advise me on this patient who ...(information about patient)\"></text>\n   </note>\n</ServiceRequest>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Task/{id}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "read-instance: Read Task instance",
+        "description": "[A005 - Retrieve referral request](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a005-retrieve-referral-request)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                },
+                "example": "{\n  \"resourceType\": \"Task\",\n  \"id\": \"000000070000\",\n  \"identifier\": [ {\n    \"system\": \"https://tools.ietf.org/html/rfc4122\",\n    \"value\": \"f9ba86b1-2c3d-441f-840f-324396128771\"\n  } ],\n  \"status\": \"requested\",\n  \"intent\": \"order\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n      \"code\": \"fulfill\",\n      \"display\": \"Fulfill the focal request\"\n    } ]\n  },\n  \"focus\": {\n    \"reference\": \"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n      \"value\": \"000000070000\"\n    }\n  },\n  \"for\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n      \"value\": \"9446368138\"\n    }\n  },\n  \"authoredOn\": \"2021-10-09T12:00:00+00:00\",\n  \"requester\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"GP0001\"\n    }\n  },\n  \"owner\": {\n    \"reference\": \"https://directory.spineservices.nhs.uk/R4/Organization/RR8\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"RR8\"\n    }\n  },\n  \"reasonCode\": {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"306185001\",\n      \"display\": \"Referral to cardiac surgery service\"\n    } ]\n  }\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                },
+                "example": "<Task xmlns=\"http://hl7.org/fhir\">\n   <id value=\"000000070000\"></id>\n   <identifier>\n      <system value=\"https://tools.ietf.org/html/rfc4122\"></system>\n      <value value=\"f9ba86b1-2c3d-441f-840f-324396128771\"></value>\n   </identifier>\n   <status value=\"requested\"></status>\n   <intent value=\"order\"></intent>\n   <code>\n      <coding>\n         <system value=\"http://hl7.org/fhir/CodeSystem/task-code\"></system>\n         <code value=\"fulfill\"></code>\n         <display value=\"Fulfill the focal request\"></display>\n      </coding>\n   </code>\n   <focus>\n      <reference value=\"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n         <value value=\"000000070000\"></value>\n      </identifier>\n   </focus>\n   <for>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n         <value value=\"9446368138\"></value>\n      </identifier>\n   </for>\n   <authoredOn value=\"2021-10-09T12:00:00+00:00\"></authoredOn>\n   <requester>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"GP0001\"></value>\n      </identifier>\n   </requester>\n   <owner>\n      <reference value=\"https://directory.spineservices.nhs.uk/R4/Organization/RR8\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"RR8\"></value>\n      </identifier>\n   </owner>\n   <reasonCode>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"306185001\"></code>\n         <display value=\"Referral to cardiac surgery service\"></display>\n      </coding>\n   </reasonCode>\n</Task>"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "update-instance: Update an existing Task instance, or create using a client-assigned ID",
+        "description": "[A013 - Accept referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a013-accept-referral) and [A014 - Reject referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a014-reject-referral)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              },
+              "example": "{\n  \"resourceType\": \"Task\",\n  \"id\": \"000000070000\",\n  \"identifier\": [ {\n    \"system\": \"https://tools.ietf.org/html/rfc4122\",\n    \"value\": \"f9ba86b1-2c3d-441f-840f-324396128771\"\n  } ],\n  \"status\": \"requested\",\n  \"intent\": \"order\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n      \"code\": \"fulfill\",\n      \"display\": \"Fulfill the focal request\"\n    } ]\n  },\n  \"focus\": {\n    \"reference\": \"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n      \"value\": \"000000070000\"\n    }\n  },\n  \"for\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n      \"value\": \"9446368138\"\n    }\n  },\n  \"authoredOn\": \"2021-10-09T12:00:00+00:00\",\n  \"requester\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"GP0001\"\n    }\n  },\n  \"owner\": {\n    \"reference\": \"https://directory.spineservices.nhs.uk/R4/Organization/RR8\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"RR8\"\n    }\n  },\n  \"reasonCode\": {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"306185001\",\n      \"display\": \"Referral to cardiac surgery service\"\n    } ]\n  }\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              },
+              "example": "<Task xmlns=\"http://hl7.org/fhir\">\n   <id value=\"000000070000\"></id>\n   <identifier>\n      <system value=\"https://tools.ietf.org/html/rfc4122\"></system>\n      <value value=\"f9ba86b1-2c3d-441f-840f-324396128771\"></value>\n   </identifier>\n   <status value=\"requested\"></status>\n   <intent value=\"order\"></intent>\n   <code>\n      <coding>\n         <system value=\"http://hl7.org/fhir/CodeSystem/task-code\"></system>\n         <code value=\"fulfill\"></code>\n         <display value=\"Fulfill the focal request\"></display>\n      </coding>\n   </code>\n   <focus>\n      <reference value=\"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n         <value value=\"000000070000\"></value>\n      </identifier>\n   </focus>\n   <for>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n         <value value=\"9446368138\"></value>\n      </identifier>\n   </for>\n   <authoredOn value=\"2021-10-09T12:00:00+00:00\"></authoredOn>\n   <requester>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"GP0001\"></value>\n      </identifier>\n   </requester>\n   <owner>\n      <reference value=\"https://directory.spineservices.nhs.uk/R4/Organization/RR8\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"RR8\"></value>\n      </identifier>\n   </owner>\n   <reasonCode>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"306185001\"></code>\n         <display value=\"Referral to cardiac surgery service\"></display>\n      </coding>\n   </reasonCode>\n</Task>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Task": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "search-type: Search for Task instances",
+        "description": "See also [A008 - Retrieve referral worklist](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a008-retrieve-worklist)",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "query",
+            "description": "Search by task owner",
+            "style": "simple"
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "Search by task code (worklist type)",
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bundle"
+                },
+                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 1,\n  \"entry\": [ {\n    \"resource\": {\n      \"resourceType\": \"Task\",\n      \"id\": \"000000070000\",\n      \"identifier\": [ {\n        \"system\": \"https://tools.ietf.org/html/rfc4122\",\n        \"value\": \"f9ba86b1-2c3d-441f-840f-324396128771\"\n      } ],\n      \"status\": \"requested\",\n      \"intent\": \"order\",\n      \"code\": {\n        \"coding\": [ {\n          \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n          \"code\": \"fulfill\",\n          \"display\": \"Fulfill the focal request\"\n        } ]\n      },\n      \"focus\": {\n        \"reference\": \"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\",\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n          \"value\": \"000000070000\"\n        }\n      },\n      \"for\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n          \"value\": \"9446368138\"\n        }\n      },\n      \"authoredOn\": \"2021-10-09T12:00:00+00:00\",\n      \"requester\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"GP0001\"\n        }\n      },\n      \"owner\": {\n        \"reference\": \"https://directory.spineservices.nhs.uk/R4/Organization/RR8\",\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"RR8\"\n        }\n      },\n      \"reasonCode\": {\n        \"coding\": [ {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"306185001\",\n          \"display\": \"Referral to cardiac surgery service\"\n        } ]\n      }\n    }\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bundle"
+                },
+                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"1\"></total>\n   <entry>\n      <resource>\n         <Task xmlns=\"http://hl7.org/fhir\">\n            <id value=\"000000070000\"></id>\n            <identifier>\n               <system value=\"https://tools.ietf.org/html/rfc4122\"></system>\n               <value value=\"f9ba86b1-2c3d-441f-840f-324396128771\"></value>\n            </identifier>\n            <status value=\"requested\"></status>\n            <intent value=\"order\"></intent>\n            <code>\n               <coding>\n                  <system value=\"http://hl7.org/fhir/CodeSystem/task-code\"></system>\n                  <code value=\"fulfill\"></code>\n                  <display value=\"Fulfill the focal request\"></display>\n               </coding>\n            </code>\n            <focus>\n               <reference value=\"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\"></reference>\n               <identifier>\n                  <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n                  <value value=\"000000070000\"></value>\n               </identifier>\n            </focus>\n            <for>\n               <identifier>\n                  <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n                  <value value=\"9446368138\"></value>\n               </identifier>\n            </for>\n            <authoredOn value=\"2021-10-09T12:00:00+00:00\"></authoredOn>\n            <requester>\n               <identifier>\n                  <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                  <value value=\"GP0001\"></value>\n               </identifier>\n            </requester>\n            <owner>\n               <reference value=\"https://directory.spineservices.nhs.uk/R4/Organization/RR8\"></reference>\n               <identifier>\n                  <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                  <value value=\"RR8\"></value>\n               </identifier>\n            </owner>\n            <reasonCode>\n               <coding>\n                  <system value=\"http://snomed.info/sct\"></system>\n                  <code value=\"306185001\"></code>\n                  <display value=\"Referral to cardiac surgery service\"></display>\n               </coding>\n            </reasonCode>\n         </Task>\n      </resource>\n   </entry>\n</Bundle>"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "create-type: Create a new Task instance",
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              },
+              "example": "{\n  \"resourceType\": \"Task\",\n  \"id\": \"000000070000\",\n  \"identifier\": [ {\n    \"system\": \"https://tools.ietf.org/html/rfc4122\",\n    \"value\": \"f9ba86b1-2c3d-441f-840f-324396128771\"\n  } ],\n  \"status\": \"requested\",\n  \"intent\": \"order\",\n  \"code\": {\n    \"coding\": [ {\n      \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n      \"code\": \"fulfill\",\n      \"display\": \"Fulfill the focal request\"\n    } ]\n  },\n  \"focus\": {\n    \"reference\": \"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n      \"value\": \"000000070000\"\n    }\n  },\n  \"for\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n      \"value\": \"9446368138\"\n    }\n  },\n  \"authoredOn\": \"2021-10-09T12:00:00+00:00\",\n  \"requester\": {\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"GP0001\"\n    }\n  },\n  \"owner\": {\n    \"reference\": \"https://directory.spineservices.nhs.uk/R4/Organization/RR8\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"RR8\"\n    }\n  },\n  \"reasonCode\": {\n    \"coding\": [ {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"306185001\",\n      \"display\": \"Referral to cardiac surgery service\"\n    } ]\n  }\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              },
+              "example": "<Task xmlns=\"http://hl7.org/fhir\">\n   <id value=\"000000070000\"></id>\n   <identifier>\n      <system value=\"https://tools.ietf.org/html/rfc4122\"></system>\n      <value value=\"f9ba86b1-2c3d-441f-840f-324396128771\"></value>\n   </identifier>\n   <status value=\"requested\"></status>\n   <intent value=\"order\"></intent>\n   <code>\n      <coding>\n         <system value=\"http://hl7.org/fhir/CodeSystem/task-code\"></system>\n         <code value=\"fulfill\"></code>\n         <display value=\"Fulfill the focal request\"></display>\n      </coding>\n   </code>\n   <focus>\n      <reference value=\"https://api.ers-service.nhs.uk/FHIR/R4/ServiceRequest/dafb61c6-7042-40aa-a72d-843f1936b573\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/UBRN\"></system>\n         <value value=\"000000070000\"></value>\n      </identifier>\n   </focus>\n   <for>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n         <value value=\"9446368138\"></value>\n      </identifier>\n   </for>\n   <authoredOn value=\"2021-10-09T12:00:00+00:00\"></authoredOn>\n   <requester>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"GP0001\"></value>\n      </identifier>\n   </requester>\n   <owner>\n      <reference value=\"https://directory.spineservices.nhs.uk/R4/Organization/RR8\"></reference>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"RR8\"></value>\n      </identifier>\n   </owner>\n   <reasonCode>\n      <coding>\n         <system value=\"http://snomed.info/sct\"></system>\n         <code value=\"306185001\"></code>\n         <display value=\"Referral to cardiac surgery service\"></display>\n      </coding>\n   </reasonCode>\n</Task>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Slot": {
+      "get": {
+        "tags": [
+          "Slot"
+        ],
+        "summary": "search-type: Search for Slot instances",
+        "description": "[A015 - Retrieve appointment slots](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a015-retrieve-appointment-slots)",
+        "parameters": [
+          {
+            "name": "appointment-type",
+            "in": "query",
+            "description": "The style of appointment or patient that may be booked in the slot (not service type)",
+            "style": "simple"
+          },
+          {
+            "name": "schedule.actor:HealthcareService",
+            "in": "query",
+            "description": "A single service ID is required to indicate the service for which appointment slots are required.",
+            "style": "simple"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The free/busy status of the appointment",
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/HealthcareService": {
+      "get": {
+        "tags": [
+          "HealthcareService"
+        ],
+        "summary": "search-type: Search for HealthcareService instances",
+        "description": "[A010 - Patient service search](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a010-patient-service-search)",
+        "parameters": [
+          {
+            "name": "service-type",
+            "in": "query",
+            "description": "The type of service provided by this healthcare service",
+            "style": "simple"
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "Can't find this parameter presume need to: External identifiers for this item",
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/HealthcareService/{id}": {
+      "get": {
+        "tags": [
+          "HealthcareService"
+        ],
+        "summary": "read-instance: Read HealthcareService instance",
+        "description": "Unable to find existing matching service",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/DocumentReference/{id}": {
+      "get": {
+        "tags": [
+          "DocumentReference"
+        ],
+        "summary": "read-instance: Read DocumentReference instance",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Binary/{id}": {
+      "get": {
+        "tags": [
+          "Binary"
+        ],
+        "summary": "read-instance: Read Binary instance",
+        "description": "[A006 - Retrieve attachment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a006-retrieve-attachment)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The resource ID",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "minimum": 1,
+              "type": "string"
+            },
+            "example": "123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/null"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Binary": {
+      "post": {
+        "tags": [
+          "Binary"
+        ],
+        "summary": "create-type: Create a new Binary instance",
+        "description": "[A020 - Upload file to document store](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a020-upload-file-to-document-store)",
+        "requestBody": {
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Binary"
+              },
+              "example": "{\n  \"resourceType\": \"Binary\"\n}"
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Binary"
+              },
+              "example": "<Binary xmlns=\"http://hl7.org/fhir\"></Binary>"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationOutcome"
+                },
+                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CapabilityStatement": {
+        "type": "object",
+        "description": "See resource [CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "Appointment": {
+        "type": "object",
+        "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "OperationOutcome": {
+        "type": "object",
+        "description": "See resource [OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "ServiceRequest": {
+        "type": "object",
+        "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for the FHIR Profile on resource [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "Bundle": {
+        "type": "object",
+        "description": "See resource [Bundle](https://www.hl7.org/fhir/Bundle.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "Task": {
+        "type": "object",
+        "description": "See [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "Slot": {
+        "type": "object",
+        "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for the FHIR Profile on resource [Slot](https://www.hl7.org/fhir/Slot.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "HealthcareService": {
+        "type": "object",
+        "description": "See [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md) for the FHIR Profile on resource [HealthcareService](https://www.hl7.org/fhir/HealthcareService.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "DocumentReference": {
+        "type": "object",
+        "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for the FHIR Profile on resource [DocumentReference](https://www.hl7.org/fhir/DocumentReference.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "List": {
+        "type": "object",
+        "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for the FHIR Profile on resource [List](https://www.hl7.org/fhir/List.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      },
+      "Binary": {
+        "type": "object",
+        "description": "See [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md) for the FHIR Profile on resource [Binary](https://www.hl7.org/fhir/Binary.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+      }
+    }
+  }
+}
