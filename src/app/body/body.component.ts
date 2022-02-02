@@ -15,8 +15,8 @@ export class BodyComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   url = {
-    name: 'eRS',
-    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/ers.json'
+    name: 'eRS-Futures',
+    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
   }
 
   ngOnInit(): void {

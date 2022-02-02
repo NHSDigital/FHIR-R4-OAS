@@ -66,8 +66,8 @@ class BodyComponent {
     constructor(route) {
         this.route = route;
         this.url = {
-            name: 'eRS',
-            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/ers.json'
+            name: 'eRS-Futures',
+            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
         };
     }
     ngOnInit() {
