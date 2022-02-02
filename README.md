@@ -2,6 +2,10 @@
 
 This project demonstrates the rendering of FHIR CapabilityStatements as openAPI documentation
 
-[Sample FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/)
+- [eRS Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/ers)
 
- ng build --output-path docs --base-href /FHIR-R4-OAS/
+- [PDS Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/pds)
+
+- [EPS-NextGen Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/EPS-NextGen)
+
+
