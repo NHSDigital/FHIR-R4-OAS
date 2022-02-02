@@ -65,10 +65,7 @@ const _c0 = ["swagger"];
 class BodyComponent {
     constructor(route) {
         this.route = route;
-        this.url = {
-            name: 'eRS-Futures',
-            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
-        };
+        this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json';
     }
     ngOnInit() {
         this.doSetup();
@@ -79,12 +76,10 @@ class BodyComponent {
     // https://stackblitz.com/edit/angular-swagger-ui-integration?file=src%2Fapp%2Fapp.component.ts
     ngAfterViewInit() {
         Object(swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"])({
-            urls: [
-                this.url
-            ],
+            url: this.url,
             domNode: this.swaggerDom.nativeElement,
             deepLinking: true,
-            presets: [swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].presets.apis, swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIStandalonePreset"]],
+            presets: [swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].presets.apis, swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIStandalonePreset"].slice(1)],
             plugins: [
                 swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].plugins.DownloadUrl
             ],
@@ -94,10 +89,7 @@ class BodyComponent {
     doSetup() {
         const tempid = this.route.snapshot.paramMap.get('oasurl');
         if (tempid != undefined) {
-            this.url = {
-                name: tempid,
-                url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/' + tempid + '.json'
-            };
+            this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/' + tempid + '.json';
         }
     }
 }
@@ -111,7 +103,7 @@ BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", null, 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"]], styles: [".swagger-ui.scheme-container[_ngcontent-%COMP%], .swagger-ui[_ngcontent-%COMP%]   .topbar[_ngcontent-%COMP%] {\n  display: none !important;\n}\n\n.swagger-section[_ngcontent-%COMP%]   #header[_ngcontent-%COMP%] {\n  background-color: #fadc00;\n}\n\n#topbar[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBQ3NCLHdCQUFBO0FBRXRCOztBQURBO0VBQTJCLHlCQUFBO0FBSzNCOztBQUhBO0VBQ0EsYUFBQTtBQU1BIiwiZmlsZSI6ImJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3dhZ2dlci11aS5zY2hlbWUtY29udGFpbmVyLFxyXG4uc3dhZ2dlci11aSAudG9wYmFyIHsgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50OyB9XHJcbi5zd2FnZ2VyLXNlY3Rpb24gI2hlYWRlciB7IGJhY2tncm91bmQtY29sb3I6ICNmYWRjMDA7IH1cclxuXHJcbiN0b3BiYXIge1xyXG5kaXNwbGF5Om5vbmU7XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib2R5LmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BodyComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{

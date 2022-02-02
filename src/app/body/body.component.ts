@@ -14,10 +14,8 @@ export class BodyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  url = {
-    name: 'eRS-Futures',
-    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
-  }
+  url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
+
 
   ngOnInit(): void {
     this.doSetup();
@@ -28,13 +26,12 @@ export class BodyComponent implements OnInit {
   }
   // https://stackblitz.com/edit/angular-swagger-ui-integration?file=src%2Fapp%2Fapp.component.ts
   ngAfterViewInit() {
+
     SwaggerUIBundle({
-      urls: [
-        this.url
-      ],
+      url: this.url,
       domNode: this.swaggerDom.nativeElement,
       deepLinking: true,
-      presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+      presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset.slice(1)],
       plugins: [
         SwaggerUIBundle.plugins.DownloadUrl
       ],
@@ -46,10 +43,7 @@ export class BodyComponent implements OnInit {
 
     const tempid = this.route.snapshot.paramMap.get('oasurl');
     if (tempid != undefined) {
-      this.url = {
-        name: tempid,
-        url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/'+tempid+'.json'
-      }
+      this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/'+tempid+'.json'
     }
   }
 }
