@@ -1,0 +1,503 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "description": "Conformance requirements for NHS Digital EPS NextGen APIs",
+        "contact": {}
+    },
+    "servers": [
+        {}
+    ],
+    "tags": [
+        {
+            "name": "System Level Operations",
+            "description": "Server-level operations"
+        },
+        {
+            "name": "List",
+            "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for documentation. Resource type: List"
+        },
+        {
+            "name": "Claim",
+            "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for documentation. Resource type: Claim"
+        },
+        {
+            "name": "CommunicationRequest",
+            "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for documentation. Resource type: CommunicationRequest"
+        },
+        {
+            "name": "MedicationRequest",
+            "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for documentation. Resource type: MedicationRequest"
+        },
+        {
+            "name": "MedicationDispense",
+            "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for documentation. Resource type: MedicationDispense"
+        },
+        {
+            "name": "Medication",
+            "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for documentation. Resource type: Medication"
+        },
+        {
+            "name": "Task",
+            "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for documentation. Resource type: Task"
+        }
+    ],
+    "paths": {
+        "/metadata": {
+            "get": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "summary": "server-capabilities: Fetch the server FHIR CapabilityStatement",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "{\n  \"resourceType\": \"CapabilityStatement\"\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "<CapabilityStatement xmlns=\"http://hl7.org/fhir\"></CapabilityStatement>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/$process-message": {
+            "post": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "description": "This operation accepts a message, processes it according to the definition of the event in the message header, and returns one or more response messages.  \n\nIn addition to processing the message event, a server may choose to retain all or some the resources and make them available on a RESTful interface, but is not required to do so.\n Supported Messages \n\n\n prescription-order \n --------------------\n `https://fhir.nhs.uk/MessageDefinition/prescription-order` \n Ordering of medications\n \n\n MessageHeader.eventCoding = **prescription-order** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| MedicationRequest | [NHSDigital-MedicationRequest-Message](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest-Message.guide.md) | 1 | 4 | \n| CommunicationRequest | [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) | 0 | * | \n\n\n\n prescription-order-update \n --------------------\n `https://fhir.nhs.uk/MessageDefinition/prescription-order-update` \n An update to a prescription-order message\n \n\n MessageHeader.eventCoding = **prescription-order-update** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| MedicationRequest | [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) | 1 | 1 | \n\n\n\n dispense-notification \n --------------------\n `https://fhir.nhs.uk/MessageDefinition/dispense-notification` \n Notification of dispensed medication\n \n\n MessageHeader.eventCoding = **dispense-notification** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| MedicationDispense | [NHSDigital-MedicationDispense-Message](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense-Message.guide.md) | 1 | * | \n\n\n\n dispense-notification-update \n --------------------\n `https://fhir.nhs.uk/MessageDefinition/dispense-notification-update` \n Notification of medication dispenses.\n \n\n MessageHeader.eventCoding = **dispense-notification-update** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| MedicationDispense | [NHSDigital-MedicationDispense-Message](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense-Message.guide.md) | 1 | * | \n\n",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "title": "FHIR Resource",
+                                "type": "object"
+                            },
+                            "example": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"content\"\n  }, {\n    \"name\": \"async\",\n    \"valueBoolean\": false\n  }, {\n    \"name\": \"response-url\",\n    \"valueUrl\": \"example\"\n  } ]\n}"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/$prepare": {
+            "post": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "description": "Convert a prescription in FHIR format into the canonicalised HL7 V3 signature fragments which should be signed by the prescriber.",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "title": "FHIR Resource",
+                                "type": "object"
+                            },
+                            "example": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"content\"\n  } ]\n}"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Claim": {
+            "post": {
+                "tags": [
+                    "Claim"
+                ],
+                "summary": "create-type: Create a new Claim instance",
+                "description": "Use this endpoint to submit a claim for reimbursement for a dispensed prescription.",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Claim"
+                            },
+                            "example": "{\n  \"resourceType\": \"Claim\"\n}"
+                        },
+                        "application/fhir+xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Claim"
+                            },
+                            "example": "<Claim xmlns=\"http://hl7.org/fhir\"></Claim>"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Claim/{id}": {
+            "put": {
+                "tags": [
+                    "Claim"
+                ],
+                "summary": "update-instance: Update an existing Claim instance, or create using a client-assigned ID",
+                "description": "Use this endpoint to submit a claim for reimbursement for a dispensed prescription.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The resource ID",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "123"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Claim"
+                            },
+                            "example": "{\n  \"resourceType\": \"Claim\"\n}"
+                        },
+                        "application/fhir+xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Claim"
+                            },
+                            "example": "<Claim xmlns=\"http://hl7.org/fhir\"></Claim>"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MedicationRequest": {
+            "get": {
+                "tags": [
+                    "MedicationRequest"
+                ],
+                "summary": "search-type: Search for MedicationRequest instances",
+                "description": "This is a search type",
+                "parameters": [
+                    {
+                        "name": "patient:identifier",
+                        "in": "query",
+                        "description": "Returns prescriptions for a specific patientt identifier (NHS Number)",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "patient",
+                        "in": "query",
+                        "description": "Returns prescriptions for a specific patient",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "medication",
+                        "in": "query",
+                        "description": "Return prescriptions for this medication reference",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Status of the prescription",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "authoredon",
+                        "in": "query",
+                        "description": "Return prescriptions written on this date",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MedicationDispense": {
+            "get": {
+                "tags": [
+                    "MedicationDispense"
+                ],
+                "summary": "search-type: Search for MedicationDispense instances",
+                "description": "This is a search type",
+                "parameters": [
+                    {
+                        "name": "patient:identifier",
+                        "in": "query",
+                        "description": "The identity (NHS Number) of a patient to list dispenses for",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "patient",
+                        "in": "query",
+                        "description": "The identity of a patient to list dispenses for",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Task": {
+            "get": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "search-type: Search for Task instances",
+                "description": "The EPS Tracker",
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "in": "query",
+                        "description": "The short form identifier of the prescription you are searching for.",
+                        "style": "simple"
+                    },
+                    {
+                        "name": "focus:identifier",
+                        "in": "query",
+                        "description": "The short form identifier of the prescription you are searching for.",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Task"
+                ],
+                "summary": "create-type: Create a new Task instance",
+                "description": "Used for returns prescriptions to spine. Should be a PUT",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Task"
+                            },
+                            "example": "{\n  \"resourceType\": \"Task\"\n}"
+                        },
+                        "application/fhir+xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Task"
+                            },
+                            "example": "<Task xmlns=\"http://hl7.org/fhir\"></Task>"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\">\n   <issue>\n      <severity value=\"information\"></severity>\n      <code value=\"informational\"></code>\n   </issue>\n</OperationOutcome>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Task/$release": {
+            "post": {
+                "tags": [
+                    "Task"
+                ],
+                "description": "TODO - Add description",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "title": "FHIR Resource",
+                                "type": "object"
+                            },
+                            "example": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"group-identifier\"\n  }, {\n    \"name\": \"owner\"\n  }, {\n    \"name\": \"status\",\n    \"valueCode\": \"example\"\n  }, {\n    \"name\": \"agent\"\n  } ]\n}"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CapabilityStatement": {
+                "type": "object",
+                "description": "See resource [CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "List": {
+                "type": "object",
+                "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for the FHIR Profile on resource [List](https://www.hl7.org/fhir/List.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Claim": {
+                "type": "object",
+                "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for the FHIR Profile on resource [Claim](https://www.hl7.org/fhir/Claim.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "OperationOutcome": {
+                "type": "object",
+                "description": "See resource [OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "CommunicationRequest": {
+                "type": "object",
+                "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for the FHIR Profile on resource [CommunicationRequest](https://www.hl7.org/fhir/CommunicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationRequest": {
+                "type": "object",
+                "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for the FHIR Profile on resource [MedicationRequest](https://www.hl7.org/fhir/MedicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationDispense": {
+                "type": "object",
+                "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for the FHIR Profile on resource [MedicationDispense](https://www.hl7.org/fhir/MedicationDispense.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Medication": {
+                "type": "object",
+                "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for the FHIR Profile on resource [Medication](https://www.hl7.org/fhir/Medication.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Task": {
+                "type": "object",
+                "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            }
+        }
+    }
+}
