@@ -53,7 +53,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swagger-ui-dist */ "Sgou");
 /* harmony import */ var swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+
 
 
 
@@ -61,26 +63,45 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["swagger"];
 // @ts-ignore
 class BodyComponent {
-    constructor() { }
+    constructor(route) {
+        this.route = route;
+        this.url = {
+            name: 'eRS',
+            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eps.json'
+        };
+    }
     ngOnInit() {
+        this.doSetup();
+        this.route.url.subscribe(url => {
+            this.doSetup();
+        });
     }
     // https://stackblitz.com/edit/angular-swagger-ui-integration?file=src%2Fapp%2Fapp.component.ts
     ngAfterViewInit() {
         Object(swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"])({
             urls: [
-                {
-                    name: 'eRS',
-                    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eps.json'
-                }
+                this.url
             ],
             domNode: this.swaggerDom.nativeElement,
             deepLinking: true,
             presets: [swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].presets.apis, swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIStandalonePreset"]],
+            plugins: [
+                swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].plugins.DownloadUrl
+            ],
             layout: 'StandaloneLayout'
         });
     }
+    doSetup() {
+        const tempid = this.route.snapshot.paramMap.get('oasurl');
+        if (tempid != undefined) {
+            this.url = {
+                name: tempid,
+                url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/' + tempid + '.json'
+            };
+        }
+    }
 }
-BodyComponent.ɵfac = function BodyComponent_Factory(t) { return new (t || BodyComponent)(); };
+BodyComponent.ɵfac = function BodyComponent_Factory(t) { return new (t || BodyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
 BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BodyComponent, selectors: [["app-body"]], viewQuery: function BodyComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
     } if (rf & 2) {
@@ -90,7 +111,7 @@ BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", null, 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCard"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib2R5LmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"]], styles: [".swagger-ui.scheme-container[_ngcontent-%COMP%], .swagger-ui[_ngcontent-%COMP%]   .topbar[_ngcontent-%COMP%] {\n  display: none !important;\n}\n\n.swagger-section[_ngcontent-%COMP%]   #header[_ngcontent-%COMP%] {\n  background-color: #fadc00;\n}\n\n#topbar[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGJvZHkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBQ3NCLHdCQUFBO0FBRXRCOztBQURBO0VBQTJCLHlCQUFBO0FBSzNCOztBQUhBO0VBQ0EsYUFBQTtBQU1BIiwiZmlsZSI6ImJvZHkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3dhZ2dlci11aS5zY2hlbWUtY29udGFpbmVyLFxyXG4uc3dhZ2dlci11aSAudG9wYmFyIHsgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50OyB9XHJcbi5zd2FnZ2VyLXNlY3Rpb24gI2hlYWRlciB7IGJhY2tncm91bmQtY29sb3I6ICNmYWRjMDA7IH1cclxuXHJcbiN0b3BiYXIge1xyXG5kaXNwbGF5Om5vbmU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BodyComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -98,7 +119,7 @@ BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './body.component.html',
                 styleUrls: ['./body.component.scss']
             }]
-    }], function () { return []; }, { swaggerDom: [{
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, { swaggerDom: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
             args: ['swagger']
         }] }); })();
