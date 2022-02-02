@@ -16,7 +16,7 @@ export class BodyComponent implements OnInit {
 
   url = {
     name: 'eRS',
-    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eps.json'
+    url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/ers.json'
   }
 
   ngOnInit(): void {

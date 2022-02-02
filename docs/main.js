@@ -67,7 +67,7 @@ class BodyComponent {
         this.route = route;
         this.url = {
             name: 'eRS',
-            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eps.json'
+            url: 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/ers.json'
         };
     }
     ngOnInit() {
@@ -326,9 +326,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @covalent/core/layout */ "YGdM");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 
 
 
@@ -339,25 +337,20 @@ class MainComponent {
     }
 }
 MainComponent.ɵfac = function MainComponent_Factory(t) { return new (t || MainComponent)(); };
-MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 11, vars: 0, consts: [["sidenavWidth", "280px", 1, "layout-nav-demo"], ["flex", "", "sidenavTitle", "Search"], ["navigationRoute", "/", "opened", "false", "mode", "side"], ["td-sidenav-content", ""], ["td-toolbar-content", "", "flex-auto", ""], ["flex", ""], ["mat-icon-button", "", "td-menu-button", "", "tdLayoutToggle", ""]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
+MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 8, vars: 0, consts: [["sidenavWidth", "280px", 1, "layout-nav-demo"], ["flex", "", "sidenavTitle", "Search"], ["navigationRoute", "/", "opened", "false", "mode", "side"], ["td-sidenav-content", ""], ["td-toolbar-content", "", "flex-auto", ""], ["flex", ""]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td-layout", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "td-navigation-drawer", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "td-layout-nav-list", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "search");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " NHS Digital FHIR based OAS Browser ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " NHS Digital OAS Browser ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdLayoutComponent"], _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdNavigationDrawerComponent"], _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdLayoutNavListComponent"], _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdLayoutToggleDirective"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__["MatIcon"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, directives: [_covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdLayoutComponent"], _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdNavigationDrawerComponent"], _covalent_core_layout__WEBPACK_IMPORTED_MODULE_1__["TdLayoutNavListComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MainComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
