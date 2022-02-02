@@ -2,7 +2,7 @@
 
 This project demonstrates the rendering of FHIR CapabilityStatements as openAPI documentation
 
-- [eRS Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/ers)
+- [eRS-Futures Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/eRS-Futures)
 
 - [PDS Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/pds)
 
