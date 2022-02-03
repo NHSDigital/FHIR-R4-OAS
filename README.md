@@ -8,6 +8,6 @@ This project demonstrates the rendering of FHIR CapabilityStatements as openAPI 
 
 - [EPS-NextGen Example FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/EPS-NextGen)
 
-- [FHIR Validation (Medications) FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/Validations-Medications)
+- [FHIR Validation (Medications) FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/validation-nhsd-medications)
 
 
