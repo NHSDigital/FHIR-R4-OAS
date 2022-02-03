@@ -1,0 +1,462 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "description": "\n\n | API Documentation |\n |-----|\n  |[NHS Digital FHIR Implementation Guide](https://simplifier.net/guide/NHSDigital/Home)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)|1.2.2-prerelease|\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)|2.4.9-prerelease|\n |[uk.nhsdigital.medicines.r4.test](https://simplifier.net/guide/nhsdigital-medicines/home)|2.4.2-prerelease|\n",
+        "contact": {}
+    },
+    "servers": [
+        {}
+    ],
+    "tags": [
+        {
+            "name": "System Level Operations",
+            "description": "Server-level operations"
+        },
+        {
+            "name": "CapabilityStatement",
+            "description": "See [NHSDigital-CapabilityStatement](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CapabilityStatement.guide.md) for documentation. Resource type: CapabilityStatement"
+        },
+        {
+            "name": "StructureDefinition",
+            "description": "Resource type: StructureDefinition"
+        },
+        {
+            "name": "MessageDefinition",
+            "description": "See [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md) for documentation. Resource type: MessageDefinition"
+        },
+        {
+            "name": "AllergyIntolerance",
+            "description": "See [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) for documentation. Resource type: AllergyIntolerance"
+        },
+        {
+            "name": "Immunization",
+            "description": "See [NHSDigital-Immunization](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Immunization.guide.md) for documentation. Resource type: Immunization"
+        },
+        {
+            "name": "Location",
+            "description": "See [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) for documentation. Resource type: Location"
+        },
+        {
+            "name": "MedicationAdministration",
+            "description": "See [UKCore-MedicationAdministration](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationAdministration) for documentation. Resource type: MedicationAdministration"
+        },
+        {
+            "name": "MedicationDispense",
+            "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for documentation. Resource type: MedicationDispense"
+        },
+        {
+            "name": "MedicationRequest",
+            "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for documentation. Resource type: MedicationRequest"
+        },
+        {
+            "name": "MedicationStatement",
+            "description": "See [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) for documentation. Resource type: MedicationStatement"
+        },
+        {
+            "name": "Organization",
+            "description": "See [NHSDigital-Organization](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Organization.guide.md) for documentation. Resource type: Organization"
+        },
+        {
+            "name": "Patient",
+            "description": "See [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) for documentation. Resource type: Patient"
+        },
+        {
+            "name": "Practitioner",
+            "description": "See [NHSDigital-Practitioner](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Practitioner.guide.md) for documentation. Resource type: Practitioner"
+        },
+        {
+            "name": "PractitionerRole",
+            "description": "See [NHSDigital-PractitionerRole](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-PractitionerRole.guide.md) for documentation. Resource type: PractitionerRole"
+        },
+        {
+            "name": "ServiceRequest",
+            "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for documentation. Resource type: ServiceRequest"
+        },
+        {
+            "name": "Slot",
+            "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for documentation. Resource type: Slot"
+        },
+        {
+            "name": "Appointment",
+            "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for documentation. Resource type: Appointment"
+        },
+        {
+            "name": "Task",
+            "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for documentation. Resource type: Task"
+        },
+        {
+            "name": "Questionnaire",
+            "description": "See [NHSDigital-Questionnaire](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Questionnaire.guide.md) for documentation. Resource type: Questionnaire"
+        },
+        {
+            "name": "QuestionnaireResponse",
+            "description": "See [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md) for documentation. Resource type: QuestionnaireResponse"
+        },
+        {
+            "name": "HealthcareService",
+            "description": "See [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md) for documentation. Resource type: HealthcareService"
+        },
+        {
+            "name": "DocumentReference",
+            "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for documentation. Resource type: DocumentReference"
+        },
+        {
+            "name": "List",
+            "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for documentation. Resource type: List"
+        },
+        {
+            "name": "Binary",
+            "description": "See [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md) for documentation. Resource type: Binary"
+        },
+        {
+            "name": "CommunicationRequest",
+            "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for documentation. Resource type: CommunicationRequest"
+        },
+        {
+            "name": "Encounter",
+            "description": "See [England-Encounter](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Encounter.guide.md) for documentation. Resource type: Encounter"
+        },
+        {
+            "name": "Flag",
+            "description": "See [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Flag](https://simplifier.net/guide/nhsdigital/home) for documentation. Resource type: Flag"
+        },
+        {
+            "name": "Observation",
+            "description": "See [NHSDigital-Observation](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Observation.guide.md) for documentation. Resource type: Observation"
+        },
+        {
+            "name": "OperationDefinition",
+            "description": "See [NHSDigital-OperationDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-OperationDefinition.guide.md) for documentation. Resource type: OperationDefinition"
+        },
+        {
+            "name": "Device",
+            "description": "See [SDS-Device](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/SDS-Device.guide.md) for documentation. Resource type: Device"
+        },
+        {
+            "name": "Endpoint",
+            "description": "See [SDS-Endpoint](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/SDS-Endpoint.guide.md) for documentation. Resource type: Endpoint"
+        },
+        {
+            "name": "Claim",
+            "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for documentation. Resource type: Claim"
+        },
+        {
+            "name": "Medication",
+            "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for documentation. Resource type: Medication"
+        }
+    ],
+    "paths": {
+        "/metadata": {
+            "get": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "summary": "server-capabilities: Fetch the server FHIR CapabilityStatement",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "{\n  \"resourceType\": \"CapabilityStatement\",\n  \"extension\": [ {\n    \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\n    \"extension\": [ {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"ukcore.release1.test\"\n      }, {\n        \"url\": \"version\",\n        \"valueString\": \"1.2.2-prerelease\"\n      } ]\n    }, {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"uk.nhsdigital.r4.test\"\n      }, {\n        \"url\": \"version\",\n        \"valueString\": \"2.4.9-prerelease\"\n      } ]\n    }, {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"uk.nhsdigital.medicines.r4.test\"\n      }, {\n        \"url\": \"version\",\n        \"valueString\": \"2.4.2-prerelease\"\n      } ]\n    }, {\n      \"url\": \"openApi\",\n      \"extension\": [ {\n        \"url\": \"documentation\",\n        \"valueUri\": \"https://simplifier.net/guide/NHSDigital/Home\"\n      }, {\n        \"url\": \"description\",\n        \"valueString\": \"NHS Digital FHIR Implementation Guide\"\n      } ]\n    } ]\n  } ],\n  \"status\": \"active\",\n  \"kind\": \"instance\",\n  \"fhirVersion\": \"4.0.1\",\n  \"rest\": [ {\n    \"resource\": [ {\n      \"type\": \"CapabilityStatement\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-CapabilityStatement\",\n      \"interaction\": [ {\n        \"code\": \"search-type\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"url\",\n        \"type\": \"token\",\n        \"documentation\": \"The uri that identifies the CapabilityStatement\"\n      } ]\n    }, {\n      \"type\": \"StructureDefinition\",\n      \"interaction\": [ {\n        \"code\": \"search-type\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"url\",\n        \"type\": \"token\",\n        \"documentation\": \"The uri that identifies the StructurDefinition\"\n      } ]\n    }, {\n      \"type\": \"MessageDefinition\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\",\n      \"interaction\": [ {\n        \"code\": \"search-type\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"url\",\n        \"type\": \"token\",\n        \"documentation\": \"The uri that identifies the MessageDefintiion\"\n      } ]\n    }, {\n      \"type\": \"AllergyIntolerance\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-AllergyIntolerance\"\n    }, {\n      \"type\": \"Immunization\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Immunization\"\n    }, {\n      \"type\": \"Location\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Location\"\n    }, {\n      \"type\": \"MedicationAdministration\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationAdministration\"\n    }, {\n      \"type\": \"MedicationDispense\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationDispense\"\n    }, {\n      \"type\": \"MedicationRequest\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest\"\n    }, {\n      \"type\": \"MedicationStatement\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationStatement\"\n    }, {\n      \"type\": \"Organization\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\"\n    }, {\n      \"type\": \"Patient\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\"\n    }, {\n      \"type\": \"Practitioner\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner\"\n    }, {\n      \"type\": \"PractitionerRole\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole\"\n    }, {\n      \"type\": \"ServiceRequest\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\"\n    }, {\n      \"type\": \"Slot\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-Slot\"\n    }, {\n      \"type\": \"Appointment\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-Appointment\"\n    }, {\n      \"type\": \"Task\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-DM-Task\"\n    }, {\n      \"type\": \"Questionnaire\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Questionnaire\"\n    }, {\n      \"type\": \"QuestionnaireResponse\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-QuestionnaireResponse\"\n    }, {\n      \"type\": \"HealthcareService\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-HealthcareService\"\n    }, {\n      \"type\": \"DocumentReference\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-DocumentReference\"\n    }, {\n      \"type\": \"List\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-List\"\n    }, {\n      \"type\": \"Binary\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Binary\"\n    }, {\n      \"type\": \"CommunicationRequest\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-CommunicationRequest\"\n    }, {\n      \"type\": \"Encounter\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-Encounter\"\n    }, {\n      \"type\": \"Flag\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Flag\"\n    }, {\n      \"type\": \"Observation\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Observation\"\n    }, {\n      \"type\": \"OperationDefinition\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-OperationDefinition\"\n    }, {\n      \"type\": \"Device\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/SDS-Device\"\n    }, {\n      \"type\": \"Endpoint\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/SDS-Endpoint\"\n    }, {\n      \"type\": \"Claim\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Claim\"\n    }, {\n      \"type\": \"Medication\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Medication\"\n    } ],\n    \"operation\": [ {\n      \"name\": \"validate\",\n      \"definition\": \"https://fhir.nhs.uk/OperationDefinition/validation\"\n    } ]\n  } ],\n  \"messaging\": [ {\n    \"documentation\": \"uk.nhsdigital.r4.test\",\n    \"supportedMessage\": [ {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/appointment\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/dispense-notification-update\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/dispense-notification\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/document\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/patient-notification\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/prescription-order-response\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/prescription-order-update\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/prescription-order\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/referral\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/unsolicited-observations\"\n    }, {\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/vaccinations\"\n    } ]\n  } ]\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "<CapabilityStatement xmlns=\"http://hl7.org/fhir\">\n   <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\">\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"ukcore.release1.test\"></valueString>\n         </extension>\n         <extension url=\"version\">\n            <valueString value=\"1.2.2-prerelease\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"uk.nhsdigital.r4.test\"></valueString>\n         </extension>\n         <extension url=\"version\">\n            <valueString value=\"2.4.9-prerelease\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"uk.nhsdigital.medicines.r4.test\"></valueString>\n         </extension>\n         <extension url=\"version\">\n            <valueString value=\"2.4.2-prerelease\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"openApi\">\n         <extension url=\"documentation\">\n            <valueUri value=\"https://simplifier.net/guide/NHSDigital/Home\"></valueUri>\n         </extension>\n         <extension url=\"description\">\n            <valueString value=\"NHS Digital FHIR Implementation Guide\"></valueString>\n         </extension>\n      </extension>\n   </extension>\n   <status value=\"active\"></status>\n   <kind value=\"instance\"></kind>\n   <fhirVersion value=\"4.0.1\"></fhirVersion>\n   <rest>\n      <resource>\n         <type value=\"CapabilityStatement\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-CapabilityStatement\"></profile>\n         <interaction>\n            <code value=\"search-type\"></code>\n         </interaction>\n         <searchParam>\n            <name value=\"url\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"The uri that identifies the CapabilityStatement\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"StructureDefinition\"></type>\n         <interaction>\n            <code value=\"search-type\"></code>\n         </interaction>\n         <searchParam>\n            <name value=\"url\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"The uri that identifies the StructurDefinition\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"MessageDefinition\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\"></profile>\n         <interaction>\n            <code value=\"search-type\"></code>\n         </interaction>\n         <searchParam>\n            <name value=\"url\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"The uri that identifies the MessageDefintiion\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"AllergyIntolerance\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-AllergyIntolerance\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Immunization\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Immunization\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Location\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Location\"></profile>\n      </resource>\n      <resource>\n         <type value=\"MedicationAdministration\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationAdministration\"></profile>\n      </resource>\n      <resource>\n         <type value=\"MedicationDispense\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationDispense\"></profile>\n      </resource>\n      <resource>\n         <type value=\"MedicationRequest\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest\"></profile>\n      </resource>\n      <resource>\n         <type value=\"MedicationStatement\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationStatement\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Organization\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Patient\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Practitioner\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner\"></profile>\n      </resource>\n      <resource>\n         <type value=\"PractitionerRole\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole\"></profile>\n      </resource>\n      <resource>\n         <type value=\"ServiceRequest\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Slot\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-Slot\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Appointment\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Task\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-DM-Task\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Questionnaire\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Questionnaire\"></profile>\n      </resource>\n      <resource>\n         <type value=\"QuestionnaireResponse\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-QuestionnaireResponse\"></profile>\n      </resource>\n      <resource>\n         <type value=\"HealthcareService\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-HealthcareService\"></profile>\n      </resource>\n      <resource>\n         <type value=\"DocumentReference\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-DocumentReference\"></profile>\n      </resource>\n      <resource>\n         <type value=\"List\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-List\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Binary\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Binary\"></profile>\n      </resource>\n      <resource>\n         <type value=\"CommunicationRequest\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-CommunicationRequest\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Encounter\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-Encounter\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Flag\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Flag\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Observation\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Observation\"></profile>\n      </resource>\n      <resource>\n         <type value=\"OperationDefinition\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-OperationDefinition\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Device\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/SDS-Device\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Endpoint\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/SDS-Endpoint\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Claim\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Claim\"></profile>\n      </resource>\n      <resource>\n         <type value=\"Medication\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Medication\"></profile>\n      </resource>\n      <operation>\n         <name value=\"validate\"></name>\n         <definition value=\"https://fhir.nhs.uk/OperationDefinition/validation\"></definition>\n      </operation>\n   </rest>\n   <messaging>\n      <documentation value=\"uk.nhsdigital.r4.test\"></documentation>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/appointment\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/dispense-notification-update\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/dispense-notification\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/document\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/patient-notification\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/prescription-order-response\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/prescription-order-update\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/prescription-order\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/referral\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/unsolicited-observations\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/vaccinations\"></definition>\n      </supportedMessage>\n   </messaging>\n</CapabilityStatement>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/$validation": {
+            "get": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "description": "NHS Validation Service Operation",
+                "parameters": [
+                    {
+                        "name": "resource",
+                        "in": "query",
+                        "description": "The resource to be validated",
+                        "required": true,
+                        "style": "simple"
+                    },
+                    {
+                        "name": "return",
+                        "in": "query",
+                        "description": "response to the event POST",
+                        "required": true,
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/null"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/CapabilityStatement": {
+            "get": {
+                "tags": [
+                    "CapabilityStatement"
+                ],
+                "summary": "search-type: Search for CapabilityStatement instances",
+                "description": "This is a search type",
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The uri that identifies the CapabilityStatement",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/StructureDefinition": {
+            "get": {
+                "tags": [
+                    "StructureDefinition"
+                ],
+                "summary": "search-type: Search for StructureDefinition instances",
+                "description": "This is a search type",
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The uri that identifies the StructurDefinition",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StructureDefinition"
+                                },
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StructureDefinition"
+                                },
+                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/MessageDefinition": {
+            "get": {
+                "tags": [
+                    "MessageDefinition"
+                ],
+                "summary": "search-type: Search for MessageDefinition instances",
+                "description": "This is a search type",
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The uri that identifies the MessageDefintiion",
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageDefinition"
+                                },
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
+                            },
+                            "application/fhir+xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MessageDefinition"
+                                },
+                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CapabilityStatement": {
+                "type": "object",
+                "description": "See resource [CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "StructureDefinition": {
+                "type": "object",
+                "description": "See resource [StructureDefinition](https://www.hl7.org/fhir/StructureDefinition.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MessageDefinition": {
+                "type": "object",
+                "description": "See [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md) for the FHIR Profile on resource [MessageDefinition](https://www.hl7.org/fhir/MessageDefinition.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "AllergyIntolerance": {
+                "type": "object",
+                "description": "See [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) for the FHIR Profile on resource [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Immunization": {
+                "type": "object",
+                "description": "See [NHSDigital-Immunization](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Immunization.guide.md) for the FHIR Profile on resource [Immunization](https://www.hl7.org/fhir/Immunization.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Location": {
+                "type": "object",
+                "description": "See [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) for the FHIR Profile on resource [Location](https://www.hl7.org/fhir/Location.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationAdministration": {
+                "type": "object",
+                "description": "See [UKCore-MedicationAdministration](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationAdministration) for the FHIR Profile on resource [MedicationAdministration](https://www.hl7.org/fhir/MedicationAdministration.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationDispense": {
+                "type": "object",
+                "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for the FHIR Profile on resource [MedicationDispense](https://www.hl7.org/fhir/MedicationDispense.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationRequest": {
+                "type": "object",
+                "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for the FHIR Profile on resource [MedicationRequest](https://www.hl7.org/fhir/MedicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "MedicationStatement": {
+                "type": "object",
+                "description": "See [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) for the FHIR Profile on resource [MedicationStatement](https://www.hl7.org/fhir/MedicationStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Organization": {
+                "type": "object",
+                "description": "See [NHSDigital-Organization](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Organization.guide.md) for the FHIR Profile on resource [Organization](https://www.hl7.org/fhir/Organization.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Patient": {
+                "type": "object",
+                "description": "See [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) for the FHIR Profile on resource [Patient](https://www.hl7.org/fhir/Patient.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Practitioner": {
+                "type": "object",
+                "description": "See [NHSDigital-Practitioner](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Practitioner.guide.md) for the FHIR Profile on resource [Practitioner](https://www.hl7.org/fhir/Practitioner.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "PractitionerRole": {
+                "type": "object",
+                "description": "See [NHSDigital-PractitionerRole](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-PractitionerRole.guide.md) for the FHIR Profile on resource [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "ServiceRequest": {
+                "type": "object",
+                "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for the FHIR Profile on resource [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Slot": {
+                "type": "object",
+                "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for the FHIR Profile on resource [Slot](https://www.hl7.org/fhir/Slot.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Appointment": {
+                "type": "object",
+                "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Task": {
+                "type": "object",
+                "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Questionnaire": {
+                "type": "object",
+                "description": "See [NHSDigital-Questionnaire](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Questionnaire.guide.md) for the FHIR Profile on resource [Questionnaire](https://www.hl7.org/fhir/Questionnaire.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "QuestionnaireResponse": {
+                "type": "object",
+                "description": "See [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md) for the FHIR Profile on resource [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "HealthcareService": {
+                "type": "object",
+                "description": "See [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md) for the FHIR Profile on resource [HealthcareService](https://www.hl7.org/fhir/HealthcareService.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "DocumentReference": {
+                "type": "object",
+                "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for the FHIR Profile on resource [DocumentReference](https://www.hl7.org/fhir/DocumentReference.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "List": {
+                "type": "object",
+                "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for the FHIR Profile on resource [List](https://www.hl7.org/fhir/List.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Binary": {
+                "type": "object",
+                "description": "See [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md) for the FHIR Profile on resource [Binary](https://www.hl7.org/fhir/Binary.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "CommunicationRequest": {
+                "type": "object",
+                "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for the FHIR Profile on resource [CommunicationRequest](https://www.hl7.org/fhir/CommunicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Encounter": {
+                "type": "object",
+                "description": "See [England-Encounter](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Encounter.guide.md) for the FHIR Profile on resource [Encounter](https://www.hl7.org/fhir/Encounter.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Flag": {
+                "type": "object",
+                "description": "See [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Flag](https://simplifier.net/guide/nhsdigital/home) for the FHIR Profile on resource [Flag](https://www.hl7.org/fhir/Flag.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Observation": {
+                "type": "object",
+                "description": "See [NHSDigital-Observation](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Observation.guide.md) for the FHIR Profile on resource [Observation](https://www.hl7.org/fhir/Observation.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "OperationDefinition": {
+                "type": "object",
+                "description": "See [NHSDigital-OperationDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-OperationDefinition.guide.md) for the FHIR Profile on resource [OperationDefinition](https://www.hl7.org/fhir/OperationDefinition.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Device": {
+                "type": "object",
+                "description": "See [SDS-Device](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/SDS-Device.guide.md) for the FHIR Profile on resource [Device](https://www.hl7.org/fhir/Device.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Endpoint": {
+                "type": "object",
+                "description": "See [SDS-Endpoint](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/SDS-Endpoint.guide.md) for the FHIR Profile on resource [Endpoint](https://www.hl7.org/fhir/Endpoint.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Claim": {
+                "type": "object",
+                "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for the FHIR Profile on resource [Claim](https://www.hl7.org/fhir/Claim.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            },
+            "Medication": {
+                "type": "object",
+                "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for the FHIR Profile on resource [Medication](https://www.hl7.org/fhir/Medication.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)"
+            }
+        }
+    }
+}
