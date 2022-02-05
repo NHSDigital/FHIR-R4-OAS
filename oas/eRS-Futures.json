@@ -237,7 +237,7 @@
                     {
                         "name": "patient:identifier",
                         "in": "query",
-                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|Search on an identifier of the Patient, usualy NHS Number|ServiceRequest.subject.identifier.where(resolve() is Patient)| \n",
+                        "description": "The patient identifier (e.g. NHS Number) that the service request is aboutSearch on an identifier of the Patient, usualy NHS Number\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.subject.identifier.where(resolve() is Patient).identifier &#124; ServiceRequest.subject.identifier.where(resolve() is Patient).where(resolve() is Resource).identifier | \n",
                         "style": "simple"
                     }
                 ],
@@ -411,13 +411,13 @@
                     {
                         "name": "owner",
                         "in": "query",
-                        "description": "Search by task owner\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|Search by task owner|Task.owner| \n",
+                        "description": "Search by task ownerSearch by task owner\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.owner | \n",
                         "style": "simple"
                     },
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Search by task code (worklist type)\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|Search by task code|Task.code| \n",
+                        "description": "Search by task code (worklist type)Search by task code\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
                         "style": "simple"
                     }
                 ],
@@ -494,19 +494,19 @@
                     {
                         "name": "appointment-type",
                         "in": "query",
-                        "description": "The style of appointment or patient that may be booked in the slot (not service type)\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|The style of appointment or patient that may be booked in the slot (not service type)|Slot.appointmentType| \n",
+                        "description": "The style of appointment or patient that may be booked in the slot (not service type)The style of appointment or patient that may be booked in the slot (not service type)\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.appointmentType | \n",
                         "style": "simple"
                     },
                     {
                         "name": "schedule.actor:HealthcareService",
                         "in": "query",
-                        "description": "A single service ID is required to indicate the service for which appointment slots are required.\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name | Description | Expression | \n |--------|--------|--------| \n | schedule | The Schedule Resource that we are seeking a slot within|Slot.schedule| \n\n\n Caution: This does not appear to be a valid search parameter. Please check Hl7 FHIR conformance.",
+                        "description": "A single service ID is required to indicate the service for which appointment slots are required.The Schedule Resource that we are seeking a slot within\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name |  Expression | \n |--------|--------| \n | schedule |  Slot.schedule | \n\n\n Caution: This does not appear to be a valid search parameter. **Please check Hl7 FHIR conformance.**",
                         "style": "simple"
                     },
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "The free/busy status of the appointment\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|The free/busy status of the appointment|Slot.status| \n",
+                        "description": "The free/busy status of the appointmentThe free/busy status of the appointment\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
                         "style": "simple"
                     }
                 ],
@@ -628,13 +628,13 @@
                     {
                         "name": "service-type",
                         "in": "query",
-                        "description": "The type of service provided by this healthcare service\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|The type of service provided by this healthcare service|HealthcareService.type| \n",
+                        "description": "The type of service provided by this healthcare serviceThe type of service provided by this healthcare service\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.type | \n",
                         "style": "simple"
                     },
                     {
                         "name": "identifier",
                         "in": "query",
-                        "description": "Can't find this parameter presume need to: External identifiers for this item\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|External identifiers for this item|HealthcareService.identifier| \n",
+                        "description": "Can't find this parameter presume need to: External identifiers for this itemExternal identifiers for this item\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.identifier | \n",
                         "style": "simple"
                     }
                 ],
