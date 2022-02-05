@@ -160,31 +160,31 @@
                     {
                         "name": "family",
                         "in": "query",
-                        "description": "The patient's family name (surname).Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the family name of the patient<br/>* [Practitioner](practitioner.html): A portion of the family name\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)| Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the family name of the patient<br/>* [Practitioner](practitioner.html): A portion of the family name | Patient.name.family &#124; Practitioner.name.family | \n",
+                        "description": "The patient's family name (surname).Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the family name of the patient<br/>* [Practitioner](practitioner.html): A portion of the family name\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.family &#124; Practitioner.name.family | \n",
                         "style": "simple"
                     },
                     {
                         "name": "given",
                         "in": "query",
-                        "description": "A portion of the given name of the patientMultiple Resources: <br/><br/>* [Patient](patient.html): A portion of the given name of the patient<br/>* [Practitioner](practitioner.html): A portion of the given name\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)| Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the given name of the patient<br/>* [Practitioner](practitioner.html): A portion of the given name | Patient.name.given &#124; Practitioner.name.given | \n",
+                        "description": "A portion of the given name of the patientMultiple Resources: <br/><br/>* [Patient](patient.html): A portion of the given name of the patient<br/>* [Practitioner](practitioner.html): A portion of the given name\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.given &#124; Practitioner.name.given | \n",
                         "style": "simple"
                     },
                     {
                         "name": "gender",
                         "in": "query",
-                        "description": "Gender of the patientMultiple Resources: <br/><br/>* [Patient](patient.html): Gender of the patient<br/>* [Person](person.html): The gender of the person<br/>* [Practitioner](practitioner.html): Gender of the practitioner<br/>* [RelatedPerson](relatedperson.html): Gender of the related person\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)| Multiple Resources: <br/><br/>* [Patient](patient.html): Gender of the patient<br/>* [Person](person.html): The gender of the person<br/>* [Practitioner](practitioner.html): Gender of the practitioner<br/>* [RelatedPerson](relatedperson.html): Gender of the related person | Patient.gender &#124; Person.gender &#124; Practitioner.gender &#124; RelatedPerson.gender | \n",
+                        "description": "Gender of the patientMultiple Resources: <br/><br/>* [Patient](patient.html): Gender of the patient<br/>* [Person](person.html): The gender of the person<br/>* [Practitioner](practitioner.html): Gender of the practitioner<br/>* [RelatedPerson](relatedperson.html): Gender of the related person\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.gender &#124; Person.gender &#124; Practitioner.gender &#124; RelatedPerson.gender | \n",
                         "style": "simple"
                     },
                     {
                         "name": "birthdate",
                         "in": "query",
-                        "description": "The patient's date of birthMultiple Resources: <br/><br/>* [Patient](patient.html): The patient's date of birth<br/>* [Person](person.html): The person's date of birth<br/>* [RelatedPerson](relatedperson.html): The Related Person's date of birth\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)| Multiple Resources: <br/><br/>* [Patient](patient.html): The patient's date of birth<br/>* [Person](person.html): The person's date of birth<br/>* [RelatedPerson](relatedperson.html): The Related Person's date of birth | Patient.birthDate &#124; Person.birthDate &#124; RelatedPerson.birthDate | \n",
+                        "description": "The patient's date of birthMultiple Resources: <br/><br/>* [Patient](patient.html): The patient's date of birth<br/>* [Person](person.html): The person's date of birth<br/>* [RelatedPerson](relatedperson.html): The Related Person's date of birth\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Patient.birthDate &#124; Person.birthDate &#124; RelatedPerson.birthDate | \n",
                         "style": "simple"
                     },
                     {
                         "name": "death-date",
                         "in": "query",
-                        "description": "The date of death has been provided and satisfies this search valueThe date of death has been provided and satisfies this search value\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)| The date of death has been provided and satisfies this search value | (Patient.deceased as dateTime) | \n",
+                        "description": "The date of death has been provided and satisfies this search valueThe date of death has been provided and satisfies this search value\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  (Patient.deceased as dateTime) | \n",
                         "style": "simple"
                     },
                     {
@@ -196,19 +196,19 @@
                     {
                         "name": "address-postalcode",
                         "in": "query",
-                        "description": "Correction to actual PDS API. A postalCode specified in an addressMultiple Resources: <br/><br/>* [Patient](patient.html): A postalCode specified in an address<br/>* [Person](person.html): A postal code specified in an address<br/>* [Practitioner](practitioner.html): A postalCode specified in an address<br/>* [RelatedPerson](relatedperson.html): A postal code specified in an address\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)| Multiple Resources: <br/><br/>* [Patient](patient.html): A postalCode specified in an address<br/>* [Person](person.html): A postal code specified in an address<br/>* [Practitioner](practitioner.html): A postalCode specified in an address<br/>* [RelatedPerson](relatedperson.html): A postal code specified in an address | Patient.address.postalCode &#124; Person.address.postalCode &#124; Practitioner.address.postalCode &#124; RelatedPerson.address.postalCode | \n",
+                        "description": "Correction to actual PDS API. A postalCode specified in an addressMultiple Resources: <br/><br/>* [Patient](patient.html): A postalCode specified in an address<br/>* [Person](person.html): A postal code specified in an address<br/>* [Practitioner](practitioner.html): A postalCode specified in an address<br/>* [RelatedPerson](relatedperson.html): A postal code specified in an address\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.address.postalCode &#124; Person.address.postalCode &#124; Practitioner.address.postalCode &#124; RelatedPerson.address.postalCode | \n",
                         "style": "simple"
                     },
                     {
                         "name": "general-practitioner:identifier",
                         "in": "query",
-                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the recordPatient's nominated general practitioner, not the organization that manages the record\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)| Patient's nominated general practitioner, not the organization that manages the record | Patient.generalPractitioner.identifier &#124; Patient.generalPractitioner.where(resolve() is Resource).identifier | \n",
+                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the recordPatient's nominated general practitioner, not the organization that manages the record\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.generalPractitioner.identifier &#124; Patient.generalPractitioner.where(resolve() is Resource).identifier | \n",
                         "style": "simple"
                     },
                     {
                         "name": "general-practitioner",
                         "in": "query",
-                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the recordPatient's nominated general practitioner, not the organization that manages the record\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)| Patient's nominated general practitioner, not the organization that manages the record | Patient.generalPractitioner | \n",
+                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the recordPatient's nominated general practitioner, not the organization that manages the record\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Patient.generalPractitioner | \n",
                         "style": "simple"
                     }
                 ],
@@ -244,7 +244,7 @@
                     {
                         "name": "patient",
                         "in": "query",
-                        "description": "Patients NHS NumberThe patient this related person is related to\n\n | Type | Description | Expression | \n |--------|--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)| The patient this related person is related to | RelatedPerson.patient | \n",
+                        "description": "Patients NHS NumberThe patient this related person is related to\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  RelatedPerson.patient | \n",
                         "style": "simple"
                     }
                 ],
