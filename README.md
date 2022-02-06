@@ -10,4 +10,6 @@ This project demonstrates the rendering of FHIR CapabilityStatements as openAPI 
 
 - [FHIR Validation (Medications) FHIR CapabilityStatement as OAS](https://nhsdigital.github.io/FHIR-R4-OAS/validation-nhsd-medications)
 
+- [PFS Mock](https://nhsdigital.github.io/FHIR-R4-OAS/PFS)
+
 
