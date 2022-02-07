@@ -25,9 +25,10 @@ export class BodyComponent implements OnInit {
 
   }
   // https://stackblitz.com/edit/angular-swagger-ui-integration?file=src%2Fapp%2Fapp.component.ts
+  // tslint:disable-next-line:typedef
   ngAfterViewInit() {
 
-    SwaggerUIBundle({
+    const ui = SwaggerUIBundle({
       url: this.url,
       domNode: this.swaggerDom.nativeElement,
       deepLinking: true,
@@ -35,15 +36,18 @@ export class BodyComponent implements OnInit {
       plugins: [
         SwaggerUIBundle.plugins.DownloadUrl
       ],
-      layout: 'StandaloneLayout'
+      layout: 'StandaloneLayout',
+      operationsSorter: 'alpha'
     });
+    ui.onComplete();
   }
 
+  // tslint:disable-next-line:typedef
   doSetup() {
 
     const tempid = this.route.snapshot.paramMap.get('oasurl');
-    if (tempid != undefined) {
-      this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/'+tempid+'.json'
+    if (tempid !== null) {
+      this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/' + tempid + '.json';
     }
   }
 }
