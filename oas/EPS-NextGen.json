@@ -1,5 +1,6 @@
 {
     "openapi": "3.0.1",
+    "basePath": "/eRS-Futures",
     "info": {
         "description": "Conformance requirements for NHS Digital EPS NextGen APIs\n\n | API Documentation |\n |-----|\n  |[Electronic Prescription Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n |[uk.nhsdigital.medicines.r4.test](https://simplifier.net/guide/nhsdigital-medicines/home)||\n |[UKCore.Release1.test](https://simplifier.net/guide/NHSDigital/Home)|1.2.2-prerelease|\n",
         "contact": {}
