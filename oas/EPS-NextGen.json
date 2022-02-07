@@ -5,8 +5,8 @@
         "contact": {}
     },
     "externalDocs": {
-        "description": "UKCore.Release1.test",
-        "url": "https://simplifier.net/guide/NHSDigital/Home"
+        "description": "Hl7 FHIR R4",
+        "url": "https://www.hl7.org/fhir/"
     },
     "servers": [
         {}
