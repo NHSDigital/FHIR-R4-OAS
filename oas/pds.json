@@ -1,5 +1,6 @@
 {
     "openapi": "3.0.1",
+    "basePath" : "PDS",
     "info": {
         "description": "API definition for PDS\n\n | API Documentation |\n |-----|\n  |[Personal Demographics Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
         "contact": {}
