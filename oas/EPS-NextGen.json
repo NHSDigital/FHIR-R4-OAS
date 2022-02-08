@@ -174,7 +174,7 @@
                             "minimum": 1,
                             "type": "string"
                         },
-                        "example": "123"
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
                     }
                 ],
                 "requestBody": {
