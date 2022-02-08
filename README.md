@@ -14,4 +14,6 @@ This project demonstrates the rendering of FHIR CapabilityStatements as openAPI 
 
 - [PFS Mock](https://nhsdigital.github.io/FHIR-R4-OAS/PFS)
 
+- [BaRS Mock](https://nhsdigital.github.io/FHIR-R4-OAS/BaRS)
+
 
