@@ -129,8 +129,56 @@
                 "tags": [
                     "Claim"
                 ],
-                "summary": "create-type: Create a new Claim instance",
-                "description": "Use this endpoint to submit a claim for reimbursement for a dispensed prescription.",
+                "summary": "create-type: Create a new Claim instance.",
+                "description": "See also [FHIR create](http://www.hl7.org/fhir/http.html#create)\n\nUse this endpoint to submit a claim for reimbursement for a dispensed prescription.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/fhir+json": {
@@ -161,8 +209,8 @@
                 "tags": [
                     "Claim"
                 ],
-                "summary": "update-instance: Update an existing Claim instance, or create using a client-assigned ID",
-                "description": "Use this endpoint to submit a claim for reimbursement for a dispensed prescription.",
+                "summary": "update-instance: Update an existing Claim instance, or create using a client-assigned ID.",
+                "description": "See also [FHIR update](http://www.hl7.org/fhir/http.html#update)\n\nUse this endpoint to submit a claim for reimbursement for a dispensed prescription.",
                 "parameters": [
                     {
                         "name": "id",
@@ -175,6 +223,52 @@
                             "type": "string"
                         },
                         "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "requestBody": {
@@ -207,8 +301,8 @@
                 "tags": [
                     "Task"
                 ],
-                "summary": "search-type: Search for Task instances",
-                "description": "The EPS Tracker\n\n **Required Parameters** \n\n One of the following paramters(s) is **required** \n\n| Required | Optional | \n|----------|---------| \n| identifier|  | \n| foucs:identifier|  | \n| patient:identifier|  | \n",
+                "summary": "search-type: Search for Task instances.",
+                "description": "See also [FHIR Search](http://www.hl7.org/fhir/search.html).\n\nThe EPS Tracker\n\n **Required Parameters** \n\n One of the following paramters(s) is **required** \n\n| Required | Optional | \n|----------|---------| \n| identifier|  | \n| foucs:identifier|  | \n| patient:identifier|  | \n",
                 "parameters": [
                     {
                         "name": "identifier",
@@ -259,6 +353,52 @@
                             "type": "string",
                             "example": "[system][code]"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "responses": {
@@ -269,7 +409,7 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Task"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 1,\n  \"entry\": [ {\n    \"resource\": {\n      \"resourceType\": \"Task\",\n      \"id\": \"bd1ca5c4-ff49-4f2a-9db4-f5dda0112084\",\n      \"meta\": {\n        \"lastUpdated\": \"2016-07-11T11:07:22+00:00\"\n      },\n      \"extension\": [ {\n        \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-EPS-Prescription\",\n        \"extension\": [ {\n          \"url\": \"courseOfTherapyType\",\n          \"valueCoding\": {\n            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy\",\n            \"code\": \"acute\",\n            \"display\": \"Acute\"\n          }\n        } ]\n      } ],\n      \"identifier\": [ {\n        \"system\": \"https://tools.ietf.org/html/rfc4122\",\n        \"value\": \"bd1ca5c4-ff49-4f2a-9db4-f5dda0112084\"\n      } ],\n      \"status\": \"in-progress\",\n      \"businessStatus\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/EPS-task-business-status\",\n          \"code\": \"0002\",\n          \"display\": \"With Dispenser\"\n        } ]\n      },\n      \"intent\": \"order\",\n      \"code\": {\n        \"coding\": [ {\n          \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n          \"code\": \"fulfill\",\n          \"display\": \"Fulfill the focal request\"\n        } ]\n      },\n      \"focus\": {\n        \"type\": \"Task\",\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/prescription-order-number\",\n          \"value\": \"A3B4D9-Z42475-11E6B+\"\n        }\n      },\n      \"for\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n          \"value\": \"9912003489\"\n        }\n      },\n      \"authoredOn\": \"2016-07-11T11:07:21+00:00\",\n      \"requester\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"C81007\"\n        },\n        \"display\": \"VERNON STREET MEDICAL CTR\"\n      },\n      \"owner\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"FA666\"\n        },\n        \"display\": \"CROYDON PHARMACY\"\n      },\n      \"reasonCode\": {\n        \"coding\": [ {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"33633005\",\n          \"display\": \"Prescription of drug\"\n        } ]\n      },\n      \"input\": [ {\n        \"type\": {\n          \"coding\": [ {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"16076005\",\n            \"display\": \"Prescription\"\n          } ]\n        },\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://tools.ietf.org/html/rfc4122\",\n            \"value\": \"ee86a018-779c-4809-999f-a9d89cdfd30f\"\n          }\n        }\n      } ],\n      \"output\": [ {\n        \"extension\": [ {\n          \"url\": \"https://fhir.nhs.uk/StructureDefinition/ExtensionRepeatDispensingInformation\",\n          \"extension\": [ {\n            \"url\": \"dateLastDispensed\",\n            \"valueDateTime\": \"2014-05-07\"\n          } ]\n        } ],\n        \"type\": {\n          \"coding\": [ {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"373784005\",\n            \"display\": \"Dispensing medication\"\n          } ]\n        },\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://tools.ietf.org/html/rfc4122\",\n            \"value\": \"334a3195-1f6c-497a-8efe-d272ca9c4e38\"\n          }\n        }\n      } ]\n    }\n  } ]\n}"
+                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 1,\n  \"link\": [ {\n    \"relation\": \"self\",\n    \"url\": \"http://example.org/FHIR/R4/Task?parameterExample=123&page=1\"\n  }, {\n    \"relation\": \"next\",\n    \"url\": \"http://example.org/FHIR/R4/Task?parameterExample=123&page=2\"\n  } ],\n  \"entry\": [ {\n    \"fullUrl\": \"http://example.org/FHIR/R4/Task/Task/bd1ca5c4-ff49-4f2a-9db4-f5dda0112084\",\n    \"resource\": {\n      \"resourceType\": \"Task\",\n      \"id\": \"bd1ca5c4-ff49-4f2a-9db4-f5dda0112084\",\n      \"meta\": {\n        \"lastUpdated\": \"2016-07-11T11:07:22+00:00\"\n      },\n      \"extension\": [ {\n        \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-EPS-Prescription\",\n        \"extension\": [ {\n          \"url\": \"courseOfTherapyType\",\n          \"valueCoding\": {\n            \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy\",\n            \"code\": \"acute\",\n            \"display\": \"Acute\"\n          }\n        } ]\n      } ],\n      \"identifier\": [ {\n        \"system\": \"https://tools.ietf.org/html/rfc4122\",\n        \"value\": \"bd1ca5c4-ff49-4f2a-9db4-f5dda0112084\"\n      } ],\n      \"status\": \"in-progress\",\n      \"businessStatus\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.nhs.uk/CodeSystem/EPS-task-business-status\",\n          \"code\": \"0002\",\n          \"display\": \"With Dispenser\"\n        } ]\n      },\n      \"intent\": \"order\",\n      \"code\": {\n        \"coding\": [ {\n          \"system\": \"http://hl7.org/fhir/CodeSystem/task-code\",\n          \"code\": \"fulfill\",\n          \"display\": \"Fulfill the focal request\"\n        } ]\n      },\n      \"focus\": {\n        \"type\": \"Task\",\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/prescription-order-number\",\n          \"value\": \"A3B4D9-Z42475-11E6B+\"\n        }\n      },\n      \"for\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n          \"value\": \"9912003489\"\n        }\n      },\n      \"authoredOn\": \"2016-07-11T11:07:21+00:00\",\n      \"requester\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"C81007\"\n        },\n        \"display\": \"VERNON STREET MEDICAL CTR\"\n      },\n      \"owner\": {\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"FA666\"\n        },\n        \"display\": \"CROYDON PHARMACY\"\n      },\n      \"reasonCode\": {\n        \"coding\": [ {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"33633005\",\n          \"display\": \"Prescription of drug\"\n        } ]\n      },\n      \"input\": [ {\n        \"type\": {\n          \"coding\": [ {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"16076005\",\n            \"display\": \"Prescription\"\n          } ]\n        },\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://tools.ietf.org/html/rfc4122\",\n            \"value\": \"ee86a018-779c-4809-999f-a9d89cdfd30f\"\n          }\n        }\n      } ],\n      \"output\": [ {\n        \"extension\": [ {\n          \"url\": \"https://fhir.nhs.uk/StructureDefinition/ExtensionRepeatDispensingInformation\",\n          \"extension\": [ {\n            \"url\": \"dateLastDispensed\",\n            \"valueDateTime\": \"2014-05-07\"\n          } ]\n        } ],\n        \"type\": {\n          \"coding\": [ {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"373784005\",\n            \"display\": \"Dispensing medication\"\n          } ]\n        },\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://tools.ietf.org/html/rfc4122\",\n            \"value\": \"334a3195-1f6c-497a-8efe-d272ca9c4e38\"\n          }\n        }\n      } ]\n    }\n  } ]\n}"
                             }
                         }
                     }
@@ -279,8 +419,56 @@
                 "tags": [
                     "Task"
                 ],
-                "summary": "create-type: Create a new Task instance",
-                "description": "Used for returns prescriptions to spine. Should be a PUT",
+                "summary": "create-type: Create a new Task instance.",
+                "description": "See also [FHIR create](http://www.hl7.org/fhir/http.html#create)\n\nUsed for returns prescriptions to spine. Should be a PUT",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/fhir+json": {
@@ -343,7 +531,7 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See resource [CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
@@ -351,7 +539,7 @@
             },
             "OperationOutcome": {
                 "type": "object",
-                "description": "See resource [OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
@@ -359,7 +547,7 @@
             },
             "Parameters": {
                 "type": "object",
-                "description": "See resource [Parameters](https://www.hl7.org/fhir/Parameters.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR Parameters](https://www.hl7.org/fhir/Parameters.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Parameters",
                     "url": "https://www.hl7.org/fhir/Parameters.html"
@@ -367,7 +555,7 @@
             },
             "List": {
                 "type": "object",
-                "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for the FHIR Profile on resource [List](https://www.hl7.org/fhir/List.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [UKCore-List](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-List) for the FHIR Profile on resource [List](https://www.hl7.org/fhir/List.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "List",
                     "url": "https://www.hl7.org/fhir/List.html"
@@ -375,7 +563,7 @@
             },
             "Claim": {
                 "type": "object",
-                "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for the FHIR Profile on resource [Claim](https://www.hl7.org/fhir/Claim.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-Claim](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Claim.guide.md) for the FHIR Profile on resource [Claim](https://www.hl7.org/fhir/Claim.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Claim",
                     "url": "https://www.hl7.org/fhir/Claim.html"
@@ -383,7 +571,7 @@
             },
             "CommunicationRequest": {
                 "type": "object",
-                "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for the FHIR Profile on resource [CommunicationRequest](https://www.hl7.org/fhir/CommunicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-CommunicationRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-CommunicationRequest.guide.md) for the FHIR Profile on resource [CommunicationRequest](https://www.hl7.org/fhir/CommunicationRequest.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "CommunicationRequest",
                     "url": "https://www.hl7.org/fhir/CommunicationRequest.html"
@@ -391,7 +579,7 @@
             },
             "MedicationRequest": {
                 "type": "object",
-                "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for the FHIR Profile on resource [MedicationRequest](https://www.hl7.org/fhir/MedicationRequest.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-MedicationRequest](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest.guide.md) for the FHIR Profile on resource [MedicationRequest](https://www.hl7.org/fhir/MedicationRequest.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "MedicationRequest",
                     "url": "https://www.hl7.org/fhir/MedicationRequest.html"
@@ -399,7 +587,7 @@
             },
             "MedicationDispense": {
                 "type": "object",
-                "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for the FHIR Profile on resource [MedicationDispense](https://www.hl7.org/fhir/MedicationDispense.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md) for the FHIR Profile on resource [MedicationDispense](https://www.hl7.org/fhir/MedicationDispense.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "MedicationDispense",
                     "url": "https://www.hl7.org/fhir/MedicationDispense.html"
@@ -407,7 +595,7 @@
             },
             "Medication": {
                 "type": "object",
-                "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for the FHIR Profile on resource [Medication](https://www.hl7.org/fhir/Medication.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [UKCore-Medication](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Medication) for the FHIR Profile on resource [Medication](https://www.hl7.org/fhir/Medication.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Medication",
                     "url": "https://www.hl7.org/fhir/Medication.html"
@@ -415,7 +603,7 @@
             },
             "Task": {
                 "type": "object",
-                "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-DM-Task](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-DM-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Task",
                     "url": "https://www.hl7.org/fhir/Task.html"
@@ -423,7 +611,7 @@
             },
             "Bundle": {
                 "type": "object",
-                "description": "See resource [Bundle](https://www.hl7.org/fhir/Bundle.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR Bundle](https://www.hl7.org/fhir/Bundle.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Bundle",
                     "url": "https://www.hl7.org/fhir/Bundle.html"
