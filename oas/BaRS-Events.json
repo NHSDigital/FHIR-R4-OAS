@@ -1,0 +1,95 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "description": "API Definition for central BaRS events\n\n | API Documentation |\n |-----|\n  |[Booking and Referral - FHIR API](https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
+        "contact": {}
+    },
+    "externalDocs": {
+        "description": "Hl7 FHIR R4",
+        "url": "https://www.hl7.org/fhir/"
+    },
+    "servers": [
+        {}
+    ],
+    "tags": [
+        {
+            "name": "System Level Operations",
+            "description": "Server-level operations"
+        }
+    ],
+    "paths": {
+        "/metadata": {
+            "get": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "summary": "server-capabilities: Fetch the server FHIR CapabilityStatement",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CapabilityStatement"
+                                },
+                                "example": "{\n  \"resourceType\": \"CapabilityStatement\",\n  \"id\": \"091068ce-9aac-4b93-b0a2-947b97a223cc\",\n  \"extension\": [ {\n    \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\n    \"extension\": [ {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"ukcore.release1.test\"\n      } ]\n    }, {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"uk.nhsdigital.r4.test\"\n      } ]\n    }, {\n      \"url\": \"openApi\",\n      \"extension\": [ {\n        \"url\": \"documentation\",\n        \"valueUri\": \"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"\n      }, {\n        \"url\": \"description\",\n        \"valueString\": \"Booking and Referral - FHIR API\"\n      } ]\n    } ]\n  } ],\n  \"url\": \"https://fhir.nhs.uk/CapabilityStatement/apim-events\",\n  \"version\": \"3.0.0\",\n  \"name\": \"APIMBaRSevents\",\n  \"status\": \"active\",\n  \"date\": \"2021-04-28T00:00:00+00:00\",\n  \"publisher\": \"digital.nhs.uk\",\n  \"description\": \"API Definition for central BaRS events\",\n  \"kind\": \"requirements\",\n  \"fhirVersion\": \"4.0.1\",\n  \"format\": [ \"application/fhir+json\" ],\n  \"rest\": [ {\n    \"mode\": \"server\",\n    \"security\": {\n      \"service\": [ {\n        \"coding\": [ {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/restful-security-service\",\n          \"code\": \"OAuth\",\n          \"display\": \"OAuth2 Token\"\n        } ]\n      } ]\n    },\n    \"operation\": [ {\n      \"extension\": [ {\n        \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\n        \"extension\": [ {\n          \"url\": \"example\",\n          \"extension\": [ {\n            \"url\": \"request\",\n            \"valueBoolean\": true\n          }, {\n            \"url\": \"value\",\n            \"valueReference\": {\n              \"reference\": \"Parameters/8cfc9cff-1d9a-40b2-9c00-2dfde1f3ee98\"\n            }\n          } ]\n        } ]\n      } ],\n      \"name\": \"subscriptionEvent\",\n      \"definition\": \"https://fhir.nhs.uk/OperationDefinition/subscription-event\"\n    } ]\n  } ]\n}"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/$subscriptionEvent": {
+            "post": {
+                "tags": [
+                    "System Level Operations"
+                ],
+                "description": "Mock of subscription event API\n\n ## Parameters (In) \n\n |Name | Cardinality | Type | Documentation |\n |-------|-----------|-------------|------------|\n |identifier|0..1|Identifier|Event identifier / Message Id (possibly a http header)|\n |type|0..1|Coding|handshake &#124; heartbeat &#124; event-notification &#124; query-status|\n |notificationEvent|1..*||The event reference<br/><br/> <table><tr><td>timestamp</td><td>1..1</td><td>dateTime</td><td>When {{title}} was first captured in the subject's record</td></tr><tr><td>focus</td><td>1..1</td><td>Reference</td><td>The event reference</td></tr><tr><td>focusResource</td><td>0..1</td><td>Resource</td><td>The event resource. Mandatory for subscription event submission</td></tr></table>|\n |topic|0..1|canonical|Reference to the SubscriptionTopic this notification relates to (topics are related to event triggers in other HL7 standards) |\n\n ## Parameters (Out) \n\n |Name | Cardinality | Type | Documentation |\n |-------|-----------|-------------|------------|\n |return|1..1|OperationOutcome|response to the event POST|\n\n ## Comment \n\nMock of subscription event API",
+                "requestBody": {
+                    "content": {
+                        "application/fhir+json": {
+                            "schema": {
+                                "title": "Bundle",
+                                "type": "object"
+                            },
+                            "example": "{\"resourceType\":\"Parameters\",\"id\":\"8cfc9cff-1d9a-40b2-9c00-2dfde1f3ee98\",\"parameter\":[{\"name\":\"identifier\",\"valueIdentifier\":{\"value\":\"8cfc9cff-1d9a-40b2-9c00-2dfde1f3ee98\"}},{\"name\":\"type\",\"valueCode\":\"event-notification\"},{\"name\":\"notificationEvent\",\"part\":[{\"name\":\"timestamp\",\"valueInstant\":\"2022-01-07T15:06:00+00:00\"},{\"name\":\"focus\",\"valueReference\":{\"reference\":\"https://fhir.leedsth.nhs.uk/ServiceRequest/1d3fa61f-ae15-4fe4-9393-c98e3bbdfbb0\",\"type\":\"ServiceRequest\"}},{\"name\":\"focusResource\",\"resource\":{\"resourceType\":\"ServiceRequest\",\"id\":\"1d3fa61f-ae15-4fe4-9393-c98e3bbdfbb0\",\"meta\":{\"lastUpdated\":\"2021-10-11T15:23:30+00:00\"},\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}],\"status\":\"active\",\"intent\":\"plan\",\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"127783003\",\"display\":\"Spirometry (procedure)\"}]},\"subject\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9478526985\"},\"display\":\"Julie Jones\"},\"occurrencePeriod\":{\"start\":\"2021-10-13T16:20:27+07:00\"},\"authoredOn\":\"2021-10-13T16:28:00+07:00\",\"requester\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"GP0001\"}},\"performer\":[{\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"RR8\"},\"display\":\"Leeds Teaching NHS Trust\"},{\"type\":\"HealthcareService\",\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/ers-service\",\"value\":\"11021\"}}],\"patientInstruction\":\"ADVICE GIVEN: If there are any new symptoms, or if the condition gets worse, changes or you have any other concerns, call us back.\"}}]},{\"name\":\"topic\",\"valueCanonical\":\"https://fhir.nhs.uk/SubscriptionTopic/referral-sent\"}]}"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Parameters"
+                                },
+                                "example": "{\n  \"resourceType\": \"Parameters\",\n  \"id\": \"8cfc9cff-1d9a-40b2-9c00-2dfde1f3ee98\",\n  \"parameter\": [ {\n    \"name\": \"identifier\",\n    \"valueIdentifier\": {\n      \"value\": \"8cfc9cff-1d9a-40b2-9c00-2dfde1f3ee98\"\n    }\n  }, {\n    \"name\": \"type\",\n    \"valueCode\": \"event-notification\"\n  }, {\n    \"name\": \"notificationEvent\",\n    \"part\": [ {\n      \"name\": \"timestamp\",\n      \"valueInstant\": \"2022-01-07T15:06:00+00:00\"\n    }, {\n      \"name\": \"focus\",\n      \"valueReference\": {\n        \"reference\": \"https://fhir.leedsth.nhs.uk/ServiceRequest/1d3fa61f-ae15-4fe4-9393-c98e3bbdfbb0\",\n        \"type\": \"ServiceRequest\"\n      }\n    }, {\n      \"name\": \"focusResource\",\n      \"resource\": {\n        \"resourceType\": \"ServiceRequest\",\n        \"id\": \"1d3fa61f-ae15-4fe4-9393-c98e3bbdfbb0\",\n        \"meta\": {\n          \"lastUpdated\": \"2021-10-11T15:23:30+00:00\"\n        },\n        \"identifier\": [ {\n          \"system\": \"https://fhir.nhs.uk/Id/UBRN\",\n          \"value\": \"000000070000\"\n        } ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"code\": {\n          \"coding\": [ {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"127783003\",\n            \"display\": \"Spirometry (procedure)\"\n          } ]\n        },\n        \"subject\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n            \"value\": \"9478526985\"\n          },\n          \"display\": \"Julie Jones\"\n        },\n        \"occurrencePeriod\": {\n          \"start\": \"2021-10-13T16:20:27+07:00\"\n        },\n        \"authoredOn\": \"2021-10-13T16:28:00+07:00\",\n        \"requester\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"GP0001\"\n          }\n        },\n        \"performer\": [ {\n          \"type\": \"Organization\",\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"RR8\"\n          },\n          \"display\": \"Leeds Teaching NHS Trust\"\n        }, {\n          \"type\": \"HealthcareService\",\n          \"identifier\": {\n            \"system\": \"http://fhir.nhs.net/Id/ers-service\",\n            \"value\": \"11021\"\n          }\n        } ],\n        \"patientInstruction\": \"ADVICE GIVEN: If there are any new symptoms, or if the condition gets worse, changes or you have any other concerns, call us back.\"\n      }\n    } ]\n  }, {\n    \"name\": \"topic\",\n    \"valueCanonical\": \"https://fhir.nhs.uk/SubscriptionTopic/referral-sent\"\n  } ]\n}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CapabilityStatement": {
+                "type": "object",
+                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "externalDocs": {
+                    "description": "CapabilityStatement",
+                    "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
+                }
+            },
+            "Parameters": {
+                "type": "object",
+                "description": "See [HL7 FHIR Parameters](https://www.hl7.org/fhir/Parameters.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "externalDocs": {
+                    "description": "Parameters",
+                    "url": "https://www.hl7.org/fhir/Parameters.html"
+                }
+            }
+        }
+    }
+}
