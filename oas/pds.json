@@ -1,13 +1,12 @@
 {
     "openapi": "3.0.1",
-    "basePath" : "/PDS",
     "info": {
         "description": "API definition for PDS\n\n | API Documentation |\n |-----|\n  |[Personal Demographics Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
         "contact": {}
     },
     "externalDocs": {
-        "description": "uk.nhsdigital.r4.test",
-        "url": "https://simplifier.net/guide/NHSDigital/Home"
+        "description": "Hl7 FHIR R4",
+        "url": "https://www.hl7.org/fhir/"
     },
     "servers": [
         {}
@@ -19,11 +18,11 @@
         },
         {
             "name": "Patient",
-            "description": "Profile : [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) (additional rules to the resource) \n Resource type: [Patient](https://www.hl7.org/fhir/Patient.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR Patient](https://www.hl7.org/fhir/Patient.html)\n\n Demographics and other administrative information about an individual or animal receiving care or other health-related services.\n\n Tracking patient is the center of the healthcare process.\n\n Profile (constraints): [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md)\n\n ### identifier\r\n\r\nAt least one patient identifier, **MUST** be provided. Where a traced NHS number is available for a patient this MUST be included. \r\n\r\nLocal identiers such as MRN **MUST** include a *system* which identifies NHS provider/assigning authority."
         },
         {
             "name": "RelatedPerson",
-            "description": "Profile : [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson) (additional rules to the resource) \n Resource type: [RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html)\n\n Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.\n\n Need to track persons related to the patient or the healthcare process.\n\n Profile (constraints): [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson)\n\n Defines the UK Core constraints and extensions on the RelatedPerson resource for the minimal set of data to query and retrieve related person information.\n\n This profile allows exchange of information about a person that is involved in the care for an individual, but who is not the target of healthcare, nor has a formal responsibility in the care process."
         }
     ],
     "paths": {
@@ -41,13 +40,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/CapabilityStatement"
                                 },
-                                "example": "{\n  \"resourceType\": \"CapabilityStatement\",\n  \"id\": \"7a181809-d8c1-4f00-869d-89b025cf1a99\",\n  \"extension\": [ {\n    \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\n    \"extension\": [ {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"ukcore.release1.test\"\n      } ]\n    }, {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"uk.nhsdigital.r4.test\"\n      } ]\n    }, {\n      \"url\": \"openApi\",\n      \"extension\": [ {\n        \"url\": \"documentation\",\n        \"valueUri\": \"https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir\"\n      }, {\n        \"url\": \"description\",\n        \"valueString\": \"Personal Demographics Service - FHIR API\"\n      } ]\n    } ]\n  } ],\n  \"url\": \"https://fhir.nhs.uk/CapabilityStatement/apim-pds\",\n  \"version\": \"3.0.0\",\n  \"name\": \"APIMPDS\",\n  \"status\": \"active\",\n  \"date\": \"2021-04-28T00:00:00+00:00\",\n  \"publisher\": \"digital.nhs.uk\",\n  \"description\": \"API definition for PDS\",\n  \"kind\": \"requirements\",\n  \"fhirVersion\": \"4.0.1\",\n  \"format\": [ \"application/fhir+json\" ],\n  \"rest\": [ {\n    \"mode\": \"server\",\n    \"security\": {\n      \"service\": [ {\n        \"coding\": [ {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/restful-security-service\",\n          \"code\": \"OAuth\",\n          \"display\": \"OAuth2 Token\"\n        } ]\n      } ]\n    },\n    \"resource\": [ {\n      \"type\": \"Patient\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\",\n      \"documentation\": \"Person demographics Service\",\n      \"interaction\": [ {\n        \"extension\": [ {\n          \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-Examples\",\n          \"extension\": [ {\n            \"url\": \"response\",\n            \"extension\": [ {\n              \"url\": \"resource\",\n              \"valueCode\": \"Patient\"\n            }, {\n              \"url\": \"id\",\n              \"valueString\": \"6aa13139-201b-4a54-9608-b49331a46d90\"\n            } ]\n          } ]\n        } ],\n        \"code\": \"read\"\n      }, {\n        \"code\": \"patch\"\n      }, {\n        \"extension\": [ {\n          \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-Examples\",\n          \"extension\": [ {\n            \"url\": \"response\",\n            \"extension\": [ {\n              \"url\": \"resource\",\n              \"valueCode\": \"Patient\"\n            }, {\n              \"url\": \"id\",\n              \"valueString\": \"6aa13139-201b-4a54-9608-b49331a46d90\"\n            } ]\n          } ]\n        } ],\n        \"code\": \"search-type\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"family\",\n        \"type\": \"string\",\n        \"documentation\": \"The patient's family name (surname).\"\n      }, {\n        \"name\": \"given\",\n        \"type\": \"string\",\n        \"documentation\": \"A portion of the given name of the patient\"\n      }, {\n        \"name\": \"gender\",\n        \"type\": \"token\",\n        \"documentation\": \"Gender of the patient\"\n      }, {\n        \"name\": \"birthdate\",\n        \"type\": \"date\",\n        \"documentation\": \"The patient's date of birth\"\n      }, {\n        \"name\": \"death-date\",\n        \"type\": \"date\",\n        \"documentation\": \"The date of death has been provided and satisfies this search value\"\n      }, {\n        \"name\": \"address-postcode\",\n        \"type\": \"string\",\n        \"documentation\": \"A postalCode specified in an address\"\n      }, {\n        \"name\": \"address-postalcode\",\n        \"type\": \"string\",\n        \"documentation\": \"Correction to actual PDS API. A postalCode specified in an address\"\n      }, {\n        \"name\": \"general-practitioner:identifier\",\n        \"type\": \"token\",\n        \"documentation\": \"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"\n      }, {\n        \"name\": \"general-practitioner\",\n        \"type\": \"reference\",\n        \"documentation\": \"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"\n      } ]\n    }, {\n      \"type\": \"RelatedPerson\",\n      \"profile\": \"https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson\",\n      \"documentation\": \"Get a Patients related people\",\n      \"interaction\": [ {\n        \"code\": \"search-type\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"patient\",\n        \"type\": \"reference\",\n        \"documentation\": \"Patients NHS Number\"\n      } ]\n    } ]\n  } ]\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CapabilityStatement"
-                                },
-                                "example": "<CapabilityStatement xmlns=\"http://hl7.org/fhir\">\n   <id value=\"7a181809-d8c1-4f00-869d-89b025cf1a99\"></id>\n   <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\">\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"ukcore.release1.test\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"uk.nhsdigital.r4.test\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"openApi\">\n         <extension url=\"documentation\">\n            <valueUri value=\"https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir\"></valueUri>\n         </extension>\n         <extension url=\"description\">\n            <valueString value=\"Personal Demographics Service - FHIR API\"></valueString>\n         </extension>\n      </extension>\n   </extension>\n   <url value=\"https://fhir.nhs.uk/CapabilityStatement/apim-pds\"></url>\n   <version value=\"3.0.0\"></version>\n   <name value=\"APIMPDS\"></name>\n   <status value=\"active\"></status>\n   <date value=\"2021-04-28T00:00:00+00:00\"></date>\n   <publisher value=\"digital.nhs.uk\"></publisher>\n   <description value=\"API definition for PDS\"></description>\n   <kind value=\"requirements\"></kind>\n   <fhirVersion value=\"4.0.1\"></fhirVersion>\n   <format value=\"application/fhir+json\"></format>\n   <rest>\n      <mode value=\"server\"></mode>\n      <security>\n         <service>\n            <coding>\n               <system value=\"http://terminology.hl7.org/CodeSystem/restful-security-service\"></system>\n               <code value=\"OAuth\"></code>\n               <display value=\"OAuth2 Token\"></display>\n            </coding>\n         </service>\n      </security>\n      <resource>\n         <type value=\"Patient\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\"></profile>\n         <documentation value=\"Person demographics Service\"></documentation>\n         <interaction>\n            <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-Examples\">\n               <extension url=\"response\">\n                  <extension url=\"resource\">\n                     <valueCode value=\"Patient\"></valueCode>\n                  </extension>\n                  <extension url=\"id\">\n                     <valueString value=\"6aa13139-201b-4a54-9608-b49331a46d90\"></valueString>\n                  </extension>\n               </extension>\n            </extension>\n            <code value=\"read\"></code>\n         </interaction>\n         <interaction>\n            <code value=\"patch\"></code>\n         </interaction>\n         <interaction>\n            <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-Examples\">\n               <extension url=\"response\">\n                  <extension url=\"resource\">\n                     <valueCode value=\"Patient\"></valueCode>\n                  </extension>\n                  <extension url=\"id\">\n                     <valueString value=\"6aa13139-201b-4a54-9608-b49331a46d90\"></valueString>\n                  </extension>\n               </extension>\n            </extension>\n            <code value=\"search-type\"></code>\n         </interaction>\n         <searchParam>\n            <name value=\"family\"></name>\n            <type value=\"string\"></type>\n            <documentation value=\"The patient's family name (surname).\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"given\"></name>\n            <type value=\"string\"></type>\n            <documentation value=\"A portion of the given name of the patient\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"gender\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"Gender of the patient\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"birthdate\"></name>\n            <type value=\"date\"></type>\n            <documentation value=\"The patient's date of birth\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"death-date\"></name>\n            <type value=\"date\"></type>\n            <documentation value=\"The date of death has been provided and satisfies this search value\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"address-postcode\"></name>\n            <type value=\"string\"></type>\n            <documentation value=\"A postalCode specified in an address\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"address-postalcode\"></name>\n            <type value=\"string\"></type>\n            <documentation value=\"Correction to actual PDS API. A postalCode specified in an address\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"general-practitioner:identifier\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"general-practitioner\"></name>\n            <type value=\"reference\"></type>\n            <documentation value=\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"RelatedPerson\"></type>\n         <profile value=\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson\"></profile>\n         <documentation value=\"Get a Patients related people\"></documentation>\n         <interaction>\n            <code value=\"search-type\"></code>\n         </interaction>\n         <searchParam>\n            <name value=\"patient\"></name>\n            <type value=\"reference\"></type>\n            <documentation value=\"Patients NHS Number\"></documentation>\n         </searchParam>\n      </resource>\n   </rest>\n</CapabilityStatement>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"7a181809-d8c1-4f00-869d-89b025cf1a99\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir\"},{\"url\":\"description\",\"valueString\":\"Personal Demographics Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-pds\",\"version\":\"3.0.0\",\"name\":\"APIMPDS\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API definition for PDS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"Patient\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\",\"documentation\":\"Person demographics Service\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Patient/6aa13139-201b-4a54-9608-b49331a46d90\"}}]}]}],\"code\":\"read\"},{\"code\":\"patch\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Patient/6aa13139-201b-4a54-9608-b49331a46d90\"}}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"family\",\"type\":\"string\",\"documentation\":\"The patient's family name (surname).\"},{\"name\":\"given\",\"type\":\"string\",\"documentation\":\"A portion of the given name of the patient\"},{\"name\":\"gender\",\"type\":\"token\",\"documentation\":\"Gender of the patient\"},{\"name\":\"birthdate\",\"type\":\"date\",\"documentation\":\"The patient's date of birth\"},{\"name\":\"death-date\",\"type\":\"date\",\"documentation\":\"The date of death has been provided and satisfies this search value\"},{\"name\":\"address-postcode\",\"type\":\"string\",\"documentation\":\"A postalCode specified in an address\"},{\"name\":\"address-postalcode\",\"type\":\"string\",\"documentation\":\"Correction to actual PDS API. A postalCode specified in an address\"},{\"name\":\"general-practitioner:identifier\",\"type\":\"token\",\"documentation\":\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"},{\"name\":\"general-practitioner\",\"type\":\"reference\",\"documentation\":\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"}]},{\"type\":\"RelatedPerson\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson\",\"documentation\":\"Get a Patients related people\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"RelatedPerson/507B7621\"}}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient\",\"type\":\"reference\",\"documentation\":\"Patients NHS Number\"}]}]}]}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -59,7 +56,8 @@
                 "tags": [
                     "Patient"
                 ],
-                "summary": "read-instance: Read Patient instance",
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) Patient instance.",
                 "parameters": [
                     {
                         "name": "id",
@@ -71,7 +69,53 @@
                             "minimum": 1,
                             "type": "string"
                         },
-                        "example": "123"
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "responses": {
@@ -82,13 +126,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Patient"
                                 },
-                                "example": "{\n  \"resourceType\": \"Patient\",\n  \"id\": \"6aa13139-201b-4a54-9608-b49331a46d90\",\n  \"meta\": {\n    \"versionId\": \"2\",\n    \"security\": [ {\n      \"system\": \"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\n      \"code\": \"U\",\n      \"display\": \"unrestricted\"\n    } ]\n  },\n  \"extension\": [ {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\n    \"valueReference\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"Y12345\"\n      }\n    }\n  }, {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\n    \"valueReference\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"Y23456\"\n      }\n    }\n  }, {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\n    \"valueReference\": {\n      \"identifier\": {\n        \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n        \"value\": \"Y34567\"\n      }\n    }\n  }, {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\n    \"extension\": [ {\n      \"url\": \"deathNotificationStatus\",\n      \"valueCodeableConcept\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\n          \"version\": \"1.0.0\",\n          \"code\": \"2\",\n          \"display\": \"Formal - death notice received from Registrar of Deaths\"\n        } ]\n      }\n    }, {\n      \"url\": \"systemEffectiveDate\",\n      \"valueDateTime\": \"2010-10-22T00:00:00+00:00\"\n    } ]\n  }, {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\n    \"extension\": [ {\n      \"url\": \"language\",\n      \"valueCodeableConcept\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\n          \"version\": \"1.0.0\",\n          \"code\": \"fr\",\n          \"display\": \"French\"\n        } ]\n      }\n    }, {\n      \"url\": \"interpreterRequired\",\n      \"valueBoolean\": true\n    } ]\n  }, {\n    \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\n    \"extension\": [ {\n      \"url\": \"PreferredWrittenCommunicationFormat\",\n      \"valueCodeableConcept\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\n          \"code\": \"12\",\n          \"display\": \"Braille\"\n        } ]\n      }\n    }, {\n      \"url\": \"PreferredContactMethod\",\n      \"valueCodeableConcept\": {\n        \"coding\": [ {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\n          \"code\": \"1\",\n          \"display\": \"Letter\"\n        } ]\n      }\n    }, {\n      \"url\": \"PreferredContactTimes\",\n      \"valueString\": \"Not after 7pm\"\n    } ]\n  }, {\n    \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\n    \"valueAddress\": {\n      \"city\": \"Manchester\",\n      \"district\": \"Greater Manchester\",\n      \"country\": \"GBR\"\n    }\n  } ],\n  \"identifier\": [ {\n    \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n    \"value\": \"9000000009\"\n  } ],\n  \"name\": [ {\n    \"id\": \"123\",\n    \"use\": \"usual\",\n    \"family\": \"Smith\",\n    \"given\": [ \"Jane\" ],\n    \"prefix\": [ \"Mrs\" ],\n    \"suffix\": [ \"MBE\" ],\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  } ],\n  \"telecom\": [ {\n    \"id\": \"789\",\n    \"system\": \"phone\",\n    \"value\": \"01632960587\",\n    \"use\": \"home\",\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  }, {\n    \"id\": \"OC789\",\n    \"system\": \"other\",\n    \"_system\": {\n      \"extension\": [ {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\n        \"valueCoding\": {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\n          \"code\": \"textphone\",\n          \"display\": \"Minicom (Textphone)\"\n        }\n      } ]\n    },\n    \"value\": \"01632960587\",\n    \"use\": \"home\",\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  } ],\n  \"gender\": \"female\",\n  \"birthDate\": \"2010-10-22\",\n  \"deceasedDateTime\": \"2010-10-22T00:00:00+00:00\",\n  \"address\": [ {\n    \"id\": \"456\",\n    \"extension\": [ {\n      \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\n      \"extension\": [ {\n        \"url\": \"type\",\n        \"valueCoding\": {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\n          \"code\": \"PAF\"\n        }\n      }, {\n        \"url\": \"value\",\n        \"valueString\": \"12345678\"\n      } ]\n    } ],\n    \"use\": \"home\",\n    \"line\": [ \"1 Trevelyan Square\", \"Boar Lane\", \"City Centre\", \"Leeds\", \"West Yorkshire\" ],\n    \"postalCode\": \"LS1 6AE\",\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  }, {\n    \"id\": \"T456\",\n    \"extension\": [ {\n      \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\n      \"extension\": [ {\n        \"url\": \"type\",\n        \"valueCoding\": {\n          \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\n          \"code\": \"PAF\"\n        }\n      }, {\n        \"url\": \"value\",\n        \"valueString\": \"12345678\"\n      } ]\n    } ],\n    \"use\": \"temp\",\n    \"text\": \"Student Accommodation\",\n    \"line\": [ \"1 Trevelyan Square\", \"Boar Lane\", \"City Centre\", \"Leeds\", \"West Yorkshire\" ],\n    \"postalCode\": \"LS1 6AE\",\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  } ],\n  \"multipleBirthInteger\": 1,\n  \"contact\": [ {\n    \"id\": \"C123\",\n    \"relationship\": [ {\n      \"coding\": [ {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0131\",\n        \"code\": \"C\",\n        \"display\": \"Emergency Contact\"\n      } ]\n    } ],\n    \"telecom\": [ {\n      \"system\": \"phone\",\n      \"value\": \"01632960587\"\n    } ],\n    \"period\": {\n      \"start\": \"2020-01-01\",\n      \"end\": \"2021-12-31\"\n    }\n  } ],\n  \"generalPractitioner\": [ {\n    \"id\": \"254406A3\",\n    \"type\": \"Organization\",\n    \"identifier\": {\n      \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n      \"value\": \"Y12345\",\n      \"period\": {\n        \"start\": \"2020-01-01\",\n        \"end\": \"2021-12-31\"\n      }\n    }\n  } ]\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Patient"
-                                },
-                                "example": "<Patient xmlns=\"http://hl7.org/fhir\">\n   <id value=\"6aa13139-201b-4a54-9608-b49331a46d90\"></id>\n   <meta>\n      <versionId value=\"2\"></versionId>\n      <security>\n         <system value=\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\"></system>\n         <code value=\"U\"></code>\n         <display value=\"unrestricted\"></display>\n      </security>\n   </meta>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\">\n      <valueReference>\n         <identifier>\n            <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n            <value value=\"Y12345\"></value>\n         </identifier>\n      </valueReference>\n   </extension>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\">\n      <valueReference>\n         <identifier>\n            <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n            <value value=\"Y23456\"></value>\n         </identifier>\n      </valueReference>\n   </extension>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\">\n      <valueReference>\n         <identifier>\n            <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n            <value value=\"Y34567\"></value>\n         </identifier>\n      </valueReference>\n   </extension>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\">\n      <extension url=\"deathNotificationStatus\">\n         <valueCodeableConcept>\n            <coding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\"></system>\n               <version value=\"1.0.0\"></version>\n               <code value=\"2\"></code>\n               <display value=\"Formal - death notice received from Registrar of Deaths\"></display>\n            </coding>\n         </valueCodeableConcept>\n      </extension>\n      <extension url=\"systemEffectiveDate\">\n         <valueDateTime value=\"2010-10-22T00:00:00+00:00\"></valueDateTime>\n      </extension>\n   </extension>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\">\n      <extension url=\"language\">\n         <valueCodeableConcept>\n            <coding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\"></system>\n               <version value=\"1.0.0\"></version>\n               <code value=\"fr\"></code>\n               <display value=\"French\"></display>\n            </coding>\n         </valueCodeableConcept>\n      </extension>\n      <extension url=\"interpreterRequired\">\n         <valueBoolean value=\"true\"></valueBoolean>\n      </extension>\n   </extension>\n   <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\">\n      <extension url=\"PreferredWrittenCommunicationFormat\">\n         <valueCodeableConcept>\n            <coding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\"></system>\n               <code value=\"12\"></code>\n               <display value=\"Braille\"></display>\n            </coding>\n         </valueCodeableConcept>\n      </extension>\n      <extension url=\"PreferredContactMethod\">\n         <valueCodeableConcept>\n            <coding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\"></system>\n               <code value=\"1\"></code>\n               <display value=\"Letter\"></display>\n            </coding>\n         </valueCodeableConcept>\n      </extension>\n      <extension url=\"PreferredContactTimes\">\n         <valueString value=\"Not after 7pm\"></valueString>\n      </extension>\n   </extension>\n   <extension url=\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\">\n      <valueAddress>\n         <city value=\"Manchester\"></city>\n         <district value=\"Greater Manchester\"></district>\n         <country value=\"GBR\"></country>\n      </valueAddress>\n   </extension>\n   <identifier>\n      <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n      <value value=\"9000000009\"></value>\n   </identifier>\n   <name id=\"123\">\n      <use value=\"usual\"></use>\n      <family value=\"Smith\"></family>\n      <given value=\"Jane\"></given>\n      <prefix value=\"Mrs\"></prefix>\n      <suffix value=\"MBE\"></suffix>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </name>\n   <telecom id=\"789\">\n      <system value=\"phone\"></system>\n      <value value=\"01632960587\"></value>\n      <use value=\"home\"></use>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </telecom>\n   <telecom id=\"OC789\">\n      <system value=\"other\">\n         <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\">\n            <valueCoding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\"></system>\n               <code value=\"textphone\"></code>\n               <display value=\"Minicom (Textphone)\"></display>\n            </valueCoding>\n         </extension>\n      </system>\n      <value value=\"01632960587\"></value>\n      <use value=\"home\"></use>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </telecom>\n   <gender value=\"female\"></gender>\n   <birthDate value=\"2010-10-22\"></birthDate>\n   <deceasedDateTime value=\"2010-10-22T00:00:00+00:00\"></deceasedDateTime>\n   <address id=\"456\">\n      <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\">\n         <extension url=\"type\">\n            <valueCoding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\"></system>\n               <code value=\"PAF\"></code>\n            </valueCoding>\n         </extension>\n         <extension url=\"value\">\n            <valueString value=\"12345678\"></valueString>\n         </extension>\n      </extension>\n      <use value=\"home\"></use>\n      <line value=\"1 Trevelyan Square\"></line>\n      <line value=\"Boar Lane\"></line>\n      <line value=\"City Centre\"></line>\n      <line value=\"Leeds\"></line>\n      <line value=\"West Yorkshire\"></line>\n      <postalCode value=\"LS1 6AE\"></postalCode>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </address>\n   <address id=\"T456\">\n      <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\">\n         <extension url=\"type\">\n            <valueCoding>\n               <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\"></system>\n               <code value=\"PAF\"></code>\n            </valueCoding>\n         </extension>\n         <extension url=\"value\">\n            <valueString value=\"12345678\"></valueString>\n         </extension>\n      </extension>\n      <use value=\"temp\"></use>\n      <text value=\"Student Accommodation\"></text>\n      <line value=\"1 Trevelyan Square\"></line>\n      <line value=\"Boar Lane\"></line>\n      <line value=\"City Centre\"></line>\n      <line value=\"Leeds\"></line>\n      <line value=\"West Yorkshire\"></line>\n      <postalCode value=\"LS1 6AE\"></postalCode>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </address>\n   <multipleBirthInteger value=\"1\"></multipleBirthInteger>\n   <contact id=\"C123\">\n      <relationship>\n         <coding>\n            <system value=\"http://terminology.hl7.org/CodeSystem/v2-0131\"></system>\n            <code value=\"C\"></code>\n            <display value=\"Emergency Contact\"></display>\n         </coding>\n      </relationship>\n      <telecom>\n         <system value=\"phone\"></system>\n         <value value=\"01632960587\"></value>\n      </telecom>\n      <period>\n         <start value=\"2020-01-01\"></start>\n         <end value=\"2021-12-31\"></end>\n      </period>\n   </contact>\n   <generalPractitioner id=\"254406A3\">\n      <type value=\"Organization\"></type>\n      <identifier>\n         <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n         <value value=\"Y12345\"></value>\n         <period>\n            <start value=\"2020-01-01\"></start>\n            <end value=\"2021-12-31\"></end>\n         </period>\n      </identifier>\n   </generalPractitioner>\n</Patient>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"Patient\",\"id\":\"6aa13139-201b-4a54-9608-b49331a46d90\",\"meta\":{\"versionId\":\"2\",\"security\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\"code\":\"U\",\"display\":\"unrestricted\"}]},\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y23456\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y34567\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\"extension\":[{\"url\":\"deathNotificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\"version\":\"1.0.0\",\"code\":\"2\",\"display\":\"Formal - death notice received from Registrar of Deaths\"}]}},{\"url\":\"systemEffectiveDate\",\"valueDateTime\":\"2010-10-22T00:00:00+00:00\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\"valueAddress\":{\"city\":\"Manchester\",\"district\":\"Greater Manchester\",\"country\":\"GBR\"}}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9000000009\"}],\"name\":[{\"id\":\"123\",\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"id\":\"789\",\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"OC789\",\"system\":\"other\",\"_system\":{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\"code\":\"textphone\",\"display\":\"Minicom (Textphone)\"}}]},\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"gender\":\"female\",\"birthDate\":\"2010-10-22\",\"deceasedDateTime\":\"2010-10-22T00:00:00+00:00\",\"address\":[{\"id\":\"456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"T456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"temp\",\"text\":\"Student Accommodation\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"multipleBirthInteger\":1,\"contact\":[{\"id\":\"C123\",\"relationship\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v2-0131\",\"code\":\"C\",\"display\":\"Emergency Contact\"}]}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\"}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"generalPractitioner\":[{\"id\":\"254406A3\",\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -98,7 +140,8 @@
                 "tags": [
                     "Patient"
                 ],
-                "summary": "instance-patch: Patch a resource instance of type Patient by ID",
+                "summary": "patch",
+                "description": "[patch](http://www.hl7.org/fhir/http.html#patch) a resource instance of type Patient by ID.",
                 "parameters": [
                     {
                         "name": "id",
@@ -110,22 +153,62 @@
                             "minimum": 1,
                             "type": "string"
                         },
-                        "example": "123"
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "requestBody": {
                     "content": {
-                        "application/fhir+json": {
+                        "application/json-patch+json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Patient"
+                                "$ref": "#/components/schemas/JSONPATCH"
                             },
-                            "example": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [ {\n    \"name\": \"operation\",\n    \"part\": [ {\n      \"name\": \"type\",\n      \"valueString\": \"add\"\n    }, {\n      \"name\": \"path\",\n      \"valueString\": \"Patient\"\n    }, {\n      \"name\": \"name\",\n      \"valueString\": \"birthDate\"\n    }, {\n      \"name\": \"value\",\n      \"valueDate\": \"1930-01-01\"\n    } ]\n  } ]\n}"
-                        },
-                        "application/fhir+xml": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Patient"
-                            },
-                            "example": "<Parameters xmlns=\"http://hl7.org/fhir\">\n   <parameter>\n      <name value=\"operation\"></name>\n      <part>\n         <name value=\"type\"></name>\n         <valueString value=\"add\"></valueString>\n      </part>\n      <part>\n         <name value=\"path\"></name>\n         <valueString value=\"Patient\"></valueString>\n      </part>\n      <part>\n         <name value=\"name\"></name>\n         <valueString value=\"birthDate\"></valueString>\n      </part>\n      <part>\n         <name value=\"value\"></name>\n         <valueDate value=\"1930-01-01\"></valueDate>\n      </part>\n   </parameter>\n</Parameters>"
+                            "example": "{\"patches\":[{\"op\":\"add\",\"path\":\"/foo\",\"value\":[\"bar\"]},{\"op\":\"add\",\"path\":\"/foo2\",\"value\":[\"barbar\"]}]}"
                         }
                     }
                 },
@@ -137,13 +220,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/OperationOutcome"
                                 },
-                                "example": "{\n  \"resourceType\": \"OperationOutcome\"\n}"
+                                "example": "{\"resourceType\":\"OperationOutcome\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/OperationOutcome"
                                 },
-                                "example": "<OperationOutcome xmlns=\"http://hl7.org/fhir\"></OperationOutcome>"
+                                "example": "{\"resourceType\":\"OperationOutcome\"}"
                             }
                         }
                     }
@@ -155,13 +238,13 @@
                 "tags": [
                     "Patient"
                 ],
-                "summary": "search-type: Search for Patient instances",
-                "description": "This is a search type",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for Patient instances.",
                 "parameters": [
                     {
                         "name": "family",
                         "in": "query",
-                        "description": "The patient's family name (surname). Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the family name of the patient<br/>* [Practitioner](practitioner.html): A portion of the family name\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.family &#124; Practitioner.name.family | \n",
+                        "description": "The patient's family name (surname).  [Patient](patient.html): A portion of the family name of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.family  | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -171,7 +254,7 @@
                     {
                         "name": "given",
                         "in": "query",
-                        "description": "A portion of the given name of the patient Multiple Resources: <br/><br/>* [Patient](patient.html): A portion of the given name of the patient<br/>* [Practitioner](practitioner.html): A portion of the given name\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.given &#124; Practitioner.name.given | \n",
+                        "description": "A portion of the given name of the patient  [Patient](patient.html): A portion of the given name of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.given  | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -181,7 +264,7 @@
                     {
                         "name": "gender",
                         "in": "query",
-                        "description": "Gender of the patient Multiple Resources: <br/><br/>* [Patient](patient.html): Gender of the patient<br/>* [Person](person.html): The gender of the person<br/>* [Practitioner](practitioner.html): Gender of the practitioner<br/>* [RelatedPerson](relatedperson.html): Gender of the related person\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.gender &#124; Person.gender &#124; Practitioner.gender &#124; RelatedPerson.gender | \n",
+                        "description": "Gender of the patient  [Patient](patient.html): Gender of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.gender  | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -191,7 +274,7 @@
                     {
                         "name": "birthdate",
                         "in": "query",
-                        "description": "The patient's date of birth Multiple Resources: <br/><br/>* [Patient](patient.html): The patient's date of birth<br/>* [Person](person.html): The person's date of birth<br/>* [RelatedPerson](relatedperson.html): The Related Person's date of birth\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Patient.birthDate &#124; Person.birthDate &#124; RelatedPerson.birthDate | \n",
+                        "description": "The patient's date of birth  [Patient](patient.html): The patient's date of birth<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Patient.birthDate  | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -211,7 +294,7 @@
                     {
                         "name": "address-postcode",
                         "in": "query",
-                        "description": "A postalCode specified in an address\n\n Caution: This does not appear to be a valid search parameter. **Please check Hl7 FHIR conformance.**",
+                        "description": "A postalCode specified in an address\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -221,7 +304,7 @@
                     {
                         "name": "address-postalcode",
                         "in": "query",
-                        "description": "Correction to actual PDS API. A postalCode specified in an address Multiple Resources: <br/><br/>* [Patient](patient.html): A postalCode specified in an address<br/>* [Person](person.html): A postal code specified in an address<br/>* [Practitioner](practitioner.html): A postalCode specified in an address<br/>* [RelatedPerson](relatedperson.html): A postal code specified in an address\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.address.postalCode &#124; Person.address.postalCode &#124; Practitioner.address.postalCode &#124; RelatedPerson.address.postalCode | \n",
+                        "description": "Correction to actual PDS API. A postalCode specified in an address  [Patient](patient.html): A postalCode specified in an address<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.address.postalCode  | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
@@ -247,6 +330,52 @@
                             "type": "string",
                             "example": "[type]/[id] or [id] or [uri]"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "responses": {
@@ -257,13 +386,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Patient"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 1,\n  \"entry\": [ {\n    \"resource\": {\n      \"resourceType\": \"Patient\",\n      \"id\": \"6aa13139-201b-4a54-9608-b49331a46d90\",\n      \"meta\": {\n        \"versionId\": \"2\",\n        \"security\": [ {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\n          \"code\": \"U\",\n          \"display\": \"unrestricted\"\n        } ]\n      },\n      \"extension\": [ {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"Y12345\"\n          }\n        }\n      }, {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"Y23456\"\n          }\n        }\n      }, {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\n        \"valueReference\": {\n          \"identifier\": {\n            \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n            \"value\": \"Y34567\"\n          }\n        }\n      }, {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\n        \"extension\": [ {\n          \"url\": \"deathNotificationStatus\",\n          \"valueCodeableConcept\": {\n            \"coding\": [ {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\n              \"version\": \"1.0.0\",\n              \"code\": \"2\",\n              \"display\": \"Formal - death notice received from Registrar of Deaths\"\n            } ]\n          }\n        }, {\n          \"url\": \"systemEffectiveDate\",\n          \"valueDateTime\": \"2010-10-22T00:00:00+00:00\"\n        } ]\n      }, {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\n        \"extension\": [ {\n          \"url\": \"language\",\n          \"valueCodeableConcept\": {\n            \"coding\": [ {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\n              \"version\": \"1.0.0\",\n              \"code\": \"fr\",\n              \"display\": \"French\"\n            } ]\n          }\n        }, {\n          \"url\": \"interpreterRequired\",\n          \"valueBoolean\": true\n        } ]\n      }, {\n        \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\n        \"extension\": [ {\n          \"url\": \"PreferredWrittenCommunicationFormat\",\n          \"valueCodeableConcept\": {\n            \"coding\": [ {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\n              \"code\": \"12\",\n              \"display\": \"Braille\"\n            } ]\n          }\n        }, {\n          \"url\": \"PreferredContactMethod\",\n          \"valueCodeableConcept\": {\n            \"coding\": [ {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\n              \"code\": \"1\",\n              \"display\": \"Letter\"\n            } ]\n          }\n        }, {\n          \"url\": \"PreferredContactTimes\",\n          \"valueString\": \"Not after 7pm\"\n        } ]\n      }, {\n        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\n        \"valueAddress\": {\n          \"city\": \"Manchester\",\n          \"district\": \"Greater Manchester\",\n          \"country\": \"GBR\"\n        }\n      } ],\n      \"identifier\": [ {\n        \"system\": \"https://fhir.nhs.uk/Id/nhs-number\",\n        \"value\": \"9000000009\"\n      } ],\n      \"name\": [ {\n        \"id\": \"123\",\n        \"use\": \"usual\",\n        \"family\": \"Smith\",\n        \"given\": [ \"Jane\" ],\n        \"prefix\": [ \"Mrs\" ],\n        \"suffix\": [ \"MBE\" ],\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      } ],\n      \"telecom\": [ {\n        \"id\": \"789\",\n        \"system\": \"phone\",\n        \"value\": \"01632960587\",\n        \"use\": \"home\",\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      }, {\n        \"id\": \"OC789\",\n        \"system\": \"other\",\n        \"_system\": {\n          \"extension\": [ {\n            \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\n            \"valueCoding\": {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\n              \"code\": \"textphone\",\n              \"display\": \"Minicom (Textphone)\"\n            }\n          } ]\n        },\n        \"value\": \"01632960587\",\n        \"use\": \"home\",\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      } ],\n      \"gender\": \"female\",\n      \"birthDate\": \"2010-10-22\",\n      \"deceasedDateTime\": \"2010-10-22T00:00:00+00:00\",\n      \"address\": [ {\n        \"id\": \"456\",\n        \"extension\": [ {\n          \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\n          \"extension\": [ {\n            \"url\": \"type\",\n            \"valueCoding\": {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\n              \"code\": \"PAF\"\n            }\n          }, {\n            \"url\": \"value\",\n            \"valueString\": \"12345678\"\n          } ]\n        } ],\n        \"use\": \"home\",\n        \"line\": [ \"1 Trevelyan Square\", \"Boar Lane\", \"City Centre\", \"Leeds\", \"West Yorkshire\" ],\n        \"postalCode\": \"LS1 6AE\",\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      }, {\n        \"id\": \"T456\",\n        \"extension\": [ {\n          \"url\": \"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\n          \"extension\": [ {\n            \"url\": \"type\",\n            \"valueCoding\": {\n              \"system\": \"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\n              \"code\": \"PAF\"\n            }\n          }, {\n            \"url\": \"value\",\n            \"valueString\": \"12345678\"\n          } ]\n        } ],\n        \"use\": \"temp\",\n        \"text\": \"Student Accommodation\",\n        \"line\": [ \"1 Trevelyan Square\", \"Boar Lane\", \"City Centre\", \"Leeds\", \"West Yorkshire\" ],\n        \"postalCode\": \"LS1 6AE\",\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      } ],\n      \"multipleBirthInteger\": 1,\n      \"contact\": [ {\n        \"id\": \"C123\",\n        \"relationship\": [ {\n          \"coding\": [ {\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0131\",\n            \"code\": \"C\",\n            \"display\": \"Emergency Contact\"\n          } ]\n        } ],\n        \"telecom\": [ {\n          \"system\": \"phone\",\n          \"value\": \"01632960587\"\n        } ],\n        \"period\": {\n          \"start\": \"2020-01-01\",\n          \"end\": \"2021-12-31\"\n        }\n      } ],\n      \"generalPractitioner\": [ {\n        \"id\": \"254406A3\",\n        \"type\": \"Organization\",\n        \"identifier\": {\n          \"system\": \"https://fhir.nhs.uk/Id/ods-organization-code\",\n          \"value\": \"Y12345\",\n          \"period\": {\n            \"start\": \"2020-01-01\",\n            \"end\": \"2021-12-31\"\n          }\n        }\n      } ]\n    }\n  } ]\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Patient"
-                                },
-                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"1\"></total>\n   <entry>\n      <resource>\n         <Patient xmlns=\"http://hl7.org/fhir\">\n            <id value=\"6aa13139-201b-4a54-9608-b49331a46d90\"></id>\n            <meta>\n               <versionId value=\"2\"></versionId>\n               <security>\n                  <system value=\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\"></system>\n                  <code value=\"U\"></code>\n                  <display value=\"unrestricted\"></display>\n               </security>\n            </meta>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\">\n               <valueReference>\n                  <identifier>\n                     <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                     <value value=\"Y12345\"></value>\n                  </identifier>\n               </valueReference>\n            </extension>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\">\n               <valueReference>\n                  <identifier>\n                     <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                     <value value=\"Y23456\"></value>\n                  </identifier>\n               </valueReference>\n            </extension>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\">\n               <valueReference>\n                  <identifier>\n                     <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                     <value value=\"Y34567\"></value>\n                  </identifier>\n               </valueReference>\n            </extension>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\">\n               <extension url=\"deathNotificationStatus\">\n                  <valueCodeableConcept>\n                     <coding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\"></system>\n                        <version value=\"1.0.0\"></version>\n                        <code value=\"2\"></code>\n                        <display value=\"Formal - death notice received from Registrar of Deaths\"></display>\n                     </coding>\n                  </valueCodeableConcept>\n               </extension>\n               <extension url=\"systemEffectiveDate\">\n                  <valueDateTime value=\"2010-10-22T00:00:00+00:00\"></valueDateTime>\n               </extension>\n            </extension>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\">\n               <extension url=\"language\">\n                  <valueCodeableConcept>\n                     <coding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\"></system>\n                        <version value=\"1.0.0\"></version>\n                        <code value=\"fr\"></code>\n                        <display value=\"French\"></display>\n                     </coding>\n                  </valueCodeableConcept>\n               </extension>\n               <extension url=\"interpreterRequired\">\n                  <valueBoolean value=\"true\"></valueBoolean>\n               </extension>\n            </extension>\n            <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\">\n               <extension url=\"PreferredWrittenCommunicationFormat\">\n                  <valueCodeableConcept>\n                     <coding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\"></system>\n                        <code value=\"12\"></code>\n                        <display value=\"Braille\"></display>\n                     </coding>\n                  </valueCodeableConcept>\n               </extension>\n               <extension url=\"PreferredContactMethod\">\n                  <valueCodeableConcept>\n                     <coding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\"></system>\n                        <code value=\"1\"></code>\n                        <display value=\"Letter\"></display>\n                     </coding>\n                  </valueCodeableConcept>\n               </extension>\n               <extension url=\"PreferredContactTimes\">\n                  <valueString value=\"Not after 7pm\"></valueString>\n               </extension>\n            </extension>\n            <extension url=\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\">\n               <valueAddress>\n                  <city value=\"Manchester\"></city>\n                  <district value=\"Greater Manchester\"></district>\n                  <country value=\"GBR\"></country>\n               </valueAddress>\n            </extension>\n            <identifier>\n               <system value=\"https://fhir.nhs.uk/Id/nhs-number\"></system>\n               <value value=\"9000000009\"></value>\n            </identifier>\n            <name id=\"123\">\n               <use value=\"usual\"></use>\n               <family value=\"Smith\"></family>\n               <given value=\"Jane\"></given>\n               <prefix value=\"Mrs\"></prefix>\n               <suffix value=\"MBE\"></suffix>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </name>\n            <telecom id=\"789\">\n               <system value=\"phone\"></system>\n               <value value=\"01632960587\"></value>\n               <use value=\"home\"></use>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </telecom>\n            <telecom id=\"OC789\">\n               <system value=\"other\">\n                  <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\">\n                     <valueCoding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\"></system>\n                        <code value=\"textphone\"></code>\n                        <display value=\"Minicom (Textphone)\"></display>\n                     </valueCoding>\n                  </extension>\n               </system>\n               <value value=\"01632960587\"></value>\n               <use value=\"home\"></use>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </telecom>\n            <gender value=\"female\"></gender>\n            <birthDate value=\"2010-10-22\"></birthDate>\n            <deceasedDateTime value=\"2010-10-22T00:00:00+00:00\"></deceasedDateTime>\n            <address id=\"456\">\n               <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\">\n                  <extension url=\"type\">\n                     <valueCoding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\"></system>\n                        <code value=\"PAF\"></code>\n                     </valueCoding>\n                  </extension>\n                  <extension url=\"value\">\n                     <valueString value=\"12345678\"></valueString>\n                  </extension>\n               </extension>\n               <use value=\"home\"></use>\n               <line value=\"1 Trevelyan Square\"></line>\n               <line value=\"Boar Lane\"></line>\n               <line value=\"City Centre\"></line>\n               <line value=\"Leeds\"></line>\n               <line value=\"West Yorkshire\"></line>\n               <postalCode value=\"LS1 6AE\"></postalCode>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </address>\n            <address id=\"T456\">\n               <extension url=\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\">\n                  <extension url=\"type\">\n                     <valueCoding>\n                        <system value=\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\"></system>\n                        <code value=\"PAF\"></code>\n                     </valueCoding>\n                  </extension>\n                  <extension url=\"value\">\n                     <valueString value=\"12345678\"></valueString>\n                  </extension>\n               </extension>\n               <use value=\"temp\"></use>\n               <text value=\"Student Accommodation\"></text>\n               <line value=\"1 Trevelyan Square\"></line>\n               <line value=\"Boar Lane\"></line>\n               <line value=\"City Centre\"></line>\n               <line value=\"Leeds\"></line>\n               <line value=\"West Yorkshire\"></line>\n               <postalCode value=\"LS1 6AE\"></postalCode>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </address>\n            <multipleBirthInteger value=\"1\"></multipleBirthInteger>\n            <contact id=\"C123\">\n               <relationship>\n                  <coding>\n                     <system value=\"http://terminology.hl7.org/CodeSystem/v2-0131\"></system>\n                     <code value=\"C\"></code>\n                     <display value=\"Emergency Contact\"></display>\n                  </coding>\n               </relationship>\n               <telecom>\n                  <system value=\"phone\"></system>\n                  <value value=\"01632960587\"></value>\n               </telecom>\n               <period>\n                  <start value=\"2020-01-01\"></start>\n                  <end value=\"2021-12-31\"></end>\n               </period>\n            </contact>\n            <generalPractitioner id=\"254406A3\">\n               <type value=\"Organization\"></type>\n               <identifier>\n                  <system value=\"https://fhir.nhs.uk/Id/ods-organization-code\"></system>\n                  <value value=\"Y12345\"></value>\n                  <period>\n                     <start value=\"2020-01-01\"></start>\n                     <end value=\"2021-12-31\"></end>\n                  </period>\n               </identifier>\n            </generalPractitioner>\n         </Patient>\n      </resource>\n   </entry>\n</Bundle>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"Bundle\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Patient?parameterExample=123&page=1\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/Patient?parameterExample=123&page=2\"}],\"entry\":[{\"fullUrl\":\"http://example.org/FHIR/R4/Patient/Patient/6aa13139-201b-4a54-9608-b49331a46d90/_history/2\",\"resource\":{\"resourceType\":\"Patient\",\"id\":\"6aa13139-201b-4a54-9608-b49331a46d90\",\"meta\":{\"versionId\":\"2\",\"security\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\"code\":\"U\",\"display\":\"unrestricted\"}]},\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y23456\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y34567\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\"extension\":[{\"url\":\"deathNotificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\"version\":\"1.0.0\",\"code\":\"2\",\"display\":\"Formal - death notice received from Registrar of Deaths\"}]}},{\"url\":\"systemEffectiveDate\",\"valueDateTime\":\"2010-10-22T00:00:00+00:00\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\"valueAddress\":{\"city\":\"Manchester\",\"district\":\"Greater Manchester\",\"country\":\"GBR\"}}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9000000009\"}],\"name\":[{\"id\":\"123\",\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"id\":\"789\",\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"OC789\",\"system\":\"other\",\"_system\":{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\"code\":\"textphone\",\"display\":\"Minicom (Textphone)\"}}]},\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"gender\":\"female\",\"birthDate\":\"2010-10-22\",\"deceasedDateTime\":\"2010-10-22T00:00:00+00:00\",\"address\":[{\"id\":\"456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"T456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"temp\",\"text\":\"Student Accommodation\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"multipleBirthInteger\":1,\"contact\":[{\"id\":\"C123\",\"relationship\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v2-0131\",\"code\":\"C\",\"display\":\"Emergency Contact\"}]}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\"}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"generalPractitioner\":[{\"id\":\"254406A3\",\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}}]}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -275,8 +402,8 @@
                 "tags": [
                     "RelatedPerson"
                 ],
-                "summary": "search-type: Search for RelatedPerson instances",
-                "description": "This is a search type",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for RelatedPerson instances.",
                 "parameters": [
                     {
                         "name": "patient",
@@ -287,6 +414,52 @@
                             "type": "string",
                             "example": "[type]/[id] or [id] or [uri]"
                         }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
                     }
                 ],
                 "responses": {
@@ -297,13 +470,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/RelatedPerson"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RelatedPerson"
-                                },
-                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n</Bundle>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"Bundle\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/RelatedPerson?parameterExample=123&page=1\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/RelatedPerson?parameterExample=123&page=2\"}],\"entry\":[{\"fullUrl\":\"http://example.org/FHIR/R4/RelatedPerson/RelatedPerson/507B7621\",\"resource\":{\"resourceType\":\"RelatedPerson\",\"id\":\"507B7621\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-CopyCorrespondenceIndicator\",\"valueBoolean\":true},{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-ContactRank\",\"valuePositiveInt\":1},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]}],\"active\":true,\"patient\":{\"reference\":\"https://api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/90000000009\",\"type\":\"Patient\",\"identifier\":{\"system\":\"https://api.service.nhs.uk/personal-demographics/FHIR/R4/Patient\",\"value\":\"90000000009\"}},\"relationship\":[{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/UKCore-AdditionalRelatedPersonRole\",\"code\":\"Guardian\",\"display\":\"Guardian of patient\"}]}],\"name\":[{\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"address\":[{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -315,7 +486,7 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See resource [CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
@@ -323,15 +494,19 @@
             },
             "Patient": {
                 "type": "object",
-                "description": "See [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) for the FHIR Profile on resource [Patient](https://www.hl7.org/fhir/Patient.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) for the FHIR Profile on resource [Patient](https://www.hl7.org/fhir/Patient.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "Patient",
                     "url": "https://www.hl7.org/fhir/Patient.html"
                 }
             },
+            "JSONPATCH": {
+                "type": "object",
+                "description": "See [JSON Patch](http://jsonpatch.com/)"
+            },
             "OperationOutcome": {
                 "type": "object",
-                "description": "See resource [OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
@@ -339,7 +514,7 @@
             },
             "RelatedPerson": {
                 "type": "object",
-                "description": "See [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson) for the FHIR Profile on resource [RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html). HL7 FHIR R4 Schema can be found here [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "See [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson) for the FHIR Profile on resource [RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "RelatedPerson",
                     "url": "https://www.hl7.org/fhir/RelatedPerson.html"
