@@ -81,6 +81,23 @@
         }
     },
     "components": {
-        "schemas": {}
+        "schemas": {
+            "CapabilityStatement": {
+                "type": "object",
+                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "externalDocs": {
+                    "description": "CapabilityStatement",
+                    "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
+                }
+            },
+            "Parameters": {
+                "type": "object",
+                "description": "See [HL7 FHIR Parameters](https://www.hl7.org/fhir/Parameters.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "externalDocs": {
+                    "description": "Parameters",
+                    "url": "https://www.hl7.org/fhir/Parameters.html"
+                }
+            }
+        }
     }
 }
