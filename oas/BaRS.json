@@ -18,19 +18,19 @@
         },
         {
             "name": "ServiceRequest",
-            "description": "Profile : [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) (additional rules to the resource) \n Resource type: [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html)\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)"
         },
         {
             "name": "Slot",
-            "description": "Profile : [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) (additional rules to the resource) \n Resource type: [Slot](https://www.hl7.org/fhir/Slot.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR Slot](https://www.hl7.org/fhir/Slot.html)\n\n A slot of time on a schedule that may be available for booking appointments.\n\n Profile (constraints): [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md)"
         },
         {
             "name": "Appointment",
-            "description": "Profile : [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) (additional rules to the resource) \n Resource type: [Appointment](https://www.hl7.org/fhir/Appointment.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR Appointment](https://www.hl7.org/fhir/Appointment.html)\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)"
         },
         {
             "name": "MessageDefinition",
-            "description": "Profile : [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md) (additional rules to the resource) \n Resource type: [MessageDefinition](https://www.hl7.org/fhir/MessageDefinition.html) (also contains links to code generations schemas)"
+            "description": "Resource (schema): [FHIR MessageDefinition](https://www.hl7.org/fhir/MessageDefinition.html)\n\n Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.\n\n Allows messages to be defined once and re-used across systems.\n\n Profile (constraints): [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md)"
         }
     ],
     "paths": {
@@ -48,13 +48,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/CapabilityStatement"
                                 },
-                                "example": "{\n  \"resourceType\": \"CapabilityStatement\",\n  \"id\": \"b2a5d2b7-f47e-4b75-bed9-f2e79a08d263\",\n  \"extension\": [ {\n    \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\n    \"extension\": [ {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"ukcore.release1.test\"\n      } ]\n    }, {\n      \"url\": \"implementationGuide\",\n      \"extension\": [ {\n        \"url\": \"name\",\n        \"valueString\": \"uk.nhsdigital.r4.test\"\n      } ]\n    }, {\n      \"url\": \"openApi\",\n      \"extension\": [ {\n        \"url\": \"documentation\",\n        \"valueUri\": \"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"\n      }, {\n        \"url\": \"description\",\n        \"valueString\": \"Booking and Referral - FHIR API\"\n      } ]\n    }, {\n      \"url\": \"openApi\",\n      \"extension\": [ {\n        \"url\": \"documentation\",\n        \"valueUri\": \"https://simplifier.net/guide/nhsbookingandreferrals/home\"\n      }, {\n        \"url\": \"description\",\n        \"valueString\": \"NHS Bookings and Referrals\"\n      } ]\n    } ]\n  } ],\n  \"url\": \"https://fhir.nhs.uk/CapabilityStatement/apim-bars-supplier\",\n  \"version\": \"3.0.0\",\n  \"name\": \"SupplierEvents\",\n  \"status\": \"active\",\n  \"date\": \"2021-04-28T00:00:00+00:00\",\n  \"publisher\": \"digital.nhs.uk\",\n  \"description\": \"API Definition for BaRS (supplier)\",\n  \"kind\": \"requirements\",\n  \"fhirVersion\": \"4.0.1\",\n  \"format\": [ \"application/fhir+json\", \"application/fhir+xml\" ],\n  \"rest\": [ {\n    \"mode\": \"server\",\n    \"security\": {\n      \"service\": [ {\n        \"coding\": [ {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/restful-security-service\",\n          \"code\": \"OAuth\",\n          \"display\": \"OAuth2 Token\"\n        } ]\n      } ]\n    },\n    \"resource\": [ {\n      \"type\": \"ServiceRequest\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\n      \"documentation\": \"Supports Referrals and advice guidance requests\",\n      \"interaction\": [ {\n        \"code\": \"read\",\n        \"documentation\": \"Get a specific referral\"\n      }, {\n        \"code\": \"search-type\",\n        \"documentation\": \"Get referral/s for a patient\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"patientIdentifier\",\n        \"type\": \"token\",\n        \"documentation\": \"The patient identifier (e.g. NHS Number) that the service request is about\"\n      } ]\n    }, {\n      \"type\": \"Slot\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\n      \"interaction\": [ {\n        \"code\": \"search-type\",\n        \"documentation\": \"Get slots\"\n      } ],\n      \"searchParam\": [ {\n        \"name\": \"status\",\n        \"type\": \"token\",\n        \"documentation\": \"The free/busy status of the appointment\"\n      }, {\n        \"name\": \"start\",\n        \"type\": \"date\",\n        \"documentation\": \"Appointment date/time.\"\n      }, {\n        \"name\": \"end\",\n        \"type\": \"date\",\n        \"documentation\": \"Appointment date/time.\"\n      }, {\n        \"name\": \"_include\",\n        \"type\": \"composite\",\n        \"documentation\": \"Inclusions that drive the rescusive depth of the search\"\n      } ]\n    }, {\n      \"type\": \"Appointment\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\n      \"interaction\": [ {\n        \"code\": \"read\",\n        \"documentation\": \"Get a specific booking\"\n      }, {\n        \"code\": \"search-type\",\n        \"documentation\": \"Get Bookings for a patient\"\n      } ],\n      \"searchParam\": [ {\n        \"extension\": [ {\n          \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\n          \"extension\": [ {\n            \"url\": \"required\",\n            \"valueBoolean\": true\n          } ]\n        } ],\n        \"name\": \"patientIdentifier\",\n        \"type\": \"token\",\n        \"documentation\": \"Search for appointment for a patient by NHS Number\"\n      } ]\n    }, {\n      \"type\": \"MessageDefinition\",\n      \"profile\": \"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\",\n      \"interaction\": [ {\n        \"code\": \"read\",\n        \"documentation\": \"Find Message Definition\"\n      } ]\n    } ],\n    \"operation\": [ {\n      \"name\": \"process-message\",\n      \"definition\": \"https://fhir.nhs.uk/OperationDefinition/MessageHeader-process-message\",\n      \"documentation\": \"Destination of both subscription-notifications and BaRS referrals\"\n    } ]\n  } ],\n  \"messaging\": [ {\n    \"supportedMessage\": [ {\n      \"mode\": \"receiver\",\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"\n    }, {\n      \"mode\": \"receiver\",\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"\n    }, {\n      \"extension\": [ {\n        \"url\": \"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\n        \"extension\": [ {\n          \"url\": \"example\",\n          \"extension\": [ {\n            \"url\": \"request\",\n            \"valueBoolean\": true\n          }, {\n            \"url\": \"value\",\n            \"valueReference\": {\n              \"reference\": \"Bundle/950831dd-2603-442d-9a07-e4b6cd2ac544\"\n            }\n          } ]\n        } ]\n      } ],\n      \"mode\": \"receiver\",\n      \"definition\": \"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"\n    } ]\n  } ]\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CapabilityStatement"
-                                },
-                                "example": "<CapabilityStatement xmlns=\"http://hl7.org/fhir\">\n   <id value=\"b2a5d2b7-f47e-4b75-bed9-f2e79a08d263\"></id>\n   <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\">\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"ukcore.release1.test\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"implementationGuide\">\n         <extension url=\"name\">\n            <valueString value=\"uk.nhsdigital.r4.test\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"openApi\">\n         <extension url=\"documentation\">\n            <valueUri value=\"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"></valueUri>\n         </extension>\n         <extension url=\"description\">\n            <valueString value=\"Booking and Referral - FHIR API\"></valueString>\n         </extension>\n      </extension>\n      <extension url=\"openApi\">\n         <extension url=\"documentation\">\n            <valueUri value=\"https://simplifier.net/guide/nhsbookingandreferrals/home\"></valueUri>\n         </extension>\n         <extension url=\"description\">\n            <valueString value=\"NHS Bookings and Referrals\"></valueString>\n         </extension>\n      </extension>\n   </extension>\n   <url value=\"https://fhir.nhs.uk/CapabilityStatement/apim-bars-supplier\"></url>\n   <version value=\"3.0.0\"></version>\n   <name value=\"SupplierEvents\"></name>\n   <status value=\"active\"></status>\n   <date value=\"2021-04-28T00:00:00+00:00\"></date>\n   <publisher value=\"digital.nhs.uk\"></publisher>\n   <description value=\"API Definition for BaRS (supplier)\"></description>\n   <kind value=\"requirements\"></kind>\n   <fhirVersion value=\"4.0.1\"></fhirVersion>\n   <format value=\"application/fhir+json\"></format>\n   <format value=\"application/fhir+xml\"></format>\n   <rest>\n      <mode value=\"server\"></mode>\n      <security>\n         <service>\n            <coding>\n               <system value=\"http://terminology.hl7.org/CodeSystem/restful-security-service\"></system>\n               <code value=\"OAuth\"></code>\n               <display value=\"OAuth2 Token\"></display>\n            </coding>\n         </service>\n      </security>\n      <resource>\n         <type value=\"ServiceRequest\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\"></profile>\n         <documentation value=\"Supports Referrals and advice guidance requests\"></documentation>\n         <interaction>\n            <code value=\"read\"></code>\n            <documentation value=\"Get a specific referral\"></documentation>\n         </interaction>\n         <interaction>\n            <code value=\"search-type\"></code>\n            <documentation value=\"Get referral/s for a patient\"></documentation>\n         </interaction>\n         <searchParam>\n            <name value=\"patientIdentifier\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"The patient identifier (e.g. NHS Number) that the service request is about\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"Slot\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-Slot\"></profile>\n         <interaction>\n            <code value=\"search-type\"></code>\n            <documentation value=\"Get slots\"></documentation>\n         </interaction>\n         <searchParam>\n            <name value=\"status\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"The free/busy status of the appointment\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"start\"></name>\n            <type value=\"date\"></type>\n            <documentation value=\"Appointment date/time.\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"end\"></name>\n            <type value=\"date\"></type>\n            <documentation value=\"Appointment date/time.\"></documentation>\n         </searchParam>\n         <searchParam>\n            <name value=\"_include\"></name>\n            <type value=\"composite\"></type>\n            <documentation value=\"Inclusions that drive the rescusive depth of the search\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"Appointment\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\"></profile>\n         <interaction>\n            <code value=\"read\"></code>\n            <documentation value=\"Get a specific booking\"></documentation>\n         </interaction>\n         <interaction>\n            <code value=\"search-type\"></code>\n            <documentation value=\"Get Bookings for a patient\"></documentation>\n         </interaction>\n         <searchParam>\n            <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\">\n               <extension url=\"required\">\n                  <valueBoolean value=\"true\"></valueBoolean>\n               </extension>\n            </extension>\n            <name value=\"patientIdentifier\"></name>\n            <type value=\"token\"></type>\n            <documentation value=\"Search for appointment for a patient by NHS Number\"></documentation>\n         </searchParam>\n      </resource>\n      <resource>\n         <type value=\"MessageDefinition\"></type>\n         <profile value=\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\"></profile>\n         <interaction>\n            <code value=\"read\"></code>\n            <documentation value=\"Find Message Definition\"></documentation>\n         </interaction>\n      </resource>\n      <operation>\n         <name value=\"process-message\"></name>\n         <definition value=\"https://fhir.nhs.uk/OperationDefinition/MessageHeader-process-message\"></definition>\n         <documentation value=\"Destination of both subscription-notifications and BaRS referrals\"></documentation>\n      </operation>\n   </rest>\n   <messaging>\n      <supportedMessage>\n         <mode value=\"receiver\"></mode>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <mode value=\"receiver\"></mode>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"></definition>\n      </supportedMessage>\n      <supportedMessage>\n         <extension url=\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\">\n            <extension url=\"example\">\n               <extension url=\"request\">\n                  <valueBoolean value=\"true\"></valueBoolean>\n               </extension>\n               <extension url=\"value\">\n                  <valueReference>\n                     <reference value=\"Bundle/950831dd-2603-442d-9a07-e4b6cd2ac544\"></reference>\n                  </valueReference>\n               </extension>\n            </extension>\n         </extension>\n         <mode value=\"receiver\"></mode>\n         <definition value=\"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"></definition>\n      </supportedMessage>\n   </messaging>\n</CapabilityStatement>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"b2a5d2b7-f47e-4b75-bed9-f2e79a08d263\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"},{\"url\":\"description\",\"valueString\":\"Booking and Referral - FHIR API\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://simplifier.net/guide/nhsbookingandreferrals/home\"},{\"url\":\"description\",\"valueString\":\"NHS Bookings and Referrals\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-bars-supplier\",\"version\":\"3.0.0\",\"name\":\"SupplierEvents\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API Definition for BaRS (supplier)\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\",\"application/fhir+xml\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"ServiceRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\"documentation\":\"Supports Referrals and advice guidance requests\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific referral\"},{\"code\":\"search-type\",\"documentation\":\"Get referral/s for a patient\"}],\"searchParam\":[{\"name\":\"patientIdentifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"}]},{\"type\":\"Slot\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\"interaction\":[{\"code\":\"search-type\",\"documentation\":\"Get slots\"}],\"searchParam\":[{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"The free/busy status of the appointment\"},{\"name\":\"start\",\"type\":\"date\",\"documentation\":\"Appointment date/time.\"},{\"name\":\"end\",\"type\":\"date\",\"documentation\":\"Appointment date/time.\"},{\"name\":\"_include\",\"type\":\"composite\",\"documentation\":\"Inclusions that drive the rescusive depth of the search\"}]},{\"type\":\"Appointment\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific booking\"},{\"code\":\"search-type\",\"documentation\":\"Get Bookings for a patient\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"required\",\"valueBoolean\":true}]}],\"name\":\"patientIdentifier\",\"type\":\"token\",\"documentation\":\"Search for appointment for a patient by NHS Number\"}]},{\"type\":\"MessageDefinition\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Find Message Definition\"}]}],\"operation\":[{\"name\":\"process-message\",\"definition\":\"https://fhir.nhs.uk/OperationDefinition/MessageHeader-process-message\",\"documentation\":\"Destination of both subscription-notifications and BaRS referrals\"}]}],\"messaging\":[{\"supportedMessage\":[{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"},{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/950831dd-2603-442d-9a07-e4b6cd2ac544\"}}]}]}],\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"}]}]}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -71,8 +69,7 @@
                     "content": {
                         "application/fhir+json": {
                             "schema": {
-                                "title": "Bundle",
-                                "type": "object"
+                                "$ref": "#/components/schemas/Bundle-Message"
                             },
                             "examples": {
                                 "bars-message-servicerequest-request": {
@@ -100,13 +97,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Parameters"
                                 },
-                                "example": "{\n  \"resourceType\": \"Parameters\"\n}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Parameters"
-                                },
-                                "example": "<Parameters xmlns=\"http://hl7.org/fhir\"></Parameters>"
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"Parameters\"}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -118,8 +113,8 @@
                 "tags": [
                     "ServiceRequest"
                 ],
-                "summary": "read-instance: Read ServiceRequest instance.",
-                "description": "See also [FHIR read](http://www.hl7.org/fhir/http.html#read)\n\nGet a specific referral",
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) ServiceRequest instance.\n\nGet a specific referral",
                 "parameters": [
                     {
                         "name": "id",
@@ -188,13 +183,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
-                                "example": "{\n  \"resourceType\": \"ServiceRequest\"\n}"
+                                "example": "{\"resourceType\":\"ServiceRequest\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
-                                "example": "<ServiceRequest xmlns=\"http://hl7.org/fhir\"></ServiceRequest>"
+                                "example": "{\"resourceType\":\"ServiceRequest\"}"
                             }
                         }
                     }
@@ -206,8 +201,8 @@
                 "tags": [
                     "ServiceRequest"
                 ],
-                "summary": "search-type: Search for ServiceRequest instances.",
-                "description": "See also [FHIR Search](http://www.hl7.org/fhir/search.html).\n\nGet referral/s for a patient",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for ServiceRequest instances.\n\nGet referral/s for a patient",
                 "parameters": [
                     {
                         "name": "patientIdentifier",
@@ -274,13 +269,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0,\n  \"link\": [ {\n    \"relation\": \"self\",\n    \"url\": \"http://example.org/FHIR/R4/ServiceRequest?parameterExample=123&page=1\"\n  }, {\n    \"relation\": \"next\",\n    \"url\": \"http://example.org/FHIR/R4/ServiceRequest?parameterExample=123&page=2\"\n  } ],\n  \"entry\": [ {\n    \"fullUrl\": \"http://example.org/FHIR/R4/ServiceRequest/null\"\n  } ]\n}"
+                                "example": "{\"resourceType\":\"ServiceRequest\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
-                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n   <link>\n      <relation value=\"self\"></relation>\n      <url value=\"http://example.org/FHIR/R4/ServiceRequest?parameterExample=123&amp;page=1\"></url>\n   </link>\n   <link>\n      <relation value=\"next\"></relation>\n      <url value=\"http://example.org/FHIR/R4/ServiceRequest?parameterExample=123&amp;page=2\"></url>\n   </link>\n   <entry>\n      <fullUrl value=\"http://example.org/FHIR/R4/ServiceRequest/null\"></fullUrl>\n   </entry>\n</Bundle>"
+                                "example": "{\"resourceType\":\"ServiceRequest\"}"
                             }
                         }
                     }
@@ -292,8 +287,8 @@
                 "tags": [
                     "Slot"
                 ],
-                "summary": "search-type: Search for Slot instances.",
-                "description": "See also [FHIR Search](http://www.hl7.org/fhir/search.html).\n\nGet slots",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for Slot instances.\n\nGet slots",
                 "parameters": [
                     {
                         "name": "status",
@@ -386,13 +381,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Slot"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0,\n  \"link\": [ {\n    \"relation\": \"self\",\n    \"url\": \"http://example.org/FHIR/R4/Slot?parameterExample=123&page=1\"\n  }, {\n    \"relation\": \"next\",\n    \"url\": \"http://example.org/FHIR/R4/Slot?parameterExample=123&page=2\"\n  } ],\n  \"entry\": [ {\n    \"fullUrl\": \"http://example.org/FHIR/R4/Slot/null\"\n  } ]\n}"
+                                "example": "{\"resourceType\":\"Slot\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Slot"
                                 },
-                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n   <link>\n      <relation value=\"self\"></relation>\n      <url value=\"http://example.org/FHIR/R4/Slot?parameterExample=123&amp;page=1\"></url>\n   </link>\n   <link>\n      <relation value=\"next\"></relation>\n      <url value=\"http://example.org/FHIR/R4/Slot?parameterExample=123&amp;page=2\"></url>\n   </link>\n   <entry>\n      <fullUrl value=\"http://example.org/FHIR/R4/Slot/null\"></fullUrl>\n   </entry>\n</Bundle>"
+                                "example": "{\"resourceType\":\"Slot\"}"
                             }
                         }
                     }
@@ -404,8 +399,8 @@
                 "tags": [
                     "Appointment"
                 ],
-                "summary": "read-instance: Read Appointment instance.",
-                "description": "See also [FHIR read](http://www.hl7.org/fhir/http.html#read)\n\nGet a specific booking",
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) Appointment instance.\n\nGet a specific booking",
                 "parameters": [
                     {
                         "name": "id",
@@ -474,13 +469,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Appointment"
                                 },
-                                "example": "{\n  \"resourceType\": \"Appointment\"\n}"
+                                "example": "{\"resourceType\":\"Appointment\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Appointment"
                                 },
-                                "example": "<Appointment xmlns=\"http://hl7.org/fhir\"></Appointment>"
+                                "example": "{\"resourceType\":\"Appointment\"}"
                             }
                         }
                     }
@@ -492,8 +487,8 @@
                 "tags": [
                     "Appointment"
                 ],
-                "summary": "search-type: Search for Appointment instances.",
-                "description": "See also [FHIR Search](http://www.hl7.org/fhir/search.html).\n\nGet Bookings for a patient",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for Appointment instances.\n\nGet Bookings for a patient",
                 "parameters": [
                     {
                         "name": "patientIdentifier",
@@ -561,13 +556,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Appointment"
                                 },
-                                "example": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"searchset\",\n  \"total\": 0,\n  \"link\": [ {\n    \"relation\": \"self\",\n    \"url\": \"http://example.org/FHIR/R4/Appointment?parameterExample=123&page=1\"\n  }, {\n    \"relation\": \"next\",\n    \"url\": \"http://example.org/FHIR/R4/Appointment?parameterExample=123&page=2\"\n  } ],\n  \"entry\": [ {\n    \"fullUrl\": \"http://example.org/FHIR/R4/Appointment/null\"\n  } ]\n}"
+                                "example": "{\"resourceType\":\"Appointment\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Appointment"
                                 },
-                                "example": "<Bundle xmlns=\"http://hl7.org/fhir\">\n   <type value=\"searchset\"></type>\n   <total value=\"0\"></total>\n   <link>\n      <relation value=\"self\"></relation>\n      <url value=\"http://example.org/FHIR/R4/Appointment?parameterExample=123&amp;page=1\"></url>\n   </link>\n   <link>\n      <relation value=\"next\"></relation>\n      <url value=\"http://example.org/FHIR/R4/Appointment?parameterExample=123&amp;page=2\"></url>\n   </link>\n   <entry>\n      <fullUrl value=\"http://example.org/FHIR/R4/Appointment/null\"></fullUrl>\n   </entry>\n</Bundle>"
+                                "example": "{\"resourceType\":\"Appointment\"}"
                             }
                         }
                     }
@@ -579,8 +574,8 @@
                 "tags": [
                     "MessageDefinition"
                 ],
-                "summary": "read-instance: Read MessageDefinition instance.",
-                "description": "See also [FHIR read](http://www.hl7.org/fhir/http.html#read)\n\nFind Message Definition",
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) MessageDefinition instance.\n\nFind Message Definition",
                 "parameters": [
                     {
                         "name": "id",
@@ -649,13 +644,13 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageDefinition"
                                 },
-                                "example": "{\n  \"resourceType\": \"MessageDefinition\"\n}"
+                                "example": "{\"resourceType\":\"MessageDefinition\"}"
                             },
                             "application/fhir+xml": {
                                 "schema": {
                                     "$ref": "#/components/schemas/MessageDefinition"
                                 },
-                                "example": "<MessageDefinition xmlns=\"http://hl7.org/fhir\"></MessageDefinition>"
+                                "example": "{\"resourceType\":\"MessageDefinition\"}"
                             }
                         }
                     }
@@ -680,6 +675,57 @@
                     "description": "Parameters",
                     "url": "https://www.hl7.org/fhir/Parameters.html"
                 }
+            },
+            "Bundle-Message": {
+                "title": "Bundle-Message",
+                "required": [
+                    "resourceType",
+                    "type",
+                    "entry"
+                ],
+                "type": "object",
+                "properties": {
+                    "resourceType": {
+                        "type": "string",
+                        "description": "Indicates the purpose of this bundle - how it is intended to be used. Fixed value: message",
+                        "example": "Bundle"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Indicates the purpose of this bundle - how it is intended to be used. Fixed value: message",
+                        "example": "message"
+                    },
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "required": [
+                                "fullUrl",
+                                "resource"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "fullUrl": {
+                                    "maxProperties": 1,
+                                    "minProperties": 1,
+                                    "type": "string",
+                                    "description": "URI for resource (Absolute URL server address or URI for UUID/OID)",
+                                    "example": "urn:uuid:3599c0e9-9292-413e-9270-9a1ef1ead99c"
+                                },
+                                "resource": {
+                                    "maxProperties": 1,
+                                    "minProperties": 1,
+                                    "type": "object",
+                                    "description": "A resource in the bundle. First entry MUST be a FHIR MessageHeader"
+                                }
+                            },
+                            "description": "A container for a collection of resources"
+                        }
+                    }
+                },
+                "enum": [
+                    "Bundle",
+                    "message"
+                ]
             },
             "ServiceRequest": {
                 "type": "object",
