@@ -71,6 +71,34 @@
                                 }
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -156,7 +184,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -243,6 +299,34 @@
                                 "examples": {
                                     "example": {
                                         "value": "{\"resourceType\":\"ServiceRequest\",\"id\":\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\"meta\":{\"versionId\":\"5\"},\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-ERS-Referral\",\"extension\":[{\"url\":\"sourceSystem\",\"valueCode\":\"ers\"},{\"url\":\"authorisedToRefer\",\"valueCode\":\"authorised\"}]}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}],\"status\":\"active\",\"intent\":\"order\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\"code\":\"HEART_FAILURE\"}],\"text\":\"SHOULD BE SAYING ADVICE AND GUIDANCE HERE??\"},\"subject\":{\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-11T16:40:00+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/sds-user-id\",\"value\":\"921600556514\"}},\"supportingInfo\":[{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\",\"type\":\"DocumentReference\"},{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\",\"type\":\"QuestionnaireResponse\"}],\"note\":[{\"text\":\"Please advise me on this patient who ...(information about patient)\"}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -340,7 +424,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -445,6 +557,34 @@
                                 }
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -538,7 +678,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -625,6 +793,34 @@
                                 "examples": {
                                     "example": {
                                         "value": "{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"2\"},\"identifier\":[{\"system\":\"http://fhir.nhs.net/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/sds-user-id\",\"value\":\"0987654321\"}},\"note\":[{\"text\":\"Here's some advice\"}],\"output\":[{\"type\":{\"text\":\"Something to represent attachment\"},\"valueReference\":{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\",\"type\":\"DocumentReference\"}}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -739,7 +935,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -844,6 +1068,34 @@
                                 }
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -927,7 +1179,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -1032,6 +1312,34 @@
                                 "example": "{\"resourceType\":\"Slot\"}"
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1115,7 +1423,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -1202,6 +1538,34 @@
                                 "examples": {
                                     "example": {
                                         "value": "{\"resourceType\":\"QuestionnaireResponse\",\"id\":\"d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\",\"basedOn\":[{\"reference\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\"}],\"questionnaire\":\"https://fhir.nhs.uk/Questionnaire/ERS-ShortList\",\"status\":\"completed\",\"subject\":{\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/nhs-number\",\"value\":\"9912003888\"},\"display\":\"A Patient\"},\"authored\":\"2022-01-11T16:40:00+00:00\",\"source\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.net/Id/sds-user-id\",\"value\":\"921600556514\"}},\"item\":[{\"linkId\":\"searchCriteria\",\"answer\":[{\"valueString\":\"HealthcareService?supportedSpecialty=general-medicine&supportedPriority=routine\"}]},{\"linkId\":\"services\",\"answer\":[{\"valueReference\":{\"reference\":\"HealthcareService/76de72bc-f001-49fa-84c6-af15a4fdb72c\"}},{\"valueReference\":{\"reference\":\"HealthcareService/54b0506d-49af-4245-9d40-d7d64902055e\"}}]}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -1300,6 +1664,34 @@
                                 }
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1382,6 +1774,34 @@
                                 "examples": {
                                     "example": {
                                         "value": "{\"resourceType\":\"HealthcareService\",\"id\":\"76de72bc-f001-49fa-84c6-af15a4fdb72c\",\"identifier\":[{\"use\":\"official\",\"system\":\"http://fhir.nhs.net/Id/ers-service\",\"value\":\"11021\"}],\"active\":true,\"providedBy\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"RR8\"}},\"specialty\":[{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-Specialty\",\"code\":\"RESPIRATORY_MEDICINE\"},{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDataModelAndDictionary-clinical-specialty\",\"code\":\"340\",\"display\":\"Respiratory Medicine\"}]}],\"location\":[{\"reference\":\"urn:uuid:8a5d7d67-64fb-44ec-9802-2dc214bb3dcb\"}],\"name\":\"ELMET ClNICAL CENTRE\",\"telecom\":[{\"system\":\"phone\",\"value\":\"0113 922 4984\",\"use\":\"work\"},{\"system\":\"email\",\"value\":\"directaddress@example.com\",\"use\":\"work\"}],\"serviceProvisionCode\":[{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\"code\":\"RESPIRATORY_SLEEP_APNOEA_SCREENING\"}]},{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\"code\":\"RESPIRATORY_2\"}]},{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\"code\":\"RESPIRATORY_SPIROMETRY_BRONCHODILATOR\"}]}],\"availableTime\":[{\"daysOfWeek\":[\"mon\",\"tue\",\"wed\",\"thu\"],\"availableStartTime\":\"08:30:00\",\"availableEndTime\":\"05:30:00\"},{\"daysOfWeek\":[\"sat\",\"fri\"],\"availableStartTime\":\"09:30:00\",\"availableEndTime\":\"04:30:00\"}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -1472,6 +1892,34 @@
                                 }
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1555,7 +2003,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"OperationOutcome\"}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
                                     }
                                 }
                             }
@@ -1642,6 +2118,34 @@
                                 "example": "{\"resourceType\":\"Binary\"}"
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1719,7 +2223,35 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/OperationOutcome"
                                 },
-                                "example": "{\"resourceType\":\"OperationOutcome\"}"
+                                "example": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -1737,20 +2269,20 @@
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
                 }
             },
-            "Appointment": {
-                "type": "object",
-                "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
-                "externalDocs": {
-                    "description": "Appointment",
-                    "url": "https://www.hl7.org/fhir/Appointment.html"
-                }
-            },
             "OperationOutcome": {
                 "type": "object",
                 "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
+                }
+            },
+            "Appointment": {
+                "type": "object",
+                "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "externalDocs": {
+                    "description": "Appointment",
+                    "url": "https://www.hl7.org/fhir/Appointment.html"
                 }
             },
             "ServiceRequest": {
