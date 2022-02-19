@@ -18,31 +18,31 @@
         },
         {
             "name": "AllergyIntolerance",
-            "description": "Resource (schema): [FHIR AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html)\n\n Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.\n\n To record a clinical assessment of a propensity, or potential risk to an individual, of an adverse reaction upon future exposure to the specified substance, or class of substance.\n\n Profile (constraints): [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance)\n\n Defines the UK Core constraints and extensions on the AllergyIntolerance resource for the minimal set of data to query and retrieve allergy information.\n\n This profile allows a record of a clinical assessment of an allergy or intolerance; a propensity, or a potential risk to an individual, to have an adverse reaction on future exposure to the specified substance, or class of substance. \r\nWhere a propensity is identified, to record information or evidence about a reaction event that is characterised by any harmful or undesirable physiological response that is specific to the individual and triggered by exposure of an individual to the identified substance or class of substance. \r\nSubstances include but are not limited to a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings."
+            "description": "\n\n Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.\n\n To record a clinical assessment of a propensity, or potential risk to an individual, of an adverse reaction upon future exposure to the specified substance, or class of substance.\n\n Profile (constraints): [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance)\n\n Defines the UK Core constraints and extensions on the AllergyIntolerance resource for the minimal set of data to query and retrieve allergy information.\n\n This profile allows a record of a clinical assessment of an allergy or intolerance; a propensity, or a potential risk to an individual, to have an adverse reaction on future exposure to the specified substance, or class of substance. \r\nWhere a propensity is identified, to record information or evidence about a reaction event that is characterised by any harmful or undesirable physiological response that is specific to the individual and triggered by exposure of an individual to the identified substance or class of substance. \r\nSubstances include but are not limited to a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings."
         },
         {
             "name": "Patient",
-            "description": "Resource (schema): [FHIR Patient](https://www.hl7.org/fhir/Patient.html)\n\n Demographics and other administrative information about an individual or animal receiving care or other health-related services.\n\n Tracking patient is the center of the healthcare process.\n\n Profile (constraints): [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient)\n\n Defines the UK Core constraints and extensions on the Patient resource for the minimal set of data to query and retrieve an individual’s demographic information.\n\n This profile allows exchange of demographics and other administrative information about an individual receiving care or other health-related services."
+            "description": "\n\n Demographics and other administrative information about an individual or animal receiving care or other health-related services.\n\n Tracking patient is the center of the healthcare process.\n\n Profile (constraints): [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient)\n\n Defines the UK Core constraints and extensions on the Patient resource for the minimal set of data to query and retrieve an individual’s demographic information.\n\n This profile allows exchange of demographics and other administrative information about an individual receiving care or other health-related services."
         },
         {
             "name": "RelatedPerson",
-            "description": "Resource (schema): [FHIR RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html)\n\n Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.\n\n Need to track persons related to the patient or the healthcare process.\n\n Profile (constraints): [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson)\n\n Defines the UK Core constraints and extensions on the RelatedPerson resource for the minimal set of data to query and retrieve related person information.\n\n This profile allows exchange of information about a person that is involved in the care for an individual, but who is not the target of healthcare, nor has a formal responsibility in the care process."
+            "description": "\n\n Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.\n\n Need to track persons related to the patient or the healthcare process.\n\n Profile (constraints): [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson)\n\n Defines the UK Core constraints and extensions on the RelatedPerson resource for the minimal set of data to query and retrieve related person information.\n\n This profile allows exchange of information about a person that is involved in the care for an individual, but who is not the target of healthcare, nor has a formal responsibility in the care process."
         },
         {
             "name": "Organization",
-            "description": "Resource (schema): [FHIR Organization](https://www.hl7.org/fhir/Organization.html)\n\n Profile (constraints): [UKCore-Organizationt](https://simplifier.net/guide/nhsdigital/home)"
+            "description": "\n\n Profile (constraints): [UKCore-Organizationt](https://simplifier.net/guide/nhsdigital/home)"
         },
         {
             "name": "Practitioner",
-            "description": "Resource (schema): [FHIR Practitioner](https://www.hl7.org/fhir/Practitioner.html)\n\n A person who is directly or indirectly involved in the provisioning of healthcare.\n\n Need to track doctors, staff, locums etc. for both healthcare practitioners, funders, etc.\n\n Profile (constraints): [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner)\n\n Defines the UK Core constraints and extensions on the Practitioner resource for the minimal set of data to query and retrieve practitioner information.\n\n This profile allows exchange of information about all individuals who are engaged in the healthcare process and healthcare-related services as part of their formal responsibilities and this profile is used for attribution of activities and responsibilities to these individuals."
+            "description": "\n\n A person who is directly or indirectly involved in the provisioning of healthcare.\n\n Need to track doctors, staff, locums etc. for both healthcare practitioners, funders, etc.\n\n Profile (constraints): [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner)\n\n Defines the UK Core constraints and extensions on the Practitioner resource for the minimal set of data to query and retrieve practitioner information.\n\n This profile allows exchange of information about all individuals who are engaged in the healthcare process and healthcare-related services as part of their formal responsibilities and this profile is used for attribution of activities and responsibilities to these individuals."
         },
         {
             "name": "PractitionerRole",
-            "description": "Resource (schema): [FHIR PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html)\n\n A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.\n\n Need to track services that a healthcare provider is able to provide at an organization's location, and the services that they can perform there.\n\n Profile (constraints): [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole)\n\n Defines the UK Core constraints and extensions on the PractitionerRole resource for the minimal set of data to query and retrieve practitioner role information.\n\n This profile allows exchange of a specific set of roles, specialties and services that a practitioner may perform at an organisation for a period of time."
+            "description": "\n\n A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.\n\n Need to track services that a healthcare provider is able to provide at an organization's location, and the services that they can perform there.\n\n Profile (constraints): [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole)\n\n Defines the UK Core constraints and extensions on the PractitionerRole resource for the minimal set of data to query and retrieve practitioner role information.\n\n This profile allows exchange of a specific set of roles, specialties and services that a practitioner may perform at an organisation for a period of time."
         },
         {
             "name": "Encounter",
-            "description": "Resource (schema): [FHIR Encounter](https://www.hl7.org/fhir/Encounter.html)\n\n An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.\n\n Profile (constraints): [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter)\n\n Defines the UK Core constraints and extensions on the Encounter resource for the minimal set of data to query and retrieve encounter information.\n\n This profile allows exchange of information about an interaction between an individual and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of an individual."
+            "description": "\n\n An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.\n\n Profile (constraints): [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter)\n\n Defines the UK Core constraints and extensions on the Encounter resource for the minimal set of data to query and retrieve encounter information.\n\n This profile allows exchange of information about an interaction between an individual and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of an individual."
         }
     ],
     "paths": {
@@ -113,8 +113,9 @@
                         "description": "My allergies  [AllergyIntolerance](allergyintolerance.html): Who the sensitivity is for<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  AllergyIntolerance.patient .identifier &#124; AllergyIntolerance.patient .where(resolve() is Resource).identifier | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
-                            "example": "[system][code]"
+                            "type": "string",
+                            "format": "reference",
+                            "example": "[type]/[id] or [id] or [uri]"
                         }
                     },
                     {
@@ -125,6 +126,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -136,6 +138,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -148,6 +151,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -235,6 +239,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -246,6 +251,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -258,6 +264,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -331,8 +338,9 @@
                         "description": "My allergies Multiple Resources: <br/><br/>* [AllergyIntolerance](allergyintolerance.html): Who the sensitivity is for<br/>* [CarePlan](careplan.html): Who the care plan is for<br/>* [CareTeam](careteam.html): Who care team is for<br/>* [ClinicalImpression](clinicalimpression.html): Patient or group assessed<br/>* [Composition](composition.html): Who and/or what the composition is about<br/>* [Condition](condition.html): Who has the condition?<br/>* [Consent](consent.html): Who the consent applies to<br/>* [DetectedIssue](detectedissue.html): Associated patient<br/>* [DeviceRequest](devicerequest.html): Individual the service is ordered for<br/>* [DeviceUseStatement](deviceusestatement.html): Search by subject - a patient<br/>* [DiagnosticReport](diagnosticreport.html): The subject of the report if a patient<br/>* [DocumentManifest](documentmanifest.html): The subject of the set of documents<br/>* [DocumentReference](documentreference.html): Who/what is the subject of the document<br/>* [Encounter](encounter.html): The patient or group present at the encounter<br/>* [EpisodeOfCare](episodeofcare.html): The patient who is the focus of this episode of care<br/>* [FamilyMemberHistory](familymemberhistory.html): The identity of a subject to list family member history items for<br/>* [Flag](flag.html): The identity of a subject to list flags for<br/>* [Goal](goal.html): Who this goal is intended for<br/>* [ImagingStudy](imagingstudy.html): Who the study is about<br/>* [Immunization](immunization.html): The patient for the vaccination record<br/>* [List](list.html): If all resources have the same subject<br/>* [MedicationAdministration](medicationadministration.html): The identity of a patient to list administrations  for<br/>* [MedicationDispense](medicationdispense.html): The identity of a patient to list dispenses  for<br/>* [MedicationRequest](medicationrequest.html): Returns prescriptions for a specific patient<br/>* [MedicationStatement](medicationstatement.html): Returns statements for a specific patient.<br/>* [NutritionOrder](nutritionorder.html): The identity of the person who requires the diet, formula or nutritional supplement<br/>* [Observation](observation.html): The subject that the observation is about (if patient)<br/>* [Procedure](procedure.html): Search by subject - a patient<br/>* [RiskAssessment](riskassessment.html): Who/what does assessment apply to?<br/>* [ServiceRequest](servicerequest.html): Search by subject - a patient<br/>* [SupplyDelivery](supplydelivery.html): Patient for whom the item is supplied<br/>* [VisionPrescription](visionprescription.html): The identity of a patient to list dispenses for\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  AllergyIntolerance.patient &#124; CarePlan.subject.where(resolve() is Patient) &#124; CareTeam.subject.where(resolve() is Patient) &#124; ClinicalImpression.subject.where(resolve() is Patient) &#124; Composition.subject.where(resolve() is Patient) &#124; Condition.subject.where(resolve() is Patient) &#124; Consent.patient &#124; DetectedIssue.patient &#124; DeviceRequest.subject.where(resolve() is Patient) &#124; DeviceUseStatement.subject &#124; DiagnosticReport.subject.where(resolve() is Patient) &#124; DocumentManifest.subject.where(resolve() is Patient) &#124; DocumentReference.subject.where(resolve() is Patient) &#124; Encounter.subject.where(resolve() is Patient) &#124; EpisodeOfCare.patient &#124; FamilyMemberHistory.patient &#124; Flag.subject.where(resolve() is Patient) &#124; Goal.subject.where(resolve() is Patient) &#124; ImagingStudy.subject.where(resolve() is Patient) &#124; Immunization.patient &#124; List.subject.where(resolve() is Patient) &#124; MedicationAdministration.subject.where(resolve() is Patient) &#124; MedicationDispense.subject.where(resolve() is Patient) &#124; MedicationRequest.subject.where(resolve() is Patient) &#124; MedicationStatement.subject.where(resolve() is Patient) &#124; NutritionOrder.patient &#124; Observation.subject.where(resolve() is Patient) &#124; Procedure.subject.where(resolve() is Patient) &#124; RiskAssessment.subject.where(resolve() is Patient) &#124; ServiceRequest.subject.where(resolve() is Patient) &#124; SupplyDelivery.patient &#124; VisionPrescription.patient.identifier &#124; AllergyIntolerance.patient &#124; CarePlan.subject.where(resolve() is Patient) &#124; CareTeam.subject.where(resolve() is Patient) &#124; ClinicalImpression.subject.where(resolve() is Patient) &#124; Composition.subject.where(resolve() is Patient) &#124; Condition.subject.where(resolve() is Patient) &#124; Consent.patient &#124; DetectedIssue.patient &#124; DeviceRequest.subject.where(resolve() is Patient) &#124; DeviceUseStatement.subject &#124; DiagnosticReport.subject.where(resolve() is Patient) &#124; DocumentManifest.subject.where(resolve() is Patient) &#124; DocumentReference.subject.where(resolve() is Patient) &#124; Encounter.subject.where(resolve() is Patient) &#124; EpisodeOfCare.patient &#124; FamilyMemberHistory.patient &#124; Flag.subject.where(resolve() is Patient) &#124; Goal.subject.where(resolve() is Patient) &#124; ImagingStudy.subject.where(resolve() is Patient) &#124; Immunization.patient &#124; List.subject.where(resolve() is Patient) &#124; MedicationAdministration.subject.where(resolve() is Patient) &#124; MedicationDispense.subject.where(resolve() is Patient) &#124; MedicationRequest.subject.where(resolve() is Patient) &#124; MedicationStatement.subject.where(resolve() is Patient) &#124; NutritionOrder.patient &#124; Observation.subject.where(resolve() is Patient) &#124; Procedure.subject.where(resolve() is Patient) &#124; RiskAssessment.subject.where(resolve() is Patient) &#124; ServiceRequest.subject.where(resolve() is Patient) &#124; SupplyDelivery.patient &#124; VisionPrescription.patient.where(resolve() is Resource).identifier | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
-                            "example": "[system][code]"
+                            "type": "string",
+                            "format": "reference",
+                            "example": "[type]/[id] or [id] or [uri]"
                         }
                     },
                     {
@@ -343,6 +351,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -354,6 +363,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -366,6 +376,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -453,6 +464,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -464,6 +476,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -476,6 +489,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -549,8 +563,9 @@
                         "description": "My allergies The patient this related person is related to\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  RelatedPerson.patient.identifier &#124; RelatedPerson.patient.where(resolve() is Resource).identifier | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
-                            "example": "[system][code]"
+                            "type": "string",
+                            "format": "reference",
+                            "example": "[type]/[id] or [id] or [uri]"
                         }
                     },
                     {
@@ -561,6 +576,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -572,6 +588,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -584,6 +601,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -671,6 +689,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -682,6 +701,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -694,6 +714,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -781,6 +802,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -792,6 +814,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -804,6 +827,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -891,6 +915,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -902,6 +927,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -914,6 +940,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1001,6 +1028,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1012,6 +1040,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1024,6 +1053,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1088,7 +1118,7 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [CapabilityStatement](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement).. HL7 FHIR Documentation [CapabilityStatement](\"https://www.hl7.org/fhir/CapabilityStatement.html\")",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
@@ -1096,7 +1126,7 @@
             },
             "OperationOutcome": {
                 "type": "object",
-                "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [OperationOutcome](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome).. HL7 FHIR Documentation [OperationOutcome](\"https://www.hl7.org/fhir/OperationOutcome.html\")",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
@@ -1104,7 +1134,7 @@
             },
             "AllergyIntolerance": {
                 "type": "object",
-                "description": "See [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) for the FHIR Profile on resource [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [AllergyIntolerance](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/AllergyIntolerance).. HL7 FHIR Documentation [AllergyIntolerance](\"https://www.hl7.org/fhir/AllergyIntolerance.html\")",
                 "externalDocs": {
                     "description": "AllergyIntolerance",
                     "url": "https://www.hl7.org/fhir/AllergyIntolerance.html"
@@ -1112,7 +1142,7 @@
             },
             "Patient": {
                 "type": "object",
-                "description": "See [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient) for the FHIR Profile on resource [Patient](https://www.hl7.org/fhir/Patient.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Patient](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Patient).. HL7 FHIR Documentation [Patient](\"https://www.hl7.org/fhir/Patient.html\")",
                 "externalDocs": {
                     "description": "Patient",
                     "url": "https://www.hl7.org/fhir/Patient.html"
@@ -1120,7 +1150,7 @@
             },
             "RelatedPerson": {
                 "type": "object",
-                "description": "See [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson) for the FHIR Profile on resource [RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [RelatedPerson](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/RelatedPerson).. HL7 FHIR Documentation [RelatedPerson](\"https://www.hl7.org/fhir/RelatedPerson.html\")",
                 "externalDocs": {
                     "description": "RelatedPerson",
                     "url": "https://www.hl7.org/fhir/RelatedPerson.html"
@@ -1128,7 +1158,7 @@
             },
             "Organization": {
                 "type": "object",
-                "description": "See [UKCore-Organizationt](https://simplifier.net/guide/nhsdigital/home) for the FHIR Profile on resource [Organization](https://www.hl7.org/fhir/Organization.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Organization](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Organization).. HL7 FHIR Documentation [Organization](\"https://www.hl7.org/fhir/Organization.html\")",
                 "externalDocs": {
                     "description": "Organization",
                     "url": "https://www.hl7.org/fhir/Organization.html"
@@ -1136,7 +1166,7 @@
             },
             "Practitioner": {
                 "type": "object",
-                "description": "See [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner) for the FHIR Profile on resource [Practitioner](https://www.hl7.org/fhir/Practitioner.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Practitioner](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Practitioner).. HL7 FHIR Documentation [Practitioner](\"https://www.hl7.org/fhir/Practitioner.html\")",
                 "externalDocs": {
                     "description": "Practitioner",
                     "url": "https://www.hl7.org/fhir/Practitioner.html"
@@ -1144,7 +1174,7 @@
             },
             "PractitionerRole": {
                 "type": "object",
-                "description": "See [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole) for the FHIR Profile on resource [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [PractitionerRole](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/PractitionerRole).. HL7 FHIR Documentation [PractitionerRole](\"https://www.hl7.org/fhir/PractitionerRole.html\")",
                 "externalDocs": {
                     "description": "PractitionerRole",
                     "url": "https://www.hl7.org/fhir/PractitionerRole.html"
@@ -1152,7 +1182,7 @@
             },
             "Encounter": {
                 "type": "object",
-                "description": "See [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter) for the FHIR Profile on resource [Encounter](https://www.hl7.org/fhir/Encounter.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Encounter](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Encounter).. HL7 FHIR Documentation [Encounter](\"https://www.hl7.org/fhir/Encounter.html\")",
                 "externalDocs": {
                     "description": "Encounter",
                     "url": "https://www.hl7.org/fhir/Encounter.html"
