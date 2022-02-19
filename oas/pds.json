@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "description": "API definition for PDS\n\n | API Documentation |\n |-----|\n  |[Personal Demographics Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
+        "description": "API definition for PDS\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
         "contact": {}
     },
     "externalDocs": {
@@ -17,12 +17,32 @@
             "description": "Server-level operations"
         },
         {
+            "name": "AllergyIntolerance",
+            "description": "\n\n Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.\n\n To record a clinical assessment of a propensity, or potential risk to an individual, of an adverse reaction upon future exposure to the specified substance, or class of substance.\n\n Profile (constraints): [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance)\n\n Defines the UK Core constraints and extensions on the AllergyIntolerance resource for the minimal set of data to query and retrieve allergy information.\n\n This profile allows a record of a clinical assessment of an allergy or intolerance; a propensity, or a potential risk to an individual, to have an adverse reaction on future exposure to the specified substance, or class of substance. \r\nWhere a propensity is identified, to record information or evidence about a reaction event that is characterised by any harmful or undesirable physiological response that is specific to the individual and triggered by exposure of an individual to the identified substance or class of substance. \r\nSubstances include but are not limited to a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings."
+        },
+        {
             "name": "Patient",
-            "description": "Resource (schema): [FHIR Patient](https://www.hl7.org/fhir/Patient.html)\n\n Demographics and other administrative information about an individual or animal receiving care or other health-related services.\n\n Tracking patient is the center of the healthcare process.\n\n Profile (constraints): [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md)\n\n ### identifier\r\n\r\nAt least one patient identifier, **MUST** be provided. Where a traced NHS number is available for a patient this MUST be included. \r\n\r\nLocal identiers such as MRN **MUST** include a *system* which identifies NHS provider/assigning authority."
+            "description": "\n\n Demographics and other administrative information about an individual or animal receiving care or other health-related services.\n\n Tracking patient is the center of the healthcare process.\n\n Profile (constraints): [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient)\n\n Defines the UK Core constraints and extensions on the Patient resource for the minimal set of data to query and retrieve an individual’s demographic information.\n\n This profile allows exchange of demographics and other administrative information about an individual receiving care or other health-related services."
         },
         {
             "name": "RelatedPerson",
-            "description": "Resource (schema): [FHIR RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html)\n\n Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.\n\n Need to track persons related to the patient or the healthcare process.\n\n Profile (constraints): [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson)\n\n Defines the UK Core constraints and extensions on the RelatedPerson resource for the minimal set of data to query and retrieve related person information.\n\n This profile allows exchange of information about a person that is involved in the care for an individual, but who is not the target of healthcare, nor has a formal responsibility in the care process."
+            "description": "\n\n Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.\n\n Need to track persons related to the patient or the healthcare process.\n\n Profile (constraints): [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson)\n\n Defines the UK Core constraints and extensions on the RelatedPerson resource for the minimal set of data to query and retrieve related person information.\n\n This profile allows exchange of information about a person that is involved in the care for an individual, but who is not the target of healthcare, nor has a formal responsibility in the care process."
+        },
+        {
+            "name": "Organization",
+            "description": "\n\n Profile (constraints): [UKCore-Organizationt](https://simplifier.net/guide/nhsdigital/home)"
+        },
+        {
+            "name": "Practitioner",
+            "description": "\n\n A person who is directly or indirectly involved in the provisioning of healthcare.\n\n Need to track doctors, staff, locums etc. for both healthcare practitioners, funders, etc.\n\n Profile (constraints): [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner)\n\n Defines the UK Core constraints and extensions on the Practitioner resource for the minimal set of data to query and retrieve practitioner information.\n\n This profile allows exchange of information about all individuals who are engaged in the healthcare process and healthcare-related services as part of their formal responsibilities and this profile is used for attribution of activities and responsibilities to these individuals."
+        },
+        {
+            "name": "PractitionerRole",
+            "description": "\n\n A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.\n\n Need to track services that a healthcare provider is able to provide at an organization's location, and the services that they can perform there.\n\n Profile (constraints): [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole)\n\n Defines the UK Core constraints and extensions on the PractitionerRole resource for the minimal set of data to query and retrieve practitioner role information.\n\n This profile allows exchange of a specific set of roles, specialties and services that a practitioner may perform at an organisation for a period of time."
+        },
+        {
+            "name": "Encounter",
+            "description": "\n\n An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.\n\n Profile (constraints): [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter)\n\n Defines the UK Core constraints and extensions on the Encounter resource for the minimal set of data to query and retrieve encounter information.\n\n This profile allows exchange of information about an interaction between an individual and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of an individual."
         }
     ],
     "paths": {
@@ -42,7 +62,147 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"7a181809-d8c1-4f00-869d-89b025cf1a99\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir\"},{\"url\":\"description\",\"valueString\":\"Personal Demographics Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-pds\",\"version\":\"3.0.0\",\"name\":\"APIMPDS\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API definition for PDS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"Patient\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\",\"documentation\":\"Person demographics Service\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Patient/6aa13139-201b-4a54-9608-b49331a46d90\"}}]}]}],\"code\":\"read\"},{\"code\":\"patch\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Patient/6aa13139-201b-4a54-9608-b49331a46d90\"}}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"family\",\"type\":\"string\",\"documentation\":\"The patient's family name (surname).\"},{\"name\":\"given\",\"type\":\"string\",\"documentation\":\"A portion of the given name of the patient\"},{\"name\":\"gender\",\"type\":\"token\",\"documentation\":\"Gender of the patient\"},{\"name\":\"birthdate\",\"type\":\"date\",\"documentation\":\"The patient's date of birth\"},{\"name\":\"death-date\",\"type\":\"date\",\"documentation\":\"The date of death has been provided and satisfies this search value\"},{\"name\":\"address-postcode\",\"type\":\"string\",\"documentation\":\"A postalCode specified in an address\"},{\"name\":\"address-postalcode\",\"type\":\"string\",\"documentation\":\"Correction to actual PDS API. A postalCode specified in an address\"},{\"name\":\"general-practitioner:identifier\",\"type\":\"token\",\"documentation\":\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"},{\"name\":\"general-practitioner\",\"type\":\"reference\",\"documentation\":\"Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record\"}]},{\"type\":\"RelatedPerson\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson\",\"documentation\":\"Get a Patients related people\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"RelatedPerson/507B7621\"}}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient\",\"type\":\"reference\",\"documentation\":\"Patients NHS Number\"}]}]}]}"
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"58225e8b-6abe-4f73-8bbb-c1a633f51712\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-pfs\",\"version\":\"3.0.0\",\"name\":\"APIMPFS\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API definition for PDS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"AllergyIntolerance\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-AllergyIntolerance\",\"interaction\":[{\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"My allergies\"}]},{\"type\":\"Patient\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient\",\"interaction\":[{\"code\":\"read\"},{\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"identifier\",\"type\":\"token\"}]},{\"type\":\"RelatedPerson\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson\",\"interaction\":[{\"code\":\"read\"},{\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"My allergies\"}]},{\"type\":\"Organization\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organizationt\",\"interaction\":[{\"code\":\"read\"}]},{\"type\":\"Practitioner\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Practitioner\",\"interaction\":[{\"code\":\"read\"}]},{\"type\":\"PractitionerRole\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole\",\"interaction\":[{\"code\":\"read\"}]},{\"type\":\"Encounter\",\"profile\":\"https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter\",\"interaction\":[{\"code\":\"read\"}]}]}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/AllergyIntolerance": {
+            "get": {
+                "tags": [
+                    "AllergyIntolerance"
+                ],
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for AllergyIntolerance instances.",
+                "parameters": [
+                    {
+                        "name": "patient:identifier",
+                        "in": "query",
+                        "description": "My allergies\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  AllergyIntolerance.patient.identifier &#124; AllergyIntolerance.patient.where(resolve() is Resource).identifier | \n",
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system][code]"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AllergyIntolerance"
+                                },
+                                "example": "{\"resourceType\":\"AllergyIntolerance\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
                                     }
                                 }
                             }
@@ -79,6 +239,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -90,6 +251,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -102,6 +264,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -126,22 +289,160 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/Patient"
                                 },
+                                "example": "{\"resourceType\":\"Patient\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"Patient\",\"id\":\"6aa13139-201b-4a54-9608-b49331a46d90\",\"meta\":{\"versionId\":\"2\",\"security\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\"code\":\"U\",\"display\":\"unrestricted\"}]},\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y23456\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y34567\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\"extension\":[{\"url\":\"deathNotificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\"version\":\"1.0.0\",\"code\":\"2\",\"display\":\"Formal - death notice received from Registrar of Deaths\"}]}},{\"url\":\"systemEffectiveDate\",\"valueDateTime\":\"2010-10-22T00:00:00+00:00\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\"valueAddress\":{\"city\":\"Manchester\",\"district\":\"Greater Manchester\",\"country\":\"GBR\"}}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9000000009\"}],\"name\":[{\"id\":\"123\",\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"id\":\"789\",\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"OC789\",\"system\":\"other\",\"_system\":{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\"code\":\"textphone\",\"display\":\"Minicom (Textphone)\"}}]},\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"gender\":\"female\",\"birthDate\":\"2010-10-22\",\"deceasedDateTime\":\"2010-10-22T00:00:00+00:00\",\"address\":[{\"id\":\"456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"T456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"temp\",\"text\":\"Student Accommodation\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"multipleBirthInteger\":1,\"contact\":[{\"id\":\"C123\",\"relationship\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v2-0131\",\"code\":\"C\",\"display\":\"Emergency Contact\"}]}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\"}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"generalPractitioner\":[{\"id\":\"254406A3\",\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
                                     }
                                 }
                             }
                         }
                     }
                 }
-            },
-            "patch": {
+            }
+        },
+        "/Patient": {
+            "get": {
                 "tags": [
                     "Patient"
                 ],
-                "summary": "patch",
-                "description": "[patch](http://www.hl7.org/fhir/http.html#patch) a resource instance of type Patient by ID.",
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for Patient instances.",
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "in": "query",
+                        "description": "null\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.identifier | \n",
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system][code]"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Patient"
+                                },
+                                "example": "{\"resourceType\":\"Patient\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/RelatedPerson/{id}": {
+            "get": {
+                "tags": [
+                    "RelatedPerson"
+                ],
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) RelatedPerson instance.",
                 "parameters": [
                     {
                         "name": "id",
@@ -163,6 +464,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -174,6 +476,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -186,266 +489,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json-patch+json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/JSONPATCH"
-                            },
-                            "example": "{\"patches\":[{\"op\":\"add\",\"path\":\"/foo\",\"value\":[\"bar\"]},{\"op\":\"add\",\"path\":\"/foo2\",\"value\":[\"barbar\"]}]}"
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "example": "{\"resourceType\":\"OperationOutcome\"}"
-                            },
-                            "application/fhir+xml": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "example": "{\"resourceType\":\"OperationOutcome\"}"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Patient": {
-            "get": {
-                "tags": [
-                    "Patient"
-                ],
-                "summary": "search-type",
-                "description": "[search](http://www.hl7.org/fhir/search.html) for Patient instances.",
-                "parameters": [
-                    {
-                        "name": "family",
-                        "in": "query",
-                        "description": "The patient's family name (surname).  [Patient](patient.html): A portion of the family name of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.family  | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "LS15"
-                        }
-                    },
-                    {
-                        "name": "given",
-                        "in": "query",
-                        "description": "A portion of the given name of the patient  [Patient](patient.html): A portion of the given name of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.name.given  | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "LS15"
-                        }
-                    },
-                    {
-                        "name": "gender",
-                        "in": "query",
-                        "description": "Gender of the patient  [Patient](patient.html): Gender of the patient<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.gender  | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "birthdate",
-                        "in": "query",
-                        "description": "The patient's date of birth  [Patient](patient.html): The patient's date of birth<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Patient.birthDate  | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "eq2013-01-14"
-                        }
-                    },
-                    {
-                        "name": "death-date",
-                        "in": "query",
-                        "description": "The date of death has been provided and satisfies this search value The date of death has been provided and satisfies this search value\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  (Patient.deceased as dateTime) | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "eq2013-01-14"
-                        }
-                    },
-                    {
-                        "name": "address-postcode",
-                        "in": "query",
-                        "description": "A postalCode specified in an address\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "LS15"
-                        }
-                    },
-                    {
-                        "name": "address-postalcode",
-                        "in": "query",
-                        "description": "Correction to actual PDS API. A postalCode specified in an address  [Patient](patient.html): A postalCode specified in an address<br/>\n\n | Type |  Expression | \n |--------|--------| \n | [string ](https://www.hl7.org/fhir/search.html#string)|  Patient.address.postalCode  | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "LS15"
-                        }
-                    },
-                    {
-                        "name": "general-practitioner:identifier",
-                        "in": "query",
-                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record Patient's nominated general practitioner, not the organization that manages the record\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.generalPractitioner.identifier &#124; Patient.generalPractitioner.where(resolve() is Resource).identifier | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "general-practitioner",
-                        "in": "query",
-                        "description": "Correction to PDS API. Patient's nominated general practitioner, not the organization that manages the record Patient's nominated general practitioner, not the organization that manages the record\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Patient.generalPractitioner | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Patient"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\"resourceType\":\"Bundle\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Patient?parameterExample=123&page=1\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/Patient?parameterExample=123&page=2\"}],\"entry\":[{\"fullUrl\":\"http://example.org/FHIR/R4/Patient/Patient/6aa13139-201b-4a54-9608-b49331a46d90/_history/2\",\"resource\":{\"resourceType\":\"Patient\",\"id\":\"6aa13139-201b-4a54-9608-b49331a46d90\",\"meta\":{\"versionId\":\"2\",\"security\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\"code\":\"U\",\"display\":\"unrestricted\"}]},\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y23456\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y34567\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\"extension\":[{\"url\":\"deathNotificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\"version\":\"1.0.0\",\"code\":\"2\",\"display\":\"Formal - death notice received from Registrar of Deaths\"}]}},{\"url\":\"systemEffectiveDate\",\"valueDateTime\":\"2010-10-22T00:00:00+00:00\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\"valueAddress\":{\"city\":\"Manchester\",\"district\":\"Greater Manchester\",\"country\":\"GBR\"}}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9000000009\"}],\"name\":[{\"id\":\"123\",\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"id\":\"789\",\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"OC789\",\"system\":\"other\",\"_system\":{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\"code\":\"textphone\",\"display\":\"Minicom (Textphone)\"}}]},\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"gender\":\"female\",\"birthDate\":\"2010-10-22\",\"deceasedDateTime\":\"2010-10-22T00:00:00+00:00\",\"address\":[{\"id\":\"456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}},{\"id\":\"T456\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"temp\",\"text\":\"Student Accommodation\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"multipleBirthInteger\":1,\"contact\":[{\"id\":\"C123\",\"relationship\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v2-0131\",\"code\":\"C\",\"display\":\"Emergency Contact\"}]}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\"}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"generalPractitioner\":[{\"id\":\"254406A3\",\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}}]}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/RelatedPerson": {
-            "get": {
-                "tags": [
-                    "RelatedPerson"
-                ],
-                "summary": "search-type",
-                "description": "[search](http://www.hl7.org/fhir/search.html) for RelatedPerson instances.",
-                "parameters": [
-                    {
-                        "name": "patient",
-                        "in": "query",
-                        "description": "Patients NHS Number The patient this related person is related to\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  RelatedPerson.patient | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -470,9 +514,597 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/RelatedPerson"
                                 },
+                                "example": "{\"resourceType\":\"RelatedPerson\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"Bundle\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/RelatedPerson?parameterExample=123&page=1\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/RelatedPerson?parameterExample=123&page=2\"}],\"entry\":[{\"fullUrl\":\"http://example.org/FHIR/R4/RelatedPerson/RelatedPerson/507B7621\",\"resource\":{\"resourceType\":\"RelatedPerson\",\"id\":\"507B7621\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-CopyCorrespondenceIndicator\",\"valueBoolean\":true},{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-UKCore-ContactRank\",\"valuePositiveInt\":1},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]}],\"active\":true,\"patient\":{\"reference\":\"https://api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/90000000009\",\"type\":\"Patient\",\"identifier\":{\"system\":\"https://api.service.nhs.uk/personal-demographics/FHIR/R4/Patient\",\"value\":\"90000000009\"}},\"relationship\":[{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/UKCore-AdditionalRelatedPersonRole\",\"code\":\"Guardian\",\"display\":\"Guardian of patient\"}]}],\"name\":[{\"use\":\"usual\",\"family\":\"Smith\",\"given\":[\"Jane\"],\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"address\":[{\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]}],\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}],\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}]}"
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/RelatedPerson": {
+            "get": {
+                "tags": [
+                    "RelatedPerson"
+                ],
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for RelatedPerson instances.",
+                "parameters": [
+                    {
+                        "name": "patient:identifier",
+                        "in": "query",
+                        "description": "My allergies\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  RelatedPerson.patient.identifier &#124; RelatedPerson.patient.where(resolve() is Resource).identifier | \n",
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system][code]"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RelatedPerson"
+                                },
+                                "example": "{\"resourceType\":\"RelatedPerson\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Organization/{id}": {
+            "get": {
+                "tags": [
+                    "Organization"
+                ],
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) Organization instance.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The resource ID",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organization"
+                                },
+                                "example": "{\"resourceType\":\"Organization\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Practitioner/{id}": {
+            "get": {
+                "tags": [
+                    "Practitioner"
+                ],
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) Practitioner instance.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The resource ID",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Practitioner"
+                                },
+                                "example": "{\"resourceType\":\"Practitioner\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/PractitionerRole/{id}": {
+            "get": {
+                "tags": [
+                    "PractitionerRole"
+                ],
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) PractitionerRole instance.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The resource ID",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PractitionerRole"
+                                },
+                                "example": "{\"resourceType\":\"PractitionerRole\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Encounter/{id}": {
+            "get": {
+                "tags": [
+                    "Encounter"
+                ],
+                "summary": "read",
+                "description": "[read](http://www.hl7.org/fhir/http.html#read) Encounter instance.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The resource ID",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Encounter"
+                                },
+                                "example": "{\"resourceType\":\"Encounter\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
                                     }
                                 }
                             }
@@ -486,38 +1118,74 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [CapabilityStatement](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement).. HL7 FHIR Documentation [CapabilityStatement](\"https://www.hl7.org/fhir/CapabilityStatement.html\")",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
                 }
             },
-            "Patient": {
-                "type": "object",
-                "description": "See [NHSDigital-Patient](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Patient.guide.md) for the FHIR Profile on resource [Patient](https://www.hl7.org/fhir/Patient.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
-                "externalDocs": {
-                    "description": "Patient",
-                    "url": "https://www.hl7.org/fhir/Patient.html"
-                }
-            },
-            "JSONPATCH": {
-                "type": "object",
-                "description": "See [JSON Patch](http://jsonpatch.com/)"
-            },
             "OperationOutcome": {
                 "type": "object",
-                "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [OperationOutcome](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome).. HL7 FHIR Documentation [OperationOutcome](\"https://www.hl7.org/fhir/OperationOutcome.html\")",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
                 }
             },
+            "AllergyIntolerance": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [AllergyIntolerance](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/AllergyIntolerance).. HL7 FHIR Documentation [AllergyIntolerance](\"https://www.hl7.org/fhir/AllergyIntolerance.html\")",
+                "externalDocs": {
+                    "description": "AllergyIntolerance",
+                    "url": "https://www.hl7.org/fhir/AllergyIntolerance.html"
+                }
+            },
+            "Patient": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [Patient](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Patient).. HL7 FHIR Documentation [Patient](\"https://www.hl7.org/fhir/Patient.html\")",
+                "externalDocs": {
+                    "description": "Patient",
+                    "url": "https://www.hl7.org/fhir/Patient.html"
+                }
+            },
             "RelatedPerson": {
                 "type": "object",
-                "description": "See [UKCore-RelatedPerson](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-RelatedPerson) for the FHIR Profile on resource [RelatedPerson](https://www.hl7.org/fhir/RelatedPerson.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [RelatedPerson](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/RelatedPerson).. HL7 FHIR Documentation [RelatedPerson](\"https://www.hl7.org/fhir/RelatedPerson.html\")",
                 "externalDocs": {
                     "description": "RelatedPerson",
                     "url": "https://www.hl7.org/fhir/RelatedPerson.html"
+                }
+            },
+            "Organization": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [Organization](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Organization).. HL7 FHIR Documentation [Organization](\"https://www.hl7.org/fhir/Organization.html\")",
+                "externalDocs": {
+                    "description": "Organization",
+                    "url": "https://www.hl7.org/fhir/Organization.html"
+                }
+            },
+            "Practitioner": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [Practitioner](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Practitioner).. HL7 FHIR Documentation [Practitioner](\"https://www.hl7.org/fhir/Practitioner.html\")",
+                "externalDocs": {
+                    "description": "Practitioner",
+                    "url": "https://www.hl7.org/fhir/Practitioner.html"
+                }
+            },
+            "PractitionerRole": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [PractitionerRole](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/PractitionerRole).. HL7 FHIR Documentation [PractitionerRole](\"https://www.hl7.org/fhir/PractitionerRole.html\")",
+                "externalDocs": {
+                    "description": "PractitionerRole",
+                    "url": "https://www.hl7.org/fhir/PractitionerRole.html"
+                }
+            },
+            "Encounter": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [Encounter](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Encounter).. HL7 FHIR Documentation [Encounter](\"https://www.hl7.org/fhir/Encounter.html\")",
+                "externalDocs": {
+                    "description": "Encounter",
+                    "url": "https://www.hl7.org/fhir/Encounter.html"
                 }
             }
         }
