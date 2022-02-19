@@ -18,35 +18,35 @@
         },
         {
             "name": "Appointment",
-            "description": "Resource (schema): [FHIR Appointment](https://www.hl7.org/fhir/Appointment.html)\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)"
+            "description": "\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)"
         },
         {
             "name": "ServiceRequest",
-            "description": "Resource (schema): [FHIR ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html)\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)"
+            "description": "\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)"
         },
         {
             "name": "Task",
-            "description": "Resource (schema): [FHIR Task](https://www.hl7.org/fhir/Task.html)\n\n A task to be performed.\n\n Profile (constraints): [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md)"
+            "description": "\n\n A task to be performed.\n\n Profile (constraints): [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md)"
         },
         {
             "name": "Slot",
-            "description": "Resource (schema): [FHIR Slot](https://www.hl7.org/fhir/Slot.html)\n\n A slot of time on a schedule that may be available for booking appointments.\n\n Profile (constraints): [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md)"
+            "description": "\n\n A slot of time on a schedule that may be available for booking appointments.\n\n Profile (constraints): [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md)"
         },
         {
             "name": "QuestionnaireResponse",
-            "description": "Resource (schema): [FHIR QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html)\n\n A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.\n\n To support structured, hierarchical reporting of data gathered using digital forms and other questionnaires.\n\n Profile (constraints): [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md)"
+            "description": "\n\n A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.\n\n To support structured, hierarchical reporting of data gathered using digital forms and other questionnaires.\n\n Profile (constraints): [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md)"
         },
         {
             "name": "HealthcareService",
-            "description": "Resource (schema): [FHIR HealthcareService](https://www.hl7.org/fhir/HealthcareService.html)\n\n The details of a healthcare service available at a location.\n\n Profile (constraints): [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md)"
+            "description": "\n\n The details of a healthcare service available at a location.\n\n Profile (constraints): [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md)"
         },
         {
             "name": "DocumentReference",
-            "description": "Resource (schema): [FHIR DocumentReference](https://www.hl7.org/fhir/DocumentReference.html)\n\n A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.\n\n Profile (constraints): [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md)"
+            "description": "\n\n A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.\n\n Profile (constraints): [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md)"
         },
         {
             "name": "Binary",
-            "description": "Resource (schema): [FHIR Binary](https://www.hl7.org/fhir/Binary.html)\n\n A resource that represents the data of a single raw artifact as digital content accessible in its native format.  A Binary resource can contain any content, whether text, image, pdf, zip archive, etc.\n\n There are situations where it is useful or required to handle pure binary content using the same framework as other resources.\n\n Profile (constraints): [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md)"
+            "description": "\n\n A resource that represents the data of a single raw artifact as digital content accessible in its native format.  A Binary resource can contain any content, whether text, image, pdf, zip archive, etc.\n\n There are situations where it is useful or required to handle pure binary content using the same framework as other resources.\n\n Profile (constraints): [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md)"
         }
     ],
     "paths": {
@@ -119,6 +119,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -130,6 +131,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -142,6 +144,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -249,6 +252,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -260,6 +264,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -272,6 +277,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -361,6 +367,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -372,6 +379,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -384,6 +392,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -475,7 +484,8 @@
                         "description": "The patient identifier (e.g. NHS Number) that the service request is about Search on an identifier of the Patient, usualy NHS Number\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.subject.identifier.where(resolve() is Patient).identifier &#124; ServiceRequest.subject.identifier.where(resolve() is Patient).where(resolve() is Resource).identifier | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -486,7 +496,8 @@
                         "style": "simple",
                         "schema": {
                             "type": "string",
-                            "example": "LS15"
+                            "format": "token",
+                            "example": "[system][code]"
                         }
                     },
                     {
@@ -503,6 +514,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -514,6 +526,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -526,6 +539,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -603,6 +617,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -614,6 +629,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -626,6 +642,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -743,6 +760,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -754,6 +772,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -766,6 +785,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -855,6 +875,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -866,6 +887,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -878,6 +900,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -986,7 +1009,8 @@
                         "description": "Search by task owner Search by task owner\n\n | Type |  Expression | \n |--------|--------| \n | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.owner | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "reference",
+                            "type": "string",
+                            "format": "reference",
                             "example": "[type]/[id] or [id] or [uri]"
                         }
                     },
@@ -996,7 +1020,8 @@
                         "description": "Search by task code (worklist type) Search by task code\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -1014,6 +1039,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1025,6 +1051,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1037,6 +1064,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1114,6 +1142,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1125,6 +1154,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1137,6 +1167,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1230,7 +1261,8 @@
                         "description": "The style of appointment or patient that may be booked in the slot (not service type) The style of appointment or patient that may be booked in the slot (not service type)\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.appointmentType | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -1240,7 +1272,8 @@
                         "description": "A single service ID is required to indicate the service for which appointment slots are required. The Schedule Resource that we are seeking a slot within\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name |  Expression | \n |--------|--------| \n | schedule |  Slot.schedule | \n\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
                         "style": "simple",
                         "schema": {
-                            "type": "reference",
+                            "type": "string",
+                            "format": "reference",
                             "example": "[type]/[id] or [id] or [uri]"
                         }
                     },
@@ -1250,7 +1283,8 @@
                         "description": "The free/busy status of the appointment The free/busy status of the appointment\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -1262,6 +1296,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1273,6 +1308,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1285,6 +1321,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1360,6 +1397,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1371,6 +1409,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1383,6 +1422,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1488,6 +1528,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1499,6 +1540,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1511,6 +1553,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1588,7 +1631,8 @@
                         "description": "The type of service provided by this healthcare service The type of service provided by this healthcare service\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.type | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -1598,7 +1642,8 @@
                         "description": "Can't find this parameter presume need to: External identifiers for this item External identifiers for this item\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.identifier | \n",
                         "style": "simple",
                         "schema": {
-                            "type": "token",
+                            "type": "string",
+                            "format": "token",
                             "example": "[system][code]"
                         }
                     },
@@ -1610,6 +1655,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1621,6 +1667,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1633,6 +1680,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1724,6 +1772,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1735,6 +1784,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1747,6 +1797,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1838,6 +1889,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1849,6 +1901,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1861,6 +1914,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -1940,6 +1994,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -1951,6 +2006,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -1963,6 +2019,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -2068,6 +2125,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -2079,6 +2137,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -2091,6 +2150,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -2166,6 +2226,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -2177,6 +2238,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -2189,6 +2251,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -2263,7 +2326,7 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [CapabilityStatement](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement).. HL7 FHIR Documentation [CapabilityStatement](\"https://www.hl7.org/fhir/CapabilityStatement.html\")",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
@@ -2271,7 +2334,7 @@
             },
             "OperationOutcome": {
                 "type": "object",
-                "description": "See [HL7 FHIR OperationOutcome](https://www.hl7.org/fhir/OperationOutcome.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [OperationOutcome](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome).. HL7 FHIR Documentation [OperationOutcome](\"https://www.hl7.org/fhir/OperationOutcome.html\")",
                 "externalDocs": {
                     "description": "OperationOutcome",
                     "url": "https://www.hl7.org/fhir/OperationOutcome.html"
@@ -2279,7 +2342,7 @@
             },
             "Appointment": {
                 "type": "object",
-                "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Appointment](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Appointment).. HL7 FHIR Documentation [Appointment](\"https://www.hl7.org/fhir/Appointment.html\")",
                 "externalDocs": {
                     "description": "Appointment",
                     "url": "https://www.hl7.org/fhir/Appointment.html"
@@ -2287,7 +2350,7 @@
             },
             "ServiceRequest": {
                 "type": "object",
-                "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for the FHIR Profile on resource [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [ServiceRequest](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/ServiceRequest).. HL7 FHIR Documentation [ServiceRequest](\"https://www.hl7.org/fhir/ServiceRequest.html\")",
                 "externalDocs": {
                     "description": "ServiceRequest",
                     "url": "https://www.hl7.org/fhir/ServiceRequest.html"
@@ -2295,7 +2358,7 @@
             },
             "Task": {
                 "type": "object",
-                "description": "See [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md) for the FHIR Profile on resource [Task](https://www.hl7.org/fhir/Task.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Task](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Task).. HL7 FHIR Documentation [Task](\"https://www.hl7.org/fhir/Task.html\")",
                 "externalDocs": {
                     "description": "Task",
                     "url": "https://www.hl7.org/fhir/Task.html"
@@ -2303,23 +2366,15 @@
             },
             "Slot": {
                 "type": "object",
-                "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for the FHIR Profile on resource [Slot](https://www.hl7.org/fhir/Slot.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Slot](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Slot).. HL7 FHIR Documentation [Slot](\"https://www.hl7.org/fhir/Slot.html\")",
                 "externalDocs": {
                     "description": "Slot",
                     "url": "https://www.hl7.org/fhir/Slot.html"
                 }
             },
-            "Questionnaire": {
-                "type": "object",
-                "description": "See [NHSDigital-Questionnaire](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Questionnaire.guide.md) for the FHIR Profile on resource [Questionnaire](https://www.hl7.org/fhir/Questionnaire.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
-                "externalDocs": {
-                    "description": "Questionnaire",
-                    "url": "https://www.hl7.org/fhir/Questionnaire.html"
-                }
-            },
             "QuestionnaireResponse": {
                 "type": "object",
-                "description": "See [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md) for the FHIR Profile on resource [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [QuestionnaireResponse](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse).. HL7 FHIR Documentation [QuestionnaireResponse](\"https://www.hl7.org/fhir/QuestionnaireResponse.html\")",
                 "externalDocs": {
                     "description": "QuestionnaireResponse",
                     "url": "https://www.hl7.org/fhir/QuestionnaireResponse.html"
@@ -2327,7 +2382,7 @@
             },
             "HealthcareService": {
                 "type": "object",
-                "description": "See [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md) for the FHIR Profile on resource [HealthcareService](https://www.hl7.org/fhir/HealthcareService.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [HealthcareService](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/HealthcareService).. HL7 FHIR Documentation [HealthcareService](\"https://www.hl7.org/fhir/HealthcareService.html\")",
                 "externalDocs": {
                     "description": "HealthcareService",
                     "url": "https://www.hl7.org/fhir/HealthcareService.html"
@@ -2335,7 +2390,7 @@
             },
             "DocumentReference": {
                 "type": "object",
-                "description": "See [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md) for the FHIR Profile on resource [DocumentReference](https://www.hl7.org/fhir/DocumentReference.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [DocumentReference](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/DocumentReference).. HL7 FHIR Documentation [DocumentReference](\"https://www.hl7.org/fhir/DocumentReference.html\")",
                 "externalDocs": {
                     "description": "DocumentReference",
                     "url": "https://www.hl7.org/fhir/DocumentReference.html"
@@ -2343,7 +2398,7 @@
             },
             "Binary": {
                 "type": "object",
-                "description": "See [NHSDigital-Binary](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Binary.guide.md) for the FHIR Profile on resource [Binary](https://www.hl7.org/fhir/Binary.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Binary](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Binary).. HL7 FHIR Documentation [Binary](\"https://www.hl7.org/fhir/Binary.html\")",
                 "externalDocs": {
                     "description": "Binary",
                     "url": "https://www.hl7.org/fhir/Binary.html"
