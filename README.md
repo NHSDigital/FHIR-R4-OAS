@@ -18,3 +18,5 @@ This project demonstrates the rendering of FHIR CapabilityStatements as openAPI 
 
 - [BaRS Events Mock](https://nhsdigital.github.io/FHIR-R4-OAS/BaRS-Events)
 
+- [COVID Test Restuls History Mock](https://nhsdigital.github.io/FHIR-R4-OAS/covid-testhistory)
+
