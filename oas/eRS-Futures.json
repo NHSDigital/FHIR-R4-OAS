@@ -481,7 +481,7 @@
                     {
                         "name": "patient:identifier",
                         "in": "query",
-                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  identifier.identifier | \n",
+                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.subject.identifier | \n",
                         "style": "simple",
                         "schema": {
                             "type": "string",
