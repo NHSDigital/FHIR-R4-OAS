@@ -21,3 +21,5 @@ This project demonstrates the rendering of FHIR CapabilityStatements as openAPI 
 - [COVID Test Restuls History Mock](https://nhsdigital.github.io/FHIR-R4-OAS/covid-testhistory)
 
 - [COVID Vaccination History Mock](https://nhsdigital.github.io/FHIR-R4-OAS/covid-vaccinations)
+
+- [UKCore API Mock](https://nhsdigital.github.io/FHIR-R4-OAS/ukcore-api)
