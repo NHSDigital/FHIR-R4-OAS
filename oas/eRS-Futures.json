@@ -636,6 +636,7 @@
                         "in": "query",
                         "description": "Inclusions that drive the rescursive depth of the search\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | _revinclude | [string ](https://www.hl7.org/fhir/search.html#string)|  null | \n",
                         "style": "form",
+                        "explode": true,
                         "schema": {
                             "type": "string",
                             "example": "MedicationRequest:patient",
