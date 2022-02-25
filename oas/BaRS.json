@@ -1,8 +1,12 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "description": "API Definition for BaRS (supplier)\n\n | API Documentation |\n |-----|\n  |[Booking and Referral - FHIR API](https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir)|\n |[NHS Bookings and Referrals](https://simplifier.net/guide/nhsbookingandreferrals/home)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
-        "contact": {}
+        "description": "API Definition for BaRS\n\n | API Documentation |\n |-----|\n  |[Booking and Referral - FHIR API](https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir)|\n |[NHS Bookings and Referrals](https://simplifier.net/guide/nhsbookingandreferrals/home)|\n\n\n | FHIR Implementation Guide | Version |\n |-----|-----|\n |[ukcore.release1.test](https://simplifier.net/guide/hl7fhirukcorer4release1/home)||\n |[uk.nhsdigital.r4.test](https://simplifier.net/guide/NHSDigital/Home)||\n",
+        "contact": {},
+        "x-HL7-FHIR-NpmPackages": {
+            "ukcore.release1.test": "",
+            "uk.nhsdigital.r4.test": ""
+        }
     },
     "externalDocs": {
         "description": "Hl7 FHIR R4",
@@ -18,19 +22,19 @@
         },
         {
             "name": "ServiceRequest",
-            "description": "Resource (schema): [FHIR ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html)\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)"
+            "description": "\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)"
         },
         {
             "name": "Slot",
-            "description": "Resource (schema): [FHIR Slot](https://www.hl7.org/fhir/Slot.html)\n\n A slot of time on a schedule that may be available for booking appointments.\n\n Profile (constraints): [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md)"
+            "description": "\n\n A slot of time on a schedule that may be available for booking appointments.\n\n Profile (constraints): [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md)"
         },
         {
             "name": "Appointment",
-            "description": "Resource (schema): [FHIR Appointment](https://www.hl7.org/fhir/Appointment.html)\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)"
+            "description": "\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)"
         },
         {
             "name": "MessageDefinition",
-            "description": "Resource (schema): [FHIR MessageDefinition](https://www.hl7.org/fhir/MessageDefinition.html)\n\n Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.\n\n Allows messages to be defined once and re-used across systems.\n\n Profile (constraints): [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md)"
+            "description": "\n\n Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.\n\n Allows messages to be defined once and re-used across systems.\n\n Profile (constraints): [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md)"
         }
     ],
     "paths": {
@@ -50,7 +54,35 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"b2a5d2b7-f47e-4b75-bed9-f2e79a08d263\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"},{\"url\":\"description\",\"valueString\":\"Booking and Referral - FHIR API\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://simplifier.net/guide/nhsbookingandreferrals/home\"},{\"url\":\"description\",\"valueString\":\"NHS Bookings and Referrals\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-bars-supplier\",\"version\":\"3.0.0\",\"name\":\"SupplierEvents\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API Definition for BaRS (supplier)\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\",\"application/fhir+xml\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"ServiceRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\"documentation\":\"Supports Referrals and advice guidance requests\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific referral\"},{\"code\":\"search-type\",\"documentation\":\"Get referral/s for a patient\"}],\"searchParam\":[{\"name\":\"patientIdentifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"}]},{\"type\":\"Slot\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\"interaction\":[{\"code\":\"search-type\",\"documentation\":\"Get slots\"}],\"searchParam\":[{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"The free/busy status of the appointment\"},{\"name\":\"start\",\"type\":\"date\",\"documentation\":\"Appointment date/time.\"},{\"name\":\"end\",\"type\":\"date\",\"documentation\":\"Appointment date/time.\"},{\"name\":\"_include\",\"type\":\"composite\",\"documentation\":\"Inclusions that drive the rescusive depth of the search\"}]},{\"type\":\"Appointment\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific booking\"},{\"code\":\"search-type\",\"documentation\":\"Get Bookings for a patient\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"required\",\"valueBoolean\":true}]}],\"name\":\"patientIdentifier\",\"type\":\"token\",\"documentation\":\"Search for appointment for a patient by NHS Number\"}]},{\"type\":\"MessageDefinition\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Find Message Definition\"}]}],\"operation\":[{\"name\":\"process-message\",\"definition\":\"https://fhir.nhs.uk/OperationDefinition/MessageHeader-process-message\",\"documentation\":\"Destination of both subscription-notifications and BaRS referrals\"}]}],\"messaging\":[{\"supportedMessage\":[{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"},{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/950831dd-2603-442d-9a07-e4b6cd2ac544\"}}]}]}],\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"}]}]}"
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"b2a5d2b7-f47e-4b75-bed9-f2e79a08d263\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/booking-and-referral-fhir\"},{\"url\":\"description\",\"valueString\":\"Booking and Referral - FHIR API\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://simplifier.net/guide/nhsbookingandreferrals/home\"},{\"url\":\"description\",\"valueString\":\"NHS Bookings and Referrals\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-bars\",\"version\":\"3.0.0\",\"name\":\"SupplierEvents\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API Definition for BaRS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\",\"application/fhir+xml\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"ServiceRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\"documentation\":\"Supports Referrals and advice guidance requests\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific referral\"},{\"code\":\"search-type\",\"documentation\":\"Get referral/s for a patient\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"},{\"name\":\"patient.identifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"}]},{\"type\":\"Slot\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\"interaction\":[{\"code\":\"search-type\",\"documentation\":\"Get slots\"}],\"searchInclude\":[\"Slot:schedule\",\"Schedule:actor:Practitioner\",\"Schedule:actor:PractitionerRole\",\"Schedule:actor:HealthcareService\",\"Schedule:actor:Organization\",\"Schedule:actor:Location\"],\"searchParam\":[{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"The free/busy status of the appointment\"},{\"name\":\"start\",\"type\":\"date\",\"documentation\":\"Appointment start date/time.\"},{\"name\":\"end\",\"type\":\"date\",\"documentation\":\"Appointment end date/time.\"},{\"name\":\"_include\",\"type\":\"composite\",\"documentation\":\"Inclusions that drive the rescusive depth of the search\"}]},{\"type\":\"Appointment\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Get a specific booking\"},{\"code\":\"search-type\",\"documentation\":\"Get Bookings for a patient\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"required\",\"valueBoolean\":true}]}],\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"Search for appointment for a patient by NHS Number\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"required\",\"valueBoolean\":true}]}],\"name\":\"patient.identifier\",\"type\":\"token\",\"documentation\":\"Search for appointment for a patient by NHS Number\"}]},{\"type\":\"MessageDefinition\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MessageDefinition\",\"interaction\":[{\"code\":\"read\",\"documentation\":\"Find Message Definition\"}]}],\"operation\":[{\"name\":\"process-message\",\"definition\":\"https://fhir.nhs.uk/OperationDefinition/MessageHeader-process-message\",\"documentation\":\"Destination of both subscription-notifications and BaRS referrals\"}]}],\"messaging\":[{\"supportedMessage\":[{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request\"},{\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/950831dd-2603-442d-9a07-e4b6cd2ac544\"}}]}]}],\"mode\":\"receiver\",\"definition\":\"https://fhir.nhs.uk/MessageDefinition/subscription-notification\"}]}]}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
                                     }
                                 }
                             }
@@ -74,15 +106,15 @@
                             "examples": {
                                 "bars-message-servicerequest-request": {
                                     "summary": "BARS Message Definition ServiceRequest - Request CaseTransfer",
-                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request** \n \n\n MessageDefinition.eventCoding = **servicerequest-request** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Bundle](https://www.hl7.org/fhir/Bundle.html) | [BARSBundleMessage](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MessageHeader](https://www.hl7.org/fhir/MessageHeader.html) | [BARSMessageHeader-servicerequest-request](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html) | [BARSServiceRequest-request-casetransfer](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Patient](https://www.hl7.org/fhir/Patient.html) | [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient) | 1 | 1 | \n| [Encounter](https://www.hl7.org/fhir/Encounter.html) | [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter) | 1 | 1 | \n| [Location](https://www.hl7.org/fhir/Location.html) | [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) | 1 | 1 | \n| [Organization](https://www.hl7.org/fhir/Organization.html) | [UKCore-Organization](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Organization) | 1 | 1 | \n| [Practitioner](https://www.hl7.org/fhir/Practitioner.html) | [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner) | 1 | 1 | \n| [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html) | [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole) | 1 | 1 | \n| [Observation](https://www.hl7.org/fhir/Observation.html) | [UKCore-Observation](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Observation) | 1 | 1 | \n| [Flag](https://www.hl7.org/fhir/Flag.html) | [Flag](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MedicationStatement](https://www.hl7.org/fhir/MedicationStatement.html) | [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) | 1 | 1 | \n| [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html) | [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) | 1 | 1 | \n| [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html) | [QuestionnaireResponse](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Consent](https://www.hl7.org/fhir/Consent.html) | [UKCore-Consent](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Consent) | 1 | 1 | \n\n"
+                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-request** \n \n\n The first Bundle.entry **MUST** be a FHIR MessageHeader with \n MessageHeader.eventCoding = **servicerequest-request** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Bundle](https://www.hl7.org/fhir/Bundle.html) | [BARSBundleMessage](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MessageHeader](https://www.hl7.org/fhir/MessageHeader.html) | [BARSMessageHeader-servicerequest-request](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html) | [BARSServiceRequest-request-casetransfer](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Patient](https://www.hl7.org/fhir/Patient.html) | [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient) | 1 | 1 | \n| [Encounter](https://www.hl7.org/fhir/Encounter.html) | [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter) | 1 | 1 | \n| [Location](https://www.hl7.org/fhir/Location.html) | [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) | 1 | 1 | \n| [Organization](https://www.hl7.org/fhir/Organization.html) | [UKCore-Organization](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Organization) | 1 | 1 | \n| [Practitioner](https://www.hl7.org/fhir/Practitioner.html) | [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner) | 1 | 1 | \n| [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html) | [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole) | 1 | 1 | \n| [Observation](https://www.hl7.org/fhir/Observation.html) | [UKCore-Observation](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Observation) | 1 | 1 | \n| [Flag](https://www.hl7.org/fhir/Flag.html) | [Flag](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MedicationStatement](https://www.hl7.org/fhir/MedicationStatement.html) | [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) | 1 | 1 | \n| [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html) | [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) | 1 | 1 | \n| [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html) | [QuestionnaireResponse](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Consent](https://www.hl7.org/fhir/Consent.html) | [UKCore-Consent](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Consent) | 1 | 1 | \n\n"
                                 },
                                 "bars-message-servicerequest-response": {
                                     "summary": "BARS Message Definition ServiceRequest - Response CaseTransfer",
-                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response** \n \n\n MessageDefinition.eventCoding = **servicerequest-response** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Bundle](https://www.hl7.org/fhir/Bundle.html) | [BARSBundleMessage](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MessageHeader](https://www.hl7.org/fhir/MessageHeader.html) | [BARSMessageHeader-servicerequest-response](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html) | [BARSServiceRequest-request-casetransfer](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Patient](https://www.hl7.org/fhir/Patient.html) | [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient) | 1 | 1 | \n| [Encounter](https://www.hl7.org/fhir/Encounter.html) | [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter) | 1 | 1 | \n| [Location](https://www.hl7.org/fhir/Location.html) | [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) | 1 | 1 | \n| [Organization](https://www.hl7.org/fhir/Organization.html) | [UKCore-Organization](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Organization) | 1 | 1 | \n| [Practitioner](https://www.hl7.org/fhir/Practitioner.html) | [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner) | 1 | 1 | \n| [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html) | [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole) | 1 | 1 | \n| [Observation](https://www.hl7.org/fhir/Observation.html) | [UKCore-Observation](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Observation) | 1 | 1 | \n| [Flag](https://www.hl7.org/fhir/Flag.html) | [Flag](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MedicationStatement](https://www.hl7.org/fhir/MedicationStatement.html) | [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) | 1 | 1 | \n| [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html) | [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) | 1 | 1 | \n| [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html) | [QuestionnaireResponse](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Consent](https://www.hl7.org/fhir/Consent.html) | [UKCore-Consent](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Consent) | 1 | 1 | \n\n"
+                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/bars-message-servicerequest-response** \n \n\n The first Bundle.entry **MUST** be a FHIR MessageHeader with \n MessageHeader.eventCoding = **servicerequest-response** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Bundle](https://www.hl7.org/fhir/Bundle.html) | [BARSBundleMessage](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MessageHeader](https://www.hl7.org/fhir/MessageHeader.html) | [BARSMessageHeader-servicerequest-response](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html) | [BARSServiceRequest-request-casetransfer](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Patient](https://www.hl7.org/fhir/Patient.html) | [UKCore-Patient](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Patient) | 1 | 1 | \n| [Encounter](https://www.hl7.org/fhir/Encounter.html) | [UKCore-Encounter](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Encounter) | 1 | 1 | \n| [Location](https://www.hl7.org/fhir/Location.html) | [UKCore-Location](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Location) | 1 | 1 | \n| [Organization](https://www.hl7.org/fhir/Organization.html) | [UKCore-Organization](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Organization) | 1 | 1 | \n| [Practitioner](https://www.hl7.org/fhir/Practitioner.html) | [UKCore-Practitioner](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Practitioner) | 1 | 1 | \n| [PractitionerRole](https://www.hl7.org/fhir/PractitionerRole.html) | [UKCore-PractitionerRole](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-PractitionerRole) | 1 | 1 | \n| [Observation](https://www.hl7.org/fhir/Observation.html) | [UKCore-Observation](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Observation) | 1 | 1 | \n| [Flag](https://www.hl7.org/fhir/Flag.html) | [Flag](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [MedicationStatement](https://www.hl7.org/fhir/MedicationStatement.html) | [UKCore-MedicationStatement](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement) | 1 | 1 | \n| [AllergyIntolerance](https://www.hl7.org/fhir/AllergyIntolerance.html) | [UKCore-AllergyIntolerance](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance) | 1 | 1 | \n| [QuestionnaireResponse](https://www.hl7.org/fhir/QuestionnaireResponse.html) | [QuestionnaireResponse](https://simplifier.net/guide/nhsdigital/home) | 1 | 1 | \n| [Consent](https://www.hl7.org/fhir/Consent.html) | [UKCore-Consent](https://simplifier.net/guide/HL7FHIRUKCoreR4Release1/Home/ProfilesandExtensions/ProfileUKCore-Consent) | 1 | 1 | \n\n"
                                 },
                                 "subscription-notification": {
                                     "summary": "Notification of events.",
-                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/subscription-notification** \n \n\n MessageDefinition.eventCoding = **subscription-notification** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Parameters](https://www.hl7.org/fhir/Parameters.html) | [England-Parameters-SubscriptionStatus](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Parameters-SubscriptionStatus.guide.md) | 1 | 1 | \n\n",
+                                    "description": " \n\n MessageDefinition.url = **https://fhir.nhs.uk/MessageDefinition/subscription-notification** \n \n\n The first Bundle.entry **MUST** be a FHIR MessageHeader with \n MessageHeader.eventCoding = **subscription-notification** \n\n\n | Resource | Profile | Min | Max | \n|----------|---------|-----|-----| \n| [Parameters](https://www.hl7.org/fhir/Parameters.html) | [England-Parameters-SubscriptionStatus](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Parameters-SubscriptionStatus.guide.md) | 1 | 1 | \n\n",
                                     "value": "{\"resourceType\":\"Bundle\",\"id\":\"950831dd-2603-442d-9a07-e4b6cd2ac544\",\"identifier\":{\"system\":\"https://tools.ietf.org/html/rfc4122\",\"value\":\"950831dd-2603-442d-9a07-e4b6cd2ac544\"},\"type\":\"message\",\"timestamp\":\"2021-01-07T15:13:00+00:00\",\"entry\":[{\"fullUrl\":\"urn:uuid:ea7221b8-3cc0-4b11-bc95-585b056b5428\",\"resource\":{\"resourceType\":\"MessageHeader\",\"eventCoding\":{\"system\":\"https://fhir.nhs.uk/CodeSystem/message-event\",\"code\":\"subscription-notification\",\"display\":\"Subscription Event Notification\"},\"sender\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"X2601\"},\"display\":\"NHS Digital Spine\"},\"source\":{\"endpoint\":\"urn:nhs-uk:addressing:ods:X2601\"},\"focus\":[{\"reference\":\"urn:uuid:70c35c4a-65f4-4a03-bcf7-d1041ab999fd\"}]}},{\"fullUrl\":\"urn:uuid:70c35c4a-65f4-4a03-bcf7-d1041ab999fd\",\"resource\":{\"resourceType\":\"Parameters\",\"parameter\":[{\"name\":\"status\",\"valueCode\":\"active\"},{\"name\":\"notificationEvent\",\"part\":[{\"name\":\"eventNumber\",\"valueInteger\":1},{\"name\":\"timestamp\",\"valueInstant\":\"2022-01-07T15:06:00+00:00\"},{\"name\":\"focus\",\"valueReference\":{\"reference\":\"https://fhir.leedsth.nhs.uk/ServiceRequest/1d3fa61f-ae15-4fe4-9393-c98e3bbdfbb0\",\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}}}]},{\"name\":\"subscription\",\"valueReference\":{\"reference\":\"https://spine.nhs.uk/Subscription/5c4c8f04-1c36-4b8d-94e1-4e4b08e873d8\"}},{\"name\":\"topic\",\"valueCanonical\":\"https://fhir.nhs.uk/SubscriptionTopic/referral-sent\"}]}}]}"
                                 }
                             }
@@ -100,6 +132,34 @@
                                 "examples": {
                                     "example": {
                                         "value": "{\"resourceType\":\"Parameters\"}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
                                     }
                                 }
                             }
@@ -136,6 +196,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -147,6 +208,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -159,6 +221,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -192,6 +255,34 @@
                                 "example": "{\"resourceType\":\"ServiceRequest\"}"
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -205,13 +296,25 @@
                 "description": "[search](http://www.hl7.org/fhir/search.html) for ServiceRequest instances.\n\nGet referral/s for a patient",
                 "parameters": [
                     {
-                        "name": "patientIdentifier",
+                        "name": "patient:identifier",
                         "in": "query",
-                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
-                        "style": "simple",
+                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|   ServiceRequest.subject.identifier | \n",
+                        "style": "form",
                         "schema": {
                             "type": "string",
-                            "example": "[system][code]"
+                            "format": "token",
+                            "example": "[system]|[code]"
+                        }
+                    },
+                    {
+                        "name": "patient.identifier",
+                        "in": "query",
+                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [reference ](https://www.hl7.org/fhir/search.html#reference)|   ServiceRequest.subject.where(resolve() is Patient) | \n| identifier | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.identifier | \n",
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system]|[code]"
                         }
                     },
                     {
@@ -222,6 +325,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -233,6 +337,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -245,6 +350,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -276,6 +382,34 @@
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
                                 "example": "{\"resourceType\":\"ServiceRequest\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -293,38 +427,60 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "The free/busy status of the appointment The free/busy status of the appointment\n\n | Type |  Expression | \n |--------|--------| \n | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
-                        "style": "simple",
+                        "description": "The free/busy status of the appointment\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
+                        "style": "form",
                         "schema": {
                             "type": "string",
-                            "example": "[system][code]"
+                            "format": "token",
+                            "example": "[system]|[code]"
                         }
                     },
                     {
                         "name": "start",
                         "in": "query",
-                        "description": "Appointment date/time. Appointment date/time.\n\n | Type |  Expression | \n |--------|--------| \n | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Slot.start | \n",
-                        "style": "simple",
+                        "description": "Appointment start date/time.\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | start | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Slot.start | \n",
+                        "style": "form",
                         "schema": {
                             "type": "string",
+                            "format": "date",
                             "example": "eq2013-01-14"
                         }
                     },
                     {
                         "name": "end",
                         "in": "query",
-                        "description": "Appointment date/time.\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "example": "eq2013-01-14"
-                        }
+                        "description": "Appointment end date/time.\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n \n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
+                        "style": "form"
                     },
                     {
                         "name": "_include",
                         "in": "query",
-                        "description": "Inclusions that drive the rescusive depth of the search Special search parameter, see [FHIR Search](http://www.hl7.org/fhir/search.html)\n\n | Type |  Expression | \n |--------|--------| \n | [special ](https://www.hl7.org/fhir/search.html#special)|  null | \n",
-                        "style": "simple"
+                        "description": "Inclusions that drive the rescusive depth of the search\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | _include | [string ](https://www.hl7.org/fhir/search.html#string)|  null | \n",
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "example": "MedicationRequest:patient",
+                            "enum": [
+                                "Slot:schedule"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "_include:iterate",
+                        "in": "query",
+                        "description": "The inclusion process can be iterative",
+                        "schema": {
+                            "type": "string",
+                            "format": "special",
+                            "example": "MedicationRequest:patient",
+                            "enum": [
+                                "Schedule:actor:Practitioner",
+                                "Schedule:actor:PractitionerRole",
+                                "Schedule:actor:HealthcareService",
+                                "Schedule:actor:Organization",
+                                "Schedule:actor:Location"
+                            ]
+                        }
                     },
                     {
                         "name": "Authorization",
@@ -334,6 +490,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -345,6 +502,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -357,6 +515,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -388,6 +547,34 @@
                                     "$ref": "#/components/schemas/Slot"
                                 },
                                 "example": "{\"resourceType\":\"Slot\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -422,6 +609,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -433,6 +621,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -445,6 +634,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -478,6 +668,34 @@
                                 "example": "{\"resourceType\":\"Appointment\"}"
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -491,14 +709,27 @@
                 "description": "[search](http://www.hl7.org/fhir/search.html) for Appointment instances.\n\nGet Bookings for a patient",
                 "parameters": [
                     {
-                        "name": "patientIdentifier",
+                        "name": "patient:identifier",
                         "in": "query",
-                        "description": "Search for appointment for a patient by NHS Number\n\n Caution: This does not appear to be a valid search parameter. **Please check HL7 FHIR conformance.**",
+                        "description": "Search for appointment for a patient by NHS Number\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|  Appointment.participant.actor.identifier | \n",
                         "required": true,
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
-                            "example": "[system][code]"
+                            "format": "token",
+                            "example": "[system]|[code]"
+                        }
+                    },
+                    {
+                        "name": "patient.identifier",
+                        "in": "query",
+                        "description": "Search for appointment for a patient by NHS Number\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Appointment.participant.actor.where(resolve() is Patient) | \n| identifier | [token ](https://www.hl7.org/fhir/search.html#token)|  Patient.identifier | \n",
+                        "required": true,
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system]|[code]"
                         }
                     },
                     {
@@ -509,6 +740,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -520,6 +752,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -532,6 +765,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -563,6 +797,34 @@
                                     "$ref": "#/components/schemas/Appointment"
                                 },
                                 "example": "{\"resourceType\":\"Appointment\"}"
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
                             }
                         }
                     }
@@ -597,6 +859,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
                             "type": "string"
                         },
                         "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
@@ -608,6 +871,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9]+$",
                             "type": "string"
                         },
                         "example": "555254240100"
@@ -620,6 +884,7 @@
                         "style": "simple",
                         "schema": {
                             "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
                             "type": "string"
                         },
                         "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
@@ -653,6 +918,34 @@
                                 "example": "{\"resourceType\":\"MessageDefinition\"}"
                             }
                         }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -662,19 +955,50 @@
         "schemas": {
             "CapabilityStatement": {
                 "type": "object",
-                "description": "See [HL7 FHIR CapabilityStatement](https://www.hl7.org/fhir/CapabilityStatement.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [CapabilityStatement](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement).. HL7 FHIR Documentation [CapabilityStatement](\"https://www.hl7.org/fhir/CapabilityStatement.html\")",
                 "externalDocs": {
                     "description": "CapabilityStatement",
                     "url": "https://www.hl7.org/fhir/CapabilityStatement.html"
                 }
             },
+            "OperationOutcome": {
+                "type": "object",
+                "description": "HL7 FHIR Schema [OperationOutcome](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome).. HL7 FHIR Documentation [OperationOutcome](\"https://www.hl7.org/fhir/OperationOutcome.html\")",
+                "externalDocs": {
+                    "description": "OperationOutcome",
+                    "url": "https://www.hl7.org/fhir/OperationOutcome.html"
+                }
+            },
             "Parameters": {
                 "type": "object",
-                "description": "See [HL7 FHIR Parameters](https://www.hl7.org/fhir/Parameters.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Parameters](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters).. HL7 FHIR Documentation [Parameters](\"https://www.hl7.org/fhir/Parameters.html\")",
                 "externalDocs": {
                     "description": "Parameters",
                     "url": "https://www.hl7.org/fhir/Parameters.html"
                 }
+            },
+            "Bundle-Entry": {
+                "required": [
+                    "fullUrl",
+                    "resource"
+                ],
+                "type": "object",
+                "properties": {
+                    "fullUrl": {
+                        "maxProperties": 1,
+                        "minProperties": 1,
+                        "type": "string",
+                        "description": "URI for resource (Absolute URL server address or URI for UUID/OID)",
+                        "example": "urn:uuid:3599c0e9-9292-413e-9270-9a1ef1ead99c"
+                    },
+                    "resource": {
+                        "maxProperties": 1,
+                        "minProperties": 1,
+                        "type": "object",
+                        "description": "A resource in the bundle. First entry MUST be a FHIR MessageHeader"
+                    }
+                },
+                "description": "A container for a collection of resources"
             },
             "Bundle-Message": {
                 "title": "Bundle-Message",
@@ -687,7 +1011,7 @@
                 "properties": {
                     "resourceType": {
                         "type": "string",
-                        "description": "Indicates the purpose of this bundle - how it is intended to be used. Fixed value: message",
+                        "description": "The type of FHIR resource",
                         "example": "Bundle"
                     },
                     "type": {
@@ -729,7 +1053,7 @@
             },
             "ServiceRequest": {
                 "type": "object",
-                "description": "See [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md) for the FHIR Profile on resource [ServiceRequest](https://www.hl7.org/fhir/ServiceRequest.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [ServiceRequest](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/ServiceRequest).. HL7 FHIR Documentation [ServiceRequest](\"https://www.hl7.org/fhir/ServiceRequest.html\")",
                 "externalDocs": {
                     "description": "ServiceRequest",
                     "url": "https://www.hl7.org/fhir/ServiceRequest.html"
@@ -737,7 +1061,7 @@
             },
             "Slot": {
                 "type": "object",
-                "description": "See [England-Slot](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Slot.guide.md) for the FHIR Profile on resource [Slot](https://www.hl7.org/fhir/Slot.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Slot](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Slot).. HL7 FHIR Documentation [Slot](\"https://www.hl7.org/fhir/Slot.html\")",
                 "externalDocs": {
                     "description": "Slot",
                     "url": "https://www.hl7.org/fhir/Slot.html"
@@ -745,7 +1069,7 @@
             },
             "Appointment": {
                 "type": "object",
-                "description": "See [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md) for the FHIR Profile on resource [Appointment](https://www.hl7.org/fhir/Appointment.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [Appointment](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Appointment).. HL7 FHIR Documentation [Appointment](\"https://www.hl7.org/fhir/Appointment.html\")",
                 "externalDocs": {
                     "description": "Appointment",
                     "url": "https://www.hl7.org/fhir/Appointment.html"
@@ -753,7 +1077,7 @@
             },
             "MessageDefinition": {
                 "type": "object",
-                "description": "See [NHSDigital-MessageDefinition](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MessageDefinition.guide.md) for the FHIR Profile on resource [MessageDefinition](https://www.hl7.org/fhir/MessageDefinition.html). For HL7 FHIR R4 Schema see [HL7 FHIR Downloads](https://www.hl7.org/fhir/downloads.html)",
+                "description": "HL7 FHIR Schema [MessageDefinition](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/MessageDefinition).. HL7 FHIR Documentation [MessageDefinition](\"https://www.hl7.org/fhir/MessageDefinition.html\")",
                 "externalDocs": {
                     "description": "MessageDefinition",
                     "url": "https://www.hl7.org/fhir/MessageDefinition.html"
