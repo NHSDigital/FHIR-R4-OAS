@@ -70,7 +70,7 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"8803e391-f306-42d3-8302-655c1dc49236\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir\"},{\"url\":\"description\",\"valueString\":\"e-Referral Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-ers\",\"version\":\"3.0.0\",\"name\":\"APIMeRS\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API definition for eRS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"Appointment\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Appointment/391d8d18-159a-4af8-a935-2238ed4db867\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Reviewing a Triage Deferral (Triage Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"This is linked to the reivewing a Task [PUT /Task](#/Task/put_Task).\"}]}]}],\"code\":\"create\",\"documentation\":\"[A016 - Book or defer appointment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a016-book-or-defer-appointment)\"}]},{\"type\":\"ServiceRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\"documentation\":\"Supports Referrals and advice guidance requests (new)\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\"}}]}]}],\"code\":\"read\",\"documentation\":\"[A005 - Retrieve referral request](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a005-retrieve-referral-request)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Initial Advice Creation (A+G Scenario One)\"},{\"url\":\"description\",\"valueMarkdown\":\"code should be a child concept of Evaluation procedure code (SNOMED CT 386053000)?. The advice and guidance referral is created along with a corresponding worklist (FHIR Task) item. These are retrieved via the [GET /Task](#/Task/get_Task) API and responses are sent via the [PUT /Task](#/Task/put_Task) API.\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/18253b86-9878-4c3f-b854-af0a9b7728a3\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Create Referral (A+G Scenario Five)\"},{\"url\":\"description\",\"valueMarkdown\":\"code should be a child concept of Patient Referral procedure code (SNOMED CT 3457005)? \\n\\n Following from the advice and guidnace workflow completing, it has been decided to refer the patient to a service. Note the use of basedOn to reference the original advice and guidance request. \"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/be735573-9f24-42e1-ae98-af89d632e4bf\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Initial Referral Creation (Triage Scenario One)\"},{\"url\":\"description\",\"valueMarkdown\":\"Note: the status is set to `draft` until this referral is triaged this can not be acted upon. To create the actual defferal see [POST /Task](#/Task/post_Task)\"}]}]}],\"code\":\"create\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/be735573-9f24-42e1-ae98-af89d632e4bf\"}}]}]}],\"code\":\"update\"},{\"code\":\"history-type\"},{\"code\":\"history-instance\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/09568f32-5a1f-439d-b245-5457dc88827e\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Referral found\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/ServiceRequest?patient.identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888**\"}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"}]},{\"type\":\"Task\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Task\",\"documentation\":\"Supports worklists\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}}]}]}],\"code\":\"read\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Responding to Advice (A+G Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"A user (sds-user-id=0987654321) responds to the worklist item. A document can be attached to the ServiceRequest and Task by using the [POST /Binary](#/Binary/post_Binary) POST / and [POST /DocumentReference](#/DocumentReference/post_DocumentReference) endpoints. \"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/33fddbce-6d2c-453a-9351-4822bb55e402\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Requesting additional advice, increasing priority (A+G Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"The Task.priority is increased to urgent. The use of PATCH /Task can also be considered as an alternative for this interaction.\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/a9b9f0f4-cc37-4ea3-bd4b-16d15ddbe63b\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Provider converts advice request (A+G Scenario Four and Six)\"},{\"url\":\"description\",\"valueMarkdown\":\"The Task.status is completed. See [POST /ServiceRequest](#/ServiceRequest/post_ServiceRequest) for the new referral (scenario Five)\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/f66e4cd7-207c-4b7d-9ac9-80630c451125\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Reviewing a Triage Deferral (Triage Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"Task.status set to completed. Review advice linked in Task.output. Next actions to mark as to book or create an Appointment [POST /Appointment](#/Appointment/post_Appointment)\"}]}]}],\"code\":\"update\",\"documentation\":\"See also [A013 - Accept referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a013-accept-referral) and [A014 - Reject referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a014-reject-referral)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/c18dbbe5-4f8d-4b49-a434-6e55a93fab31\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Deferral Creation (Triage Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"Task.code not set, need advice on code. [PUT /Task](#/Task/put_Task) is used to reply to the deferral.\"}]}]}],\"code\":\"create\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/eeddf786-fa1b-41d4-b30a-7542e8cff7e4\"}},{\"url\":\"summary\",\"valueMarkdown\":\"A+G Guidance Conversation\"},{\"url\":\"description\",\"valueMarkdown\":\"Search on workflow history for a specific referral\"}]}]}],\"code\":\"history-type\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/1f706390-a0bc-47d1-ac3a-86ce7e5c2f52\"}},{\"url\":\"summary\",\"valueMarkdown\":\"A+G Guidance Conversation\"},{\"url\":\"description\",\"valueMarkdown\":\"Search on a Id of a worklist/A+G workflow item\"}]}]}],\"code\":\"history-instance\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/22d00506-967b-4996-9893-e649cffab3ec\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Worklist found\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/Task?for.identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888**\"}]}]}],\"code\":\"search-type\",\"documentation\":\"See also [A008 - Retrieve referral worklist](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a008-retrieve-worklist)\"}],\"searchParam\":[{\"name\":\"owner\",\"type\":\"reference\",\"documentation\":\"Search by task owner\"},{\"name\":\"code\",\"type\":\"token\",\"documentation\":\"Search by task code (worklist type)\"},{\"name\":\"focus:identifier\",\"type\":\"token\"},{\"name\":\"focus\",\"type\":\"reference\"}]},{\"type\":\"Slot\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Slot/2779faeb-354f-4a78-9b5e-d878e88ea4e6\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"[A015 - Retrieve appointment slots](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a015-retrieve-appointment-slots)\"}],\"searchParam\":[{\"name\":\"appointment-type\",\"type\":\"token\",\"documentation\":\"The style of appointment or patient that may be booked in the slot (not service type)\"},{\"name\":\"schedule.actor:HealthcareService\",\"type\":\"reference\",\"documentation\":\"A single service ID is required to indicate the service for which appointment slots are required.\"},{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"The free/busy status of the appointment\"}]},{\"type\":\"Questionnaire\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Questionnaire\"},{\"type\":\"QuestionnaireResponse\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-QuestionnaireResponse\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\"}}]}]}],\"code\":\"create\",\"documentation\":\"Use this api to create a shortlist\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\"}}]}]}],\"code\":\"read\",\"documentation\":\"Use this api to retrieve a shortlist\"}]},{\"type\":\"HealthcareService\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-HealthcareService\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"HealthcareService/76de72bc-f001-49fa-84c6-af15a4fdb72c\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"[A010 - Patient service search](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a010-patient-service-search)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"HealthcareService/76de72bc-f001-49fa-84c6-af15a4fdb72c\"}}]}]}],\"code\":\"read\",\"documentation\":\"Unable to find existing matching service\"}],\"searchParam\":[{\"name\":\"service-type\",\"type\":\"token\",\"documentation\":\"The type of service provided by this healthcare service\"},{\"name\":\"identifier\",\"type\":\"token\",\"documentation\":\"Can't find this parameter presume need to: External identifiers for this item\"}]},{\"type\":\"DocumentReference\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-DocumentReference\",\"documentation\":\"Used to index supporting information documents - documents themselves use Binary\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"}}]}]}],\"code\":\"read\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Responding to Advice (A+G Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"Once the Task has been updated [PUT /Task](#/Task/put_Task), a DocumentReference is used to link in a previsouly posted document to the ServiceRequest and/or Task\"}]}]}],\"code\":\"create\"}]},{\"type\":\"Binary\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Binary\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Binary/db60a89b-3989-4290-b373-2e4a7266e556\"}}]}]}],\"code\":\"read\",\"documentation\":\"[A006 - Retrieve attachment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a006-retrieve-attachment)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Binary/db60a89b-3989-4290-b373-2e4a7266e556\"}}]}]}],\"code\":\"create\",\"documentation\":\"[A020 - Upload file to document store](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a020-upload-file-to-document-store)\"}]}]}]}"
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"8803e391-f306-42d3-8302-655c1dc49236\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition\",\"extension\":[{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"ukcore.release1.test\"}]},{\"url\":\"implementationGuide\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir\"},{\"url\":\"description\",\"valueString\":\"e-Referral Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-ers\",\"version\":\"3.0.0\",\"name\":\"APIMeRS\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"API definition for eRS\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"Appointment\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Appointment\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Appointment/391d8d18-159a-4af8-a935-2238ed4db867\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Reviewing a Triage Deferral (Triage Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"This is linked to the reivewing a Task [PUT /Task](#/Task/put_Task).\"}]}]}],\"code\":\"create\",\"documentation\":\"[A016 - Book or defer appointment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a016-book-or-defer-appointment)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Appointment/366a7b5b-650a-4ddf-bc25-468d59f67ea8\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Sample Patient Appointment search)\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/Appointment?patient.identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888** /n Note the example is generated from NHS Digital ITK HLv2 ADT_A05 example.\"}]}]}],\"code\":\"search-type\",\"documentation\":\"Mock for NHS App Wayfinder project\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"Search for appointment for a patient by NHS Number\"},{\"name\":\"date\",\"type\":\"date\",\"documentation\":\"Appointment date/time.\"}]},{\"type\":\"ServiceRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\",\"documentation\":\"Supports Referrals and advice guidance requests (new)\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\"}}]}]}],\"code\":\"read\",\"documentation\":\"[A005 - Retrieve referral request](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a005-retrieve-referral-request)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Initial Advice Creation (A+G Scenario One)\"},{\"url\":\"description\",\"valueMarkdown\":\"code should be a child concept of Evaluation procedure code (SNOMED CT 386053000)?. The advice and guidance referral is created along with a corresponding worklist (FHIR Task) item. These are retrieved via the [GET /Task](#/Task/get_Task) API and responses are sent via the [PUT /Task](#/Task/put_Task) API.\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/18253b86-9878-4c3f-b854-af0a9b7728a3\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Create Referral (A+G Scenario Five)\"},{\"url\":\"description\",\"valueMarkdown\":\"code should be a child concept of Patient Referral procedure code (SNOMED CT 3457005)? \\n\\n Following from the advice and guidnace workflow completing, it has been decided to refer the patient to a service. Note the use of basedOn to reference the original advice and guidance request. \"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/be735573-9f24-42e1-ae98-af89d632e4bf\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Initial Referral Creation (Triage Scenario One)\"},{\"url\":\"description\",\"valueMarkdown\":\"Note: the status is set to `draft` until this referral is triaged this can not be acted upon. To create the actual defferal see [POST /Task](#/Task/post_Task)\"}]}]}],\"code\":\"create\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"ServiceRequest/be735573-9f24-42e1-ae98-af89d632e4bf\"}}]}]}],\"code\":\"update\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/09568f32-5a1f-439d-b245-5457dc88827e\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Search on NHS Number\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/ServiceRequest?patient.identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888**\"}]}]}],\"code\":\"search-type\"}],\"searchParam\":[{\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"The patient identifier (e.g. NHS Number) that the service request is about\"},{\"name\":\"category\",\"type\":\"token\",\"documentation\":\"Classification of service\"}]},{\"type\":\"Task\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Task\",\"documentation\":\"Supports worklists\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}}]}]}],\"code\":\"read\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Responding to Advice (A+G Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"A user (sds-user-id=0987654321) responds to the worklist item. A document can be attached to the ServiceRequest and Task by using the [POST /Binary](#/Binary/post_Binary) POST / and [POST /DocumentReference](#/DocumentReference/post_DocumentReference) endpoints. \"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/33fddbce-6d2c-453a-9351-4822bb55e402\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Requesting additional advice, increasing priority (A+G Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"The Task.priority is increased to urgent. The use of PATCH /Task can also be considered as an alternative for this interaction.\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/a9b9f0f4-cc37-4ea3-bd4b-16d15ddbe63b\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Provider converts advice request (A+G Scenario Four and Six)\"},{\"url\":\"description\",\"valueMarkdown\":\"The Task.status is completed. See [POST /ServiceRequest](#/ServiceRequest/post_ServiceRequest) for the new referral (scenario Five)\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/f66e4cd7-207c-4b7d-9ac9-80630c451125\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Reviewing a Triage Deferral (Triage Scenario Three)\"},{\"url\":\"description\",\"valueMarkdown\":\"Task.status set to completed. Review advice linked in Task.output. Next actions to mark as to book or create an Appointment [POST /Appointment](#/Appointment/post_Appointment)\"}]}]}],\"code\":\"update\",\"documentation\":\"See also [A013 - Accept referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a013-accept-referral) and [A014 - Reject referral](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a014-reject-referral)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Task/c18dbbe5-4f8d-4b49-a434-6e55a93fab31\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Deferral Creation (Triage Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"Task.code not set, need advice on code. [PUT /Task](#/Task/put_Task) is used to reply to the deferral.\"}]}]}],\"code\":\"create\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/22d00506-967b-4996-9893-e649cffab3ec\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Search Task for Patient by NHS Number\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/Task?for.identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888**\"}]},{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Bundle/1f706390-a0bc-47d1-ac3a-86ce7e5c2f52\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Search on Tasks related to a ServiceRequest with a specific Task.code\"},{\"url\":\"description\",\"valueMarkdown\":\"Request **GET [baseUrl]/Task?focus:identifier=https://fhir.nhs.uk/Id/UBRN|000000070000**&code=http://snomed.info/sct|386053000\"}]}]}],\"code\":\"search-type\",\"documentation\":\"See also [A008 - Retrieve referral worklist](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a008-retrieve-worklist)\"}],\"searchParam\":[{\"name\":\"owner\",\"type\":\"reference\",\"documentation\":\"Search by task owner\"},{\"name\":\"code\",\"type\":\"token\",\"documentation\":\"Search by task code\"},{\"name\":\"focus:identifier\",\"type\":\"token\"},{\"name\":\"focus\",\"type\":\"reference\"}]},{\"type\":\"Slot\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-Slot\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Slot/2779faeb-354f-4a78-9b5e-d878e88ea4e6\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"[A015 - Retrieve appointment slots](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a015-retrieve-appointment-slots)\"}],\"searchParam\":[{\"name\":\"appointment-type\",\"type\":\"token\",\"documentation\":\"The style of appointment or patient that may be booked in the slot (not service type)\"},{\"name\":\"schedule.actor:HealthcareService\",\"type\":\"reference\",\"documentation\":\"A single service ID is required to indicate the service for which appointment slots are required.\"},{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"The free/busy status of the appointment\"}]},{\"type\":\"Questionnaire\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Questionnaire\"},{\"type\":\"QuestionnaireResponse\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-QuestionnaireResponse\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\"}}]}]}],\"code\":\"create\",\"documentation\":\"Use this api to create a shortlist\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\"}}]}]}],\"code\":\"read\",\"documentation\":\"Use this api to retrieve a shortlist\"}]},{\"type\":\"HealthcareService\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-HealthcareService\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"HealthcareService/76de72bc-f001-49fa-84c6-af15a4fdb72c\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"[A010 - Patient service search](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a010-patient-service-search)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"HealthcareService/76de72bc-f001-49fa-84c6-af15a4fdb72c\"}}]}]}],\"code\":\"read\",\"documentation\":\"Unable to find existing matching service\"}],\"searchParam\":[{\"name\":\"service-type\",\"type\":\"token\",\"documentation\":\"The type of service provided by this healthcare service\"},{\"name\":\"identifier\",\"type\":\"token\",\"documentation\":\"Can't find this parameter presume need to: External identifiers for this item\"}]},{\"type\":\"DocumentReference\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/England-DocumentReference\",\"documentation\":\"Used to index supporting information documents - documents themselves use Binary\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"}}]}]}],\"code\":\"read\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\"}},{\"url\":\"summary\",\"valueMarkdown\":\"Responding to Advice (A+G Scenario Two)\"},{\"url\":\"description\",\"valueMarkdown\":\"Once the Task has been updated [PUT /Task](#/Task/put_Task), a DocumentReference is used to link in a previsouly posted document to the ServiceRequest and/or Task\"}]}]}],\"code\":\"create\"}]},{\"type\":\"Binary\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-Binary\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Binary/db60a89b-3989-4290-b373-2e4a7266e556\"}}]}]}],\"code\":\"read\",\"documentation\":\"[A006 - Retrieve attachment](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a006-retrieve-attachment)\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-APIDefinition-OAS\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"Binary/db60a89b-3989-4290-b373-2e4a7266e556\"}}]}]}],\"code\":\"create\",\"documentation\":\"[A020 - Upload file to document store](https://digital.nhs.uk/developer/api-catalogue/e-referral-service-fhir#api-Default-a020-upload-file-to-document-store)\"}]}]}]}"
                                     }
                                 }
                             }
@@ -108,6 +108,131 @@
             }
         },
         "/Appointment": {
+            "get": {
+                "tags": [
+                    "Appointment"
+                ],
+                "summary": "search-type",
+                "description": "[search](http://www.hl7.org/fhir/search.html) for Appointment instances.\n\nMock for NHS App Wayfinder project",
+                "parameters": [
+                    {
+                        "name": "patient:identifier",
+                        "in": "query",
+                        "description": "Search for appointment for a patient by NHS Number\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|  Appointment.participant.actor.identifier | \n",
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system]|[code]"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "Appointment date/time.\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | date | [date/datetime ](https://www.hl7.org/fhir/search.html#date/datetime)|  Appointment.start | \n",
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "format": "date",
+                            "example": "eq2013-01-14"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^Bearer\\ [[:ascii:]]+$",
+                            "type": "string"
+                        },
+                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+                    },
+                    {
+                        "name": "NHSD-Session-URID",
+                        "in": "header",
+                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9]+$",
+                            "type": "string"
+                        },
+                        "example": "555254240100"
+                    },
+                    {
+                        "name": "X-Request-ID",
+                        "in": "header",
+                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+                            "type": "string"
+                        },
+                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+                    },
+                    {
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
+                        "style": "simple",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        },
+                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Appointment"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\"resourceType\":\"Appointment\"}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4xx": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "content": {
+                            "application/fhir+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OperationOutcome"
+                                },
+                                "examples": {
+                                    "example": {
+                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "Appointment"
@@ -486,11 +611,22 @@
                         "name": "patient:identifier",
                         "in": "query",
                         "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|   ServiceRequest.subject.identifier | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Classification of service\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | category | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.category | \n",
+                        "style": "form",
+                        "schema": {
+                            "type": "string",
+                            "format": "token",
+                            "example": "[system]|[code]"
                         }
                     },
                     {
@@ -552,8 +688,8 @@
                                     "$ref": "#/components/schemas/ServiceRequest"
                                 },
                                 "examples": {
-                                    "Referral found": {
-                                        "summary": "Referral found",
+                                    "Search on NHS Number": {
+                                        "summary": "Search on NHS Number",
                                         "description": "Request **GET [baseUrl]/ServiceRequest?patient.identifier=https://fhir.nhs.uk/Id/nhs-number&#124;9912003888**",
                                         "value": "{\"resourceType\":\"Bundle\",\"id\":\"09568f32-5a1f-439d-b245-5457dc88827e\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/ServiceRequest?patient:identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/ServiceRequest?patient:identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888&page=2\"}],\"entry\":[{\"fullUrl\":\"ServiceRequest/832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\"resource\":{\"resourceType\":\"ServiceRequest\",\"id\":\"832db7fa-ebdd-44b6-ab3b-8329c2d43149\",\"meta\":{\"versionId\":\"5\"},\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-ERS-Referral\",\"extension\":[{\"url\":\"sourceSystem\",\"valueCode\":\"ers\"},{\"url\":\"authorisedToRefer\",\"valueCode\":\"authorised\"}]}],\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}],\"status\":\"active\",\"intent\":\"order\",\"category\":[{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"820641000000100\",\"display\":\"Choose and book advice and guidance request\"}]}],\"priority\":\"routine\",\"subject\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-11T16:40:00+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"921600556514\"}},\"performerType\":{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/NHSDigital-ClinicType\",\"code\":\"HEART_FAILURE\"}],\"text\":\"SHOULD BE SAYING ADVICE AND GUIDANCE HERE??\"},\"supportingInfo\":[{\"reference\":\"DocumentReference/5da894e0-a57e-43e9-a1a1-e283a484003c\",\"type\":\"DocumentReference\"},{\"reference\":\"QuestionnaireResponse/d9d4cf80-3f9d-4435-9f3b-e6efb09ad654\",\"type\":\"QuestionnaireResponse\"}],\"note\":[{\"text\":\"Please advise me on this patient who ...(information about patient)\"}]}}]}"
                                     }
@@ -687,242 +823,6 @@
                                         "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"information\",\n    \"code\": \"informational\"\n  } ]\n}"
                                     }
                                 }
-                            }
-                        }
-                    },
-                    "4xx": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/ServiceRequest/_history": {
-            "get": {
-                "tags": [
-                    "ServiceRequest"
-                ],
-                "summary": "history",
-                "description": "Fetch the resource change [history](http://www.hl7.org/fhir/http.html#history) for all resources of type ServiceRequest.",
-                "parameters": [
-                    {
-                        "name": "patient:identifier",
-                        "in": "query",
-                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|   ServiceRequest.subject.identifier | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^Bearer\\ [[:ascii:]]+$",
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9]+$",
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ServiceRequest"
-                                },
-                                "example": "{\"resourceType\":\"ServiceRequest\"}"
-                            }
-                        }
-                    },
-                    "4xx": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/ServiceRequest/{id}/_history": {
-            "get": {
-                "tags": [
-                    "ServiceRequest"
-                ],
-                "summary": "history",
-                "description": "Fetch the resource change [history](http://www.hl7.org/fhir/http.html#history) for all resources of type ServiceRequest",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "The resource ID",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
-                    },
-                    {
-                        "name": "patient:identifier",
-                        "in": "query",
-                        "description": "The patient identifier (e.g. NHS Number) that the service request is about\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|   ServiceRequest.subject.identifier | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^Bearer\\ [[:ascii:]]+$",
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9]+$",
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ServiceRequest"
-                                },
-                                "example": "{\"resourceType\":\"ServiceRequest\"}"
                             }
                         }
                     },
@@ -1232,7 +1132,7 @@
                         "name": "owner",
                         "in": "query",
                         "description": "Search by task owner\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | owner | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.owner | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "reference",
@@ -1242,30 +1142,30 @@
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Search by task code (worklist type)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | code | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
-                        "style": "simple",
+                        "description": "Search by task code\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | code | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
                         "name": "focus:identifier",
                         "in": "query",
                         "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.focus.identifier | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
                         "name": "focus",
                         "in": "query",
                         "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.focus | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "reference",
@@ -1331,10 +1231,15 @@
                                     "$ref": "#/components/schemas/Task"
                                 },
                                 "examples": {
-                                    "Worklist found": {
-                                        "summary": "Worklist found",
+                                    "Search Task for Patient by NHS Number": {
+                                        "summary": "Search Task for Patient by NHS Number",
                                         "description": "Request **GET [baseUrl]/Task?for.identifier=https://fhir.nhs.uk/Id/nhs-number&#124;9912003888**",
                                         "value": "{\"resourceType\":\"Bundle\",\"id\":\"22d00506-967b-4996-9893-e649cffab3ec\",\"type\":\"searchset\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Task?for:identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888\"},{\"relation\":\"next\",\"url\":\"http://example.org/FHIR/R4/Task?for:identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888&page=2\"}],\"entry\":[{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"2\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}},\"note\":[{\"text\":\"Here's some advice\"}]}}]}"
+                                    },
+                                    "Search on Tasks related to a ServiceRequest with a specific Task.code": {
+                                        "summary": "Search on Tasks related to a ServiceRequest with a specific Task.code",
+                                        "description": "Request **GET [baseUrl]/Task?focus:identifier=https://fhir.nhs.uk/Id/UBRN&#124;000000070000**&code=http://snomed.info/sct&#124;386053000",
+                                        "value": "{\"resourceType\":\"Bundle\",\"id\":\"1f706390-a0bc-47d1-ac3a-86ce7e5c2f52\",\"type\":\"history\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed/_history\"}],\"entry\":[{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"1\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}}},\"request\":{\"method\":\"POST\",\"url\":\"Task\"},\"response\":{\"status\":\"201\",\"lastModified\":\"2022-01-21T16:58:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"2\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}},\"note\":[{\"text\":\"Here's some advice\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"33fddbce-6d2c-453a-9351-4822bb55e402\",\"meta\":{\"versionId\":\"3\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"urgent\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T17:18:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"1234567890\"}},\"note\":[{\"text\":\"I think this is quite urgent, increasing the priority\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}}]}"
                                     }
                                 }
                             }
@@ -1490,320 +1395,6 @@
                 }
             }
         },
-        "/Task/_history": {
-            "get": {
-                "tags": [
-                    "Task"
-                ],
-                "summary": "history",
-                "description": "Fetch the resource change [history](http://www.hl7.org/fhir/http.html#history) for all resources of type Task.",
-                "parameters": [
-                    {
-                        "name": "owner",
-                        "in": "query",
-                        "description": "Search by task owner\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | owner | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.owner | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "reference",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "code",
-                        "in": "query",
-                        "description": "Search by task code (worklist type)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | code | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "focus:identifier",
-                        "in": "query",
-                        "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.focus.identifier | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "focus",
-                        "in": "query",
-                        "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.focus | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "reference",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^Bearer\\ [[:ascii:]]+$",
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9]+$",
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Task"
-                                },
-                                "examples": {
-                                    "A+G Guidance Conversation": {
-                                        "summary": "A+G Guidance Conversation",
-                                        "description": "Search on workflow history for a specific referral",
-                                        "value": "{\"resourceType\":\"Bundle\",\"id\":\"eeddf786-fa1b-41d4-b30a-7542e8cff7e4\",\"type\":\"history\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Task/_history?focus:identifier=https://fhir.nhs.uk/Id/UBRN|000000070000\"}],\"entry\":[{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"1\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}}},\"request\":{\"method\":\"POST\",\"url\":\"Task\"},\"response\":{\"status\":\"201\",\"lastModified\":\"2022-01-21T16:58:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"2\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}},\"note\":[{\"text\":\"Here's some advice\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"33fddbce-6d2c-453a-9351-4822bb55e402\",\"meta\":{\"versionId\":\"3\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"urgent\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T17:18:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"1234567890\"}},\"note\":[{\"text\":\"I think this is quite urgent, increasing the priority\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}}]}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "4xx": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/Task/{id}/_history": {
-            "get": {
-                "tags": [
-                    "Task"
-                ],
-                "summary": "history",
-                "description": "Fetch the resource change [history](http://www.hl7.org/fhir/http.html#history) for all resources of type Task",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "The resource ID",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "6160eb19-6fc3-4b43-953a-54ea01dc1cf4"
-                    },
-                    {
-                        "name": "owner",
-                        "in": "query",
-                        "description": "Search by task owner\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | owner | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.owner | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "reference",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "code",
-                        "in": "query",
-                        "description": "Search by task code (worklist type)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | code | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.code | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "focus:identifier",
-                        "in": "query",
-                        "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [token ](https://www.hl7.org/fhir/search.html#token)|  Task.focus.identifier | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "token",
-                            "example": "[system][code]"
-                        }
-                    },
-                    {
-                        "name": "focus",
-                        "in": "query",
-                        "description": "null\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | focus | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Task.focus | \n",
-                        "style": "simple",
-                        "schema": {
-                            "type": "string",
-                            "format": "reference",
-                            "example": "[type]/[id] or [id] or [uri]"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "An [OAuth 2.0 bearer token](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis).\n\nRequired in all environments except sandbox.",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^Bearer\\ [[:ascii:]]+$",
-                            "type": "string"
-                        },
-                        "example": "Bearer g1112R_ccQ1Ebbb4gtHBP1aaaNM"
-                    },
-                    {
-                        "name": "NHSD-Session-URID",
-                        "in": "header",
-                        "description": "The user role ID (URID) for the current session. Also known as a user role profile ID (URPID).",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9]+$",
-                            "type": "string"
-                        },
-                        "example": "555254240100"
-                    },
-                    {
-                        "name": "X-Request-ID",
-                        "in": "header",
-                        "description": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk",
-                        "required": true,
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
-                            "type": "string"
-                        },
-                        "example": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
-                    },
-                    {
-                        "name": "X-Correlation-ID",
-                        "in": "header",
-                        "description": "An optional ID which you can use to track transactions across multiple systems. It can have any value, but we recommend avoiding `.` characters.",
-                        "style": "simple",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "string"
-                        },
-                        "example": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Task"
-                                },
-                                "examples": {
-                                    "A+G Guidance Conversation": {
-                                        "summary": "A+G Guidance Conversation",
-                                        "description": "Search on a Id of a worklist/A+G workflow item",
-                                        "value": "{\"resourceType\":\"Bundle\",\"id\":\"1f706390-a0bc-47d1-ac3a-86ce7e5c2f52\",\"type\":\"history\",\"total\":1,\"link\":[{\"relation\":\"self\",\"url\":\"http://example.org/FHIR/R4/Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed/_history\"}],\"entry\":[{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"1\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}}},\"request\":{\"method\":\"POST\",\"url\":\"Task\"},\"response\":{\"status\":\"201\",\"lastModified\":\"2022-01-21T16:58:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"meta\":{\"versionId\":\"2\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"routine\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T16:58:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"http://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"0987654321\"}},\"note\":[{\"text\":\"Here's some advice\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}},{\"fullUrl\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\",\"resource\":{\"resourceType\":\"Task\",\"id\":\"33fddbce-6d2c-453a-9351-4822bb55e402\",\"meta\":{\"versionId\":\"3\"},\"identifier\":[{\"system\":\"http://fhir.nhs.uk/Id/ers-advice-id\",\"value\":\"bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"}],\"status\":\"requested\",\"intent\":\"option\",\"priority\":\"urgent\",\"code\":{\"coding\":[{\"system\":\"http://hl7.org/fhir/CodeSystem/task-code\",\"code\":\"fulfill\",\"display\":\"Fulfill the focal request\"}]},\"focus\":{\"type\":\"ServiceRequest\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/UBRN\",\"value\":\"000000070000\"}},\"for\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9912003888\"}},\"authoredOn\":\"2022-01-21T17:18:06.259000+00:00\",\"requester\":{\"type\":\"Practitioner\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/sds-user-id\",\"value\":\"1234567890\"}},\"note\":[{\"text\":\"I think this is quite urgent, increasing the priority\"}]},\"request\":{\"method\":\"PUT\",\"url\":\"Task/bf7ab4c4-bafb-495e-8a61-1aa40309eaed\"},\"response\":{\"status\":\"200\",\"lastModified\":\"2022-01-22T17:18:06.259000+00:00\"}}]}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "4xx": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"value\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"INVALID_VALUE\"\n      } ]\n    },\n    \"diagnostics\": \"(invalid_request) firstName is missing\",\n    \"expression\": [ \"Patient.name.given\" ]\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "content": {
-                            "application/fhir+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OperationOutcome"
-                                },
-                                "examples": {
-                                    "example": {
-                                        "value": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"meta\": {\n    \"lastUpdated\": \"2021-04-14T11:35:00+00:00\"\n  },\n  \"issue\": [ {\n    \"severity\": \"error\",\n    \"code\": \"forbidden\",\n    \"details\": {\n      \"coding\": [ {\n        \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n        \"code\": \"ACCESS_DENIED\"\n      } ]\n    }\n  } ]\n}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Slot": {
             "get": {
                 "tags": [
@@ -1816,18 +1407,18 @@
                         "name": "appointment-type",
                         "in": "query",
                         "description": "The style of appointment or patient that may be booked in the slot (not service type)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | appointment-type | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.appointmentType | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
                         "name": "schedule.actor:HealthcareService",
                         "in": "query",
                         "description": "A single service ID is required to indicate the service for which appointment slots are required.\n\n Chained search parameter. Please see [chained](http://www.hl7.org/fhir/search.html#chaining)\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | schedule | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Slot.schedule | \n| actor | [reference ](https://www.hl7.org/fhir/search.html#reference)|  Schedule.actor.where(resolve() is HealthcareService) | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "reference",
@@ -1838,11 +1429,11 @@
                         "name": "status",
                         "in": "query",
                         "description": "The free/busy status of the appointment\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
@@ -2190,22 +1781,22 @@
                         "name": "service-type",
                         "in": "query",
                         "description": "The type of service provided by this healthcare service\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | service-type | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.type | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
                         "name": "identifier",
                         "in": "query",
                         "description": "Can't find this parameter presume need to: External identifiers for this item\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | identifier | [token ](https://www.hl7.org/fhir/search.html#token)|  HealthcareService.identifier | \n",
-                        "style": "simple",
+                        "style": "form",
                         "schema": {
                             "type": "string",
                             "format": "token",
-                            "example": "[system][code]"
+                            "example": "[system]|[code]"
                         }
                     },
                     {
