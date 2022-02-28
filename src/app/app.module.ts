@@ -15,6 +15,7 @@ import { BodyComponent } from './body/body.component';
 import {MatIconModule} from "@angular/material/icon";
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {MatCardModule} from "@angular/material/card";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,6 @@ import {MatCardModule} from "@angular/material/card";
     MatIconModule,
     MatCardModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

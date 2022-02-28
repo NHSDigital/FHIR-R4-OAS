@@ -63,8 +63,9 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["swagger"];
 // @ts-ignore
 class BodyComponent {
-    constructor(route) {
+    constructor(route, router) {
         this.route = route;
+        this.router = router;
         this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json';
     }
     ngOnInit() {
@@ -74,8 +75,10 @@ class BodyComponent {
         });
     }
     // https://stackblitz.com/edit/angular-swagger-ui-integration?file=src%2Fapp%2Fapp.component.ts
+    // tslint:disable-next-line:typedef
     ngAfterViewInit() {
-        Object(swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"])({
+        // Documentation can be found here https://swagger.io/docs/open-source-tools/swagger-ui/usage/configuration/
+        const ui = Object(swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"])({
             url: this.url,
             domNode: this.swaggerDom.nativeElement,
             deepLinking: true,
@@ -83,17 +86,22 @@ class BodyComponent {
             plugins: [
                 swagger_ui_dist__WEBPACK_IMPORTED_MODULE_1__["SwaggerUIBundle"].plugins.DownloadUrl
             ],
-            layout: 'StandaloneLayout'
+            layout: 'StandaloneLayout',
+            operationsSorter: 'alpha',
+            showCommonExtensions: true,
+            showExtensions: true,
+            tryItOutEnabled: true
         });
     }
+    // tslint:disable-next-line:typedef
     doSetup() {
         const tempid = this.route.snapshot.paramMap.get('oasurl');
-        if (tempid != undefined) {
+        if (tempid !== null) {
             this.url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/' + tempid + '.json';
         }
     }
 }
-BodyComponent.ɵfac = function BodyComponent_Factory(t) { return new (t || BodyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
+BodyComponent.ɵfac = function BodyComponent_Factory(t) { return new (t || BodyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
 BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BodyComponent, selectors: [["app-body"]], viewQuery: function BodyComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
     } if (rf & 2) {
@@ -111,7 +119,7 @@ BodyComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './body.component.html',
                 styleUrls: ['./body.component.scss']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, { swaggerDom: [{
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, { swaggerDom: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
             args: ['swagger']
         }] }); })();
@@ -134,12 +142,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class AppComponent {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this.title = 'FHIR-R4-OAS';
+        this.router.events.subscribe((event) => {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
+                // Show loading indicator
+                console.log(event);
+            }
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                // Hide loading indicator
+            }
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
+                // Hide loading indicator
+                // Present error to user
+                console.log(event.error);
+            }
+        });
     }
 }
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 1, vars: 0, template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "router-outlet");
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */"] });
@@ -150,7 +174,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
                 templateUrl: './app.component.html',
                 styleUrls: ['./app.component.scss']
             }]
-    }], null, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
 
 
 /***/ }),
@@ -202,7 +226,7 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
             _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
@@ -252,7 +276,6 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__["MatIconModule"],
                     _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"]
                 ],
-                providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
             }]
     }], null, null); })();
