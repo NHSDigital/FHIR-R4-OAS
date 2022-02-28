@@ -644,7 +644,7 @@
                     {
                         "name": "category",
                         "in": "query",
-                        "description": "Classification of service\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | category | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.category | \n",
+                        "description": "Classification of service\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | category | [token ](https://www.hl7.org/fhir/search.html#token)|  ServiceRequest.category | \n\n\n A code from FHIR ValueSet [ServiceRequestCategory](https://simplifier.net/guide/nhsdigital/home)",
                         "required": false,
                         "style": "form",
                         "explode": false,
@@ -672,6 +672,7 @@
                         "style": "form",
                         "explode": true,
                         "schema": {
+                            "minimum": 0,
                             "type": "string",
                             "example": "MedicationRequest:patient",
                             "enum": [
@@ -1497,7 +1498,7 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "The free/busy status of the appointment\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n",
+                        "description": "The free/busy status of the appointment\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|  Slot.status | \n\n\n A code from FHIR ValueSet [SlotStatus](http://hl7.org/fhir/ValueSet/slotstatus)",
                         "required": false,
                         "style": "form",
                         "explode": false,
