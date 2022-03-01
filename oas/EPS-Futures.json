@@ -23,11 +23,13 @@
         },
         {
             "name": "MedicationRequest",
-            "description": "\n\n An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called \"MedicationRequest\" rather than \"MedicationPrescription\" or \"MedicationOrder\" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.\n\n Profile (constraints): [NHSDigital-MedicationRequest-Contained](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest-Contained.guide.md)"
+            "description": "\n\n An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called \"MedicationRequest\" rather than \"MedicationPrescription\" or \"MedicationOrder\" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.\n\n Profile (constraints): [NHSDigital-MedicationRequest-Contained](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationRequest-Contained.guide.md)",
+            "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Contained"
         },
         {
             "name": "MedicationDispense",
-            "description": "\n\n Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.\n\n Profile (constraints): [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md)"
+            "description": "\n\n Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.\n\n Profile (constraints): [NHSDigital-MedicationDispense](https://simplifier.net/guide/NHSDigital-Medicines/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-MedicationDispense.guide.md)",
+            "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationDispense"
         }
     ],
     "paths": {
@@ -47,7 +49,7 @@
                                 },
                                 "examples": {
                                     "example": {
-                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"apim-eps-futures\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Package\",\"extension\":[{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.medicines.r4.test\"}]},{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"UKCore.Release1.test\"},{\"url\":\"version\",\"valueString\":\"1.2.2-prerelease\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir\"},{\"url\":\"description\",\"valueString\":\"Electronic Prescription Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-eps-futures\",\"version\":\"3.0.0\",\"name\":\"APIMEPSFutures\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"Conformance requirements for NHS Digital EPS Futures\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"implementationGuide\":[\"https://simplifier.net/guide/nhsdigital-medicine\",\"https://simplifier.net/guide/nhsdigital\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"MedicationRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Contained\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"The EPS Tracker.\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"read\",\"documentation\":\"**Download prescription (part)**\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"create\",\"documentation\":\"**Create a new prescription**. Equivalent to `prescription-order` message in NextGen\"},{\"code\":\"patch\",\"documentation\":\"Replaces part of the functionality in cancel prescription\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/nhs-number|9000000009\"}]}],\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"Returns prescriptions for a specific patient\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/ods-organization-code|M85011\"}]}],\"name\":\"intended-performer\",\"type\":\"reference\",\"documentation\":\"Return prescriptions for this medication reference\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"rejected\"}]}],\"name\":\"status\",\"type\":\"token\",\"documentation\":\"Status of the prescription\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/ods-organization-code|M85011\"}]}],\"name\":\"requester.identifier\",\"type\":\"token\",\"documentation\":\"Returns prescriptions prescribed by this prescriber\"},{\"name\":\"group\",\"type\":\"reference\",\"documentation\":\"Returns grouped prescriptions\"},{\"name\":\"_count\",\"type\":\"special\",\"documentation\":\"How many results to return\"}]},{\"type\":\"MedicationDispense\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationDispense\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"EPS Tracker.\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"read\",\"documentation\":\"New feature. Allows querying of a patients dispense history\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"create\",\"documentation\":\"**Mark a prescription as Dispensed**. Equivalent to `dispense-notification` in NextGen\"},{\"code\":\"patch\"}],\"searchParam\":[{\"name\":\"patient\",\"type\":\"reference\",\"documentation\":\"The identity of a patient to list dispenses for\"},{\"name\":\"prescription\",\"type\":\"reference\",\"documentation\":\"The identity of a prescription to list dispenses from\"},{\"name\":\"status\",\"type\":\"token\",\"documentation\":\"Returns dispenses with a specified dispense status\"},{\"name\":\"_count\",\"type\":\"special\",\"documentation\":\"How many results to return\"}]}]}]}"
+                                        "value": "{\"resourceType\":\"CapabilityStatement\",\"id\":\"apim-eps-futures\",\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Package\",\"extension\":[{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.r4.test\"}]},{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"uk.nhsdigital.medicines.r4.test\"}]},{\"url\":\"FHIRPackage\",\"extension\":[{\"url\":\"name\",\"valueString\":\"UKCore.Release1.test\"},{\"url\":\"version\",\"valueString\":\"1.2.2-prerelease\"}]},{\"url\":\"openApi\",\"extension\":[{\"url\":\"documentation\",\"valueUri\":\"https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir\"},{\"url\":\"description\",\"valueString\":\"Electronic Prescription Service - FHIR API\"}]}]}],\"url\":\"https://fhir.nhs.uk/CapabilityStatement/apim-eps-futures\",\"version\":\"3.0.0\",\"name\":\"APIMEPSFutures\",\"status\":\"active\",\"date\":\"2021-04-28T00:00:00+00:00\",\"publisher\":\"digital.nhs.uk\",\"description\":\"Conformance requirements for NHS Digital EPS Futures\",\"kind\":\"requirements\",\"fhirVersion\":\"4.0.1\",\"format\":[\"application/fhir+json\"],\"implementationGuide\":[\"https://simplifier.net/guide/nhsdigital-medicine\",\"https://simplifier.net/guide/nhsdigital\"],\"rest\":[{\"mode\":\"server\",\"security\":{\"service\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/restful-security-service\",\"code\":\"OAuth\",\"display\":\"OAuth2 Token\"}]}]},\"resource\":[{\"type\":\"MedicationRequest\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Contained\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"The EPS Tracker.\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"read\",\"documentation\":\"**Download prescription (part)**\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationRequest/a7b86f8d-1d7c-fc28-e050-d20ae3a215f4\"}}]}]}],\"code\":\"create\",\"documentation\":\"**Create a new prescription**. Equivalent to `prescription-order` message in NextGen\"},{\"code\":\"patch\",\"documentation\":\"Replaces part of the functionality in cancel prescription\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/nhs-number|9000000009\"}]}],\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"Returns prescriptions for a specific patient\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/ods-organization-code|M85011\"}]}],\"name\":\"intended-performer\",\"type\":\"reference\",\"documentation\":\"Return prescriptions for this medication reference\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"showCodeAndSystem\",\"valueBoolean\":false},{\"url\":\"allowedValues\",\"valueReference\":{\"reference\":\"http://hl7.org/fhir/ValueSet/medicationrequest-status\"}}]}],\"name\":\"status\",\"type\":\"token\",\"documentation\":\"Status of the prescription\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/ods-organization-code|M85011\"}]}],\"name\":\"requester.identifier\",\"type\":\"token\",\"documentation\":\"Returns prescriptions prescribed by this prescriber\"},{\"name\":\"group\",\"type\":\"reference\",\"documentation\":\"Returns grouped prescriptions\"},{\"name\":\"_count\",\"type\":\"special\",\"documentation\":\"How many results to return\"}]},{\"type\":\"MedicationDispense\",\"profile\":\"https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationDispense\",\"interaction\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"search-type\",\"documentation\":\"EPS Tracker.\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":false},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"read\",\"documentation\":\"New feature. Allows querying of a patients dispense history\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-Examples\",\"extension\":[{\"url\":\"example\",\"extension\":[{\"url\":\"request\",\"valueBoolean\":true},{\"url\":\"value\",\"valueReference\":{\"reference\":\"MedicationDispense/06167339-9337-d030-0366-514a6a46da17\"}}]}]}],\"code\":\"create\",\"documentation\":\"**Mark a prescription as Dispensed**. Equivalent to `dispense-notification` in NextGen\"},{\"code\":\"patch\"}],\"searchParam\":[{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"exampleParameter\",\"valueString\":\"https://fhir.nhs.uk/Id/nhs-number|9000000009\"}]}],\"name\":\"patient:identifier\",\"type\":\"token\",\"documentation\":\"The identity of a patient to list dispenses for\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1}]}],\"name\":\"prescription\",\"type\":\"reference\",\"documentation\":\"The identity of a prescription to list dispenses from\"},{\"extension\":[{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-NHSDigital-CapabilityStatement-QueryParameters\",\"extension\":[{\"url\":\"minimum\",\"valueInteger\":0},{\"url\":\"maximum\",\"valueInteger\":1},{\"url\":\"showCodeAndSystem\",\"valueBoolean\":false},{\"url\":\"allowedValues\",\"valueReference\":{\"reference\":\"http://hl7.org/fhir/ValueSet/medicationdispense-status\"}}]}],\"name\":\"status\",\"type\":\"token\",\"documentation\":\"Returns dispenses with a specified dispense status\"},{\"name\":\"_count\",\"type\":\"special\",\"documentation\":\"How many results to return\"}]}]}]}"
                                     }
                                 }
                             }
@@ -127,7 +129,7 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "Status of the prescription\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|   MedicationRequest.status | \n",
+                        "description": "Status of the prescription\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|   MedicationRequest.status | \n\n\n A code from FHIR ValueSet [medicationrequest Status](http://hl7.org/fhir/ValueSet/medicationrequest-status)",
                         "style": "form",
                         "explode": false,
                         "schema": {
@@ -135,11 +137,21 @@
                             "minimum": 0,
                             "type": "array",
                             "format": "token",
-                            "example": "rejected",
+                            "example": "[system]|[code],[code],[system]",
                             "items": {
                                 "type": "string",
                                 "format": "token"
-                            }
+                            },
+                            "enum": [
+                                "stopped",
+                                "entered-in-error",
+                                "draft",
+                                "cancelled",
+                                "completed",
+                                "unknown",
+                                "on-hold",
+                                "active"
+                            ]
                         }
                     },
                     {
@@ -648,15 +660,21 @@
                 "description": "[search](http://www.hl7.org/fhir/search.html) for MedicationDispense instances.\n\nEPS Tracker.",
                 "parameters": [
                     {
-                        "name": "patient",
+                        "name": "patient:identifier",
                         "in": "query",
-                        "description": "The identity of a patient to list dispenses for\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [reference ](https://www.hl7.org/fhir/search.html#reference)|   MedicationDispense.subject.where(resolve() is Patient) | \n",
+                        "description": "The identity of a patient to list dispenses for\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | patient | [token ](https://www.hl7.org/fhir/search.html#token)|   MedicationDispense.subject.identifier | \n",
                         "style": "form",
                         "explode": false,
                         "schema": {
-                            "type": "string",
-                            "format": "reference",
-                            "example": "[type]/[id] or [id] or [uri]"
+                            "maximum": 1,
+                            "minimum": 0,
+                            "type": "array",
+                            "format": "token",
+                            "example": "https://fhir.nhs.uk/Id/nhs-number|9000000009",
+                            "items": {
+                                "type": "string",
+                                "format": "token"
+                            }
                         }
                     },
                     {
@@ -666,6 +684,8 @@
                         "style": "form",
                         "explode": false,
                         "schema": {
+                            "maximum": 1,
+                            "minimum": 0,
                             "type": "string",
                             "format": "reference",
                             "example": "[type]/[id] or [id] or [uri]"
@@ -674,17 +694,30 @@
                     {
                         "name": "status",
                         "in": "query",
-                        "description": "Returns dispenses with a specified dispense status\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|   MedicationDispense.status | \n",
+                        "description": "Returns dispenses with a specified dispense status\n\n | Name | Type |  Expression | \n |--------|--------|--------| \n | status | [token ](https://www.hl7.org/fhir/search.html#token)|   MedicationDispense.status | \n\n\n A code from FHIR ValueSet [MedicationDispense Status Codes](http://hl7.org/fhir/ValueSet/medicationdispense-status)",
                         "style": "form",
                         "explode": false,
                         "schema": {
+                            "maximum": 1,
+                            "minimum": 0,
                             "type": "array",
                             "format": "token",
                             "example": "[system]|[code],[code],[system]",
                             "items": {
                                 "type": "string",
                                 "format": "token"
-                            }
+                            },
+                            "enum": [
+                                "preparation",
+                                "declined",
+                                "in-progress",
+                                "stopped",
+                                "completed",
+                                "cancelled",
+                                "unknown",
+                                "on-hold",
+                                "entered-in-error"
+                            ]
                         }
                     },
                     {
