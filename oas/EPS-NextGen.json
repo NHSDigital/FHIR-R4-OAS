@@ -1149,7 +1149,19 @@
                         "type": "array",
                         "description": "\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Prescription Order Item\n\n Unique Id of the MedicationRequest within EPS",
                         "items": {
-                            "type": "object"
+                            "type": "object",
+                            "properties": {
+                                "system": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n `fixed value = https://fhir.nhs.uk/Id/prescription-order-item-number`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                },
+                                "value": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                }
+                            }
                         }
                     },
                     "status": {
@@ -1256,7 +1268,14 @@
                                 "type": "array",
                                 "description": "\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId)\n\n UUID order number for grouped MedciationRequests\n\n An Extension",
                                 "items": {
-                                    "type": "object"
+                                    "type": "object",
+                                    "properties": {
+                                        "url": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n `fixed value = https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId`\n\n [http://hl7.org/fhirpath/System.String](https://www.hl7.org/fhir/datatypes.html) \n\n\n identifies the meaning of the extension\n\n Source of the definition for the extension code - a logical name or a URL."
+                                        }
+                                    }
                                 }
                             },
                             "system": {
