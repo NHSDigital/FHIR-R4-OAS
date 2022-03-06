@@ -22,17 +22,17 @@
         },
         {
             "name": "Appointment",
-            "description": "\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)\n\n\n\n ### Appointment.extension\n `optional`\n `max = 1`\n type **Extension**\n\n ### Appointment.identifier\n `mustSupport`\n\n ### Appointment.serviceType\n UKCore will probably use this ValueSet https://fhir.hl7.org.uk/ValueSet/UKCore-CareSettingType\r\n\r\nAt present we will base this on NHS Data Dictionary ValueSet\n\n ### Appointment.reasonCode\n `mustSupport`\n\n ### Appointment.basedOn\n `mustSupport`\n type **Reference**\n - http://hl7.org/fhir/StructureDefinition/ServiceRequest\n\n ### Appointment.basedOn.identifier\n `mustSupport`\n\n ### Appointment.participant\n `mustSupport`",
+            "description": "\n\n A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).\n\n Profile (constraints): [England-Appointment](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-Appointment.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/England-Appointment"
         },
         {
             "name": "ServiceRequest",
-            "description": "\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)\n\n\n\n ### ServiceRequest.extension\n `optional`\n type **Extension**\n\n ### ServiceRequest.extension\n `optional`\n `max = *`\n type **Extension**\n\n ### ServiceRequest.basedOn\n `mustSupport`\n type **Reference**\n - http://hl7.org/fhir/StructureDefinition/CarePlan\n - http://hl7.org/fhir/StructureDefinition/MedicationRequest\n - http://hl7.org/fhir/StructureDefinition/ServiceRequest\n\n ### ServiceRequest.basedOn.identifier\n `mustSupport`\n\n ### ServiceRequest.code\n A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested.\r\n\r\nIdeally this should be a child code of the ServiceRequest.category\n\n ### ServiceRequest.subject\n `mustSupport`\n type **Reference**\n - https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient\n\n ### ServiceRequest.encounter\n type **Reference**\n - http://hl7.org/fhir/StructureDefinition/Encounter\n\n ### ServiceRequest.requester\n `mustSupport`\n `mandatory`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/England-PractitionerRole\n\n ### ServiceRequest.performerType\n At present examples use eRS clinic type codes\n\n ### ServiceRequest.performer\n `mustSupport`\n\n ### ServiceRequest.performer.identifier\n `mustSupport`\n\n ### ServiceRequest.reasonCode\n `mustSupport`\n\n ### ServiceRequest.supportingInfo\n type **Reference**\n - http://hl7.org/fhir/StructureDefinition/Resource\n - https://fhir.nhs.uk/StructureDefinition/England-DocumentReference",
+            "description": "\n\n A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.\n\n Profile (constraints): [England-ServiceRequest](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-ServiceRequest.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest"
         },
         {
             "name": "Task",
-            "description": "\n\n A task to be performed.\n\n Profile (constraints): [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md)\n\n\n\n ### Task.extension\n `optional`\n `max = 1`\n Provenance of the resource\n Is used as the author on request resources.\n type **Extension**\n\n ### Task.identifier\n `mustSupport`\n `mandatory`\n\n ### Task.status\n `mustSupport`\n\n ### Task.intent\n `mustSupport`\n\n ### Task.code\n `mustSupport`\n\n ### Task.focus\n The request being actioned or the resource being manipulated by this task.\r\n\r\nThis includes a FHIR Message, this should be used with caution and is used here for EPS prescription-order.\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/England-Appointment\n - https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Bundle-FHIRMessage\n - https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationRequest\n\n ### Task.for\n `mustSupport`\n `mandatory`\n\n ### Task.requester\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\n - https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole\n\n ### Task.owner\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\n\n ### Task.reasonCode\n `mustSupport`\n\n ### Task.input\n `mustSupport`",
+            "description": "\n\n A task to be performed.\n\n Profile (constraints): [NHSDigital-Task](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Task.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-Task"
         },
         {
@@ -41,23 +41,28 @@
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/England-Slot"
         },
         {
+            "name": "Questionnaire",
+            "description": "\n\n A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.\n\n To support structured, hierarchical registration of data gathered using digital forms and other questionnaires.  Questionnaires provide greater control over presentation and allow capture of data in a domain-independent way (i.e. capturing information that would otherwise require multiple distinct types of resources).\n\n Profile (constraints): [NHSDigital-Questionnaire](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-Questionnaire.guide.md)\n\n",
+            "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-Questionnaire"
+        },
+        {
             "name": "QuestionnaireResponse",
-            "description": "\n\n A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.\n\n To support structured, hierarchical reporting of data gathered using digital forms and other questionnaires.\n\n Profile (constraints): [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md)\n\n\n\n ### QuestionnaireResponse.identifier\n `mustSupport`\n\n ### QuestionnaireResponse.questionnaire\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.subject\n `mustSupport`\n `mandatory`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient\n\n ### QuestionnaireResponse.subject.identifier.system\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.subject.identifier.value\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.subject.display\n `mustSupport`\n\n ### QuestionnaireResponse.author\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\n\n ### QuestionnaireResponse.author.identifier.system\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.author.identifier.value\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.author.display\n `mustSupport`\n\n ### QuestionnaireResponse.source\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner\n\n ### QuestionnaireResponse.source.identifier\n `mustSupport`\n `mandatory`\n\n ### QuestionnaireResponse.source.display\n `mustSupport`\n\n ### QuestionnaireResponse.item\n `mustSupport`\n `mandatory`",
+            "description": "\n\n A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.\n\n To support structured, hierarchical reporting of data gathered using digital forms and other questionnaires.\n\n Profile (constraints): [NHSDigital-QuestionnaireResponse](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-QuestionnaireResponse.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-QuestionnaireResponse"
         },
         {
             "name": "CodeSystem",
-            "description": "\n\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.\n\n Profile (constraints): [CodeSystem](https://simplifier.net/guide/nhsdigital/home)\n\n\n\n ### CodeSystem\n `optional`\n `max = *`\n Declares the existence of and describes a code system or code system supplement\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.\n\n ### CodeSystem.url\n `optional`\n `max = 1`\n Canonical identifier for this code system, represented as a URI (globally unique) (Coding.system)\n An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.\n type **uri**\n\n ### CodeSystem.identifier\n `optional`\n `max = *`\n Additional identifier for the code system (business identifier)\n A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.\n type **Identifier**\n\n ### CodeSystem.version\n `optional`\n `max = 1`\n Business version of the code system (Coding.version)\n The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.\n type **string**\n\n ### CodeSystem.name\n `optional`\n `max = 1`\n Name for this code system (computer friendly)\n A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.\n type **string**\n\n ### CodeSystem.title\n `optional`\n `max = 1`\n Name for this code system (human friendly)\n A short, descriptive, user-friendly title for the code system.\n type **string**\n\n ### CodeSystem.status\n `mandatory`\n `max = 1`\n draft | active | retired | unknown\n The date (and optionally time) when the code system resource was created or revised.\n type **code**\n\n ### CodeSystem.experimental\n `optional`\n `max = 1`\n For testing purposes, not real usage\n A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.\n type **boolean**\n\n ### CodeSystem.date\n `optional`\n `max = 1`\n Date last changed\n The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.\n type **dateTime**\n\n ### CodeSystem.publisher\n `optional`\n `max = 1`\n Name of the publisher (organization or individual)\n The name of the organization or individual that published the code system.\n type **string**\n\n ### CodeSystem.contact\n `optional`\n `max = *`\n Contact details for the publisher\n Contact details to assist a user in finding and communicating with the publisher.\n type **ContactDetail**\n\n ### CodeSystem.description\n `optional`\n `max = 1`\n Natural language description of the code system\n A free text natural language description of the code system from a consumer's perspective.\n type **markdown**\n\n ### CodeSystem.useContext\n `optional`\n `max = *`\n The context that the content is intended to support\n The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.\n type **UsageContext**\n\n ### CodeSystem.jurisdiction\n `optional`\n `max = *`\n Intended jurisdiction for code system (if applicable)\n A legal or geographic region in which the code system is intended to be used.\n type **CodeableConcept**\n\n ### CodeSystem.purpose\n `optional`\n `max = 1`\n Why this code system is defined\n Explanation of why this code system is needed and why it has been designed as it has.\n type **markdown**\n\n ### CodeSystem.copyright\n `optional`\n `max = 1`\n Use and/or publishing restrictions\n A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.\n type **markdown**\n\n ### CodeSystem.caseSensitive\n `optional`\n `max = 1`\n If code comparison is case sensitive\n If code comparison is case sensitive when codes within this system are compared to each other.\n type **boolean**\n\n ### CodeSystem.valueSet\n `optional`\n `max = 1`\n Canonical reference to the value set with entire code system\n Canonical reference to the value set that contains the entire code system.\n type **canonical**\n - http://hl7.org/fhir/StructureDefinition/ValueSet\n\n ### CodeSystem.hierarchyMeaning\n `optional`\n `max = 1`\n grouped-by | is-a | part-of | classified-with\n The meaning of the hierarchy of concepts as represented in this resource.\n type **code**\n\n ### CodeSystem.compositional\n `optional`\n `max = 1`\n If code system defines a compositional grammar\n The code system defines a compositional (post-coordination) grammar.\n type **boolean**\n\n ### CodeSystem.versionNeeded\n `optional`\n `max = 1`\n If definitions are not stable\n This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.\n type **boolean**\n\n ### CodeSystem.content\n `mandatory`\n `max = 1`\n not-present | example | fragment | complete | supplement\n The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.\n type **code**\n\n ### CodeSystem.supplements\n `optional`\n `max = 1`\n Canonical URL of Code System this adds designations and properties to\n The canonical URL of the code system that this code system supplement is adding designations and properties to.\n type **canonical**\n - http://hl7.org/fhir/StructureDefinition/CodeSystem\n\n ### CodeSystem.count\n `optional`\n `max = 1`\n Total concepts in the code system\n The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.\n type **unsignedInt**\n\n ### CodeSystem.filter\n `optional`\n `max = *`\n Filter that can be used in a value set\n A filter that can be used in a value set compose statement when selecting concepts using a filter.\n type **BackboneElement**\n\n ### CodeSystem.filter.code\n `mandatory`\n `max = 1`\n Code that identifies the filter\n The code that identifies this filter when it is used as a filter in [ValueSet](valueset.html#).compose.include.filter.\n type **code**\n\n ### CodeSystem.filter.description\n `optional`\n `max = 1`\n How or why the filter is used\n A description of how or why the filter is used.\n type **string**\n\n ### CodeSystem.filter.operator\n `mandatory`\n `max = *`\n = | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | exists\n A list of operators that can be used with the filter.\n type **code**\n\n ### CodeSystem.filter.value\n `mandatory`\n `max = 1`\n What to use for the value\n A description of what the value for the filter should be.\n type **string**\n\n ### CodeSystem.property\n `optional`\n `max = *`\n Additional information supplied about each concept\n A property defines an additional slot through which additional information can be provided about a concept.\n type **BackboneElement**\n\n ### CodeSystem.property.code\n `mandatory`\n `max = 1`\n Identifies the property on the concepts, and when referred to in operations\n A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.\n type **code**\n\n ### CodeSystem.property.uri\n `optional`\n `max = 1`\n Formal identifier for the property\n Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.\n type **uri**\n\n ### CodeSystem.property.description\n `optional`\n `max = 1`\n Why the property is defined, and/or what it conveys\n A description of the property- why it is defined, and how its value might be used.\n type **string**\n\n ### CodeSystem.property.type\n `mandatory`\n `max = 1`\n code | Coding | string | integer | boolean | dateTime | decimal\n The type of the property value. Properties of type \"code\" contain a code defined by the code system (e.g. a reference to another defined concept).\n type **code**\n\n ### CodeSystem.concept\n `optional`\n `max = *`\n Concepts in the code system\n Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meanings of the hierarchical relationships are.\n type **BackboneElement**\n\n ### CodeSystem.concept.code\n `mandatory`\n `max = 1`\n Code that identifies concept\n A code - a text symbol - that uniquely identifies the concept within the code system.\n type **code**\n\n ### CodeSystem.concept.display\n `optional`\n `max = 1`\n Text to display to the user\n A human readable string that is the recommended default way to present this concept to a user.\n type **string**\n\n ### CodeSystem.concept.definition\n `optional`\n `max = 1`\n Formal definition\n The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.\n type **string**\n\n ### CodeSystem.concept.designation\n `optional`\n `max = *`\n Additional representations for the concept\n Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.\n type **BackboneElement**\n\n ### CodeSystem.concept.designation.language\n `optional`\n `max = 1`\n Human language of the designation\n The language this designation is defined for.\n type **code**\n\n ### CodeSystem.concept.designation.use\n `optional`\n `max = 1`\n Details how this designation would be used\n A code that details how this designation would be used.\n type **Coding**\n\n ### CodeSystem.concept.designation.value\n `mandatory`\n `max = 1`\n The text value for this designation\n The text value for this designation.\n type **string**\n\n ### CodeSystem.concept.property\n `optional`\n `max = *`\n Property value for the concept\n A property value for this concept.\n type **BackboneElement**\n\n ### CodeSystem.concept.property.code\n `mandatory`\n `max = 1`\n Reference to CodeSystem.property.code\n A code that is a reference to CodeSystem.property.code.\n type **code**\n\n ### CodeSystem.concept.property.value[x]\n `mandatory`\n `max = 1`\n Value of the property for this concept\n The value of this property.\n type **code**\n type **Coding**\n type **string**\n type **integer**\n type **boolean**\n type **dateTime**\n type **decimal**\n\n ### CodeSystem.concept.concept\n `optional`\n `max = *`\n Child Concepts (is-a/contains/categorizes)\n Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.\n\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.",
+            "description": "\n\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.\n\n Profile (constraints): [CodeSystem](https://simplifier.net/guide/nhsdigital/home)\n\n\n\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.",
             "x-HL7-FHIR-Profile": "http://hl7.org/fhir/StructureDefinition/CodeSystem"
         },
         {
             "name": "HealthcareService",
-            "description": "\n\n The details of a healthcare service available at a location.\n\n Profile (constraints): [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md)\n\n\n\n ### HealthcareService.identifier\n `mustSupport`\n `mandatory`\n\n ### HealthcareService.providedBy\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization\n\n ### HealthcareService.type\n `mustSupport`\n\n ### HealthcareService.specialty\n `mustSupport`\n\n ### HealthcareService.location\n `mustSupport`\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Location\n\n ### HealthcareService.name\n `mustSupport`\n `mandatory`\n\n ### HealthcareService.telecom\n `mustSupport`\n `mandatory`\n\n ### HealthcareService.availableTime\n `mustSupport`",
+            "description": "\n\n The details of a healthcare service available at a location.\n\n Profile (constraints): [NHSDigital-HealthcareService](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/NHSDigital-HealthcareService.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/NHSDigital-HealthcareService"
         },
         {
             "name": "DocumentReference",
-            "description": "\n\n A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.\n\n Profile (constraints): [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md)\n\n\n\n ### DocumentReference.context.related\n Related identifiers or resources associated with the DocumentReference.\r\n\r\nIn eRS this is used to link a DocumentReference (i.e. a document) to a ServiceRequest and/or Task.\n type **Reference**\n - https://fhir.nhs.uk/StructureDefinition/England-ServiceRequest\n - https://fhir.nhs.uk/StructureDefinition/NHSDigital-Task",
+            "description": "\n\n A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.\n\n Profile (constraints): [England-DocumentReference](https://simplifier.net/guide/NHSDigital/Home/FHIRAssets/AllAssets/Profiles/England-DocumentReference.guide.md)\n\n",
             "x-HL7-FHIR-Profile": "https://fhir.nhs.uk/StructureDefinition/England-DocumentReference"
         },
         {
@@ -2738,6 +2743,83 @@
             },
             "Appointment": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n External Ids for this item\n\n This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "system": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                },
+                                "value": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                }
+                            }
+                        }
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n proposed | pending | booked | arrived | fulfilled | cancelled | noshow | entered-in-error | checked-in | waitlist\n\n The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.\n `Required` [http://hl7.org/fhir/ValueSet/appointmentstatus|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/appointmentstatus|4.0.1)The free/busy status of an appointment. "
+                    },
+                    "reasonCode": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Coded reason this appointment is scheduled\n\n The coded reason that this appointment is being scheduled. This is more clinical than administrative.\n `Preferred` [http://hl7.org/fhir/ValueSet/encounter-reason](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/encounter-reason)The Reason for the appointment to take place. ",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "basedOn": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/ServiceRequest](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/ServiceRequest)\n\n The service request this appointment is allocated to assess\n\n The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "identifier": {
+                                    "minimum": 0,
+                                    "type": "object",
+                                    "properties": {
+                                        "system": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                        },
+                                        "value": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                        }
+                                    },
+                                    "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                                }
+                            }
+                        }
+                    },
+                    "participant": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Participants involved in appointment\n\n List of participants involved in the appointment.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n accepted | declined | tentative | needs-action\n\n Participation status of the actor.\n `Required` [http://hl7.org/fhir/ValueSet/participationstatus|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/participationstatus|4.0.1)The Participation status of an appointment. "
+                                }
+                            }
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [Appointment](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Appointment).. HL7 FHIR Documentation [Appointment](\"https://www.hl7.org/fhir/Appointment.html\")",
                 "externalDocs": {
                     "description": "Appointment",
@@ -2746,6 +2828,135 @@
             },
             "ServiceRequest": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Identifiers assigned to this order\n\n Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                }
+                            }
+                        }
+                    },
+                    "basedOn": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/CarePlan](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/CarePlan)\n - [http://hl7.org/fhir/StructureDefinition/MedicationRequest](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/MedicationRequest)\n - [http://hl7.org/fhir/StructureDefinition/ServiceRequest](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/ServiceRequest)\n\n What request fulfills\n\n Plan/proposal/order fulfilled by this request.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "identifier": {
+                                    "minimum": 0,
+                                    "type": "object",
+                                    "properties": {
+                                        "system": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                        },
+                                        "value": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                        }
+                                    },
+                                    "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                                }
+                            }
+                        }
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n draft | active | on-hold | revoked | completed | entered-in-error | unknown\n\n The status of the order.\n `Required` [http://hl7.org/fhir/ValueSet/request-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/request-status|4.0.1)The status of a service order. "
+                    },
+                    "intent": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option\n\n Whether the request is a proposal, plan, an original order or a reflex order.\n `Required` [http://hl7.org/fhir/ValueSet/request-intent|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/request-intent|4.0.1)The kind of service request. "
+                    },
+                    "category": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Classification of service\n\n A code that classifies the service for searching, sorting and display purposes (e.g. \"Surgical Procedure\").\n `Example` [http://hl7.org/fhir/ValueSet/servicerequest-category](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/servicerequest-category)Classification of the requested service. ",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "coding": {
+                                    "minimum": 1,
+                                    "type": "array",
+                                    "description": "\n `max = *`\n\n [Coding](https://www.hl7.org/fhir/datatypes.html) \n\n\n Code defined by a terminology system\n\n A reference to a code defined by a terminology system.\n `Required` [https://fhir.nhs.uk/ValueSet/England-servicerequest-category](https://simplifier.net/search?canonical=https://fhir.nhs.uk/ValueSet/England-servicerequest-category)",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "system": {
+                                                "minimum": 1,
+                                                "type": "string",
+                                                "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n Identity of the terminology system\n\n The identification of the code system that defines the meaning of the symbol in the code."
+                                            },
+                                            "code": {
+                                                "minimum": 1,
+                                                "type": "string",
+                                                "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n Symbol in syntax defined by the system\n\n A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "subject": {
+                        "minimum": 1,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)\n\n Individual or Entity the service is ordered for\n\n On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)."
+                    },
+                    "requester": {
+                        "minimum": 1,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/England-PractitionerRole](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/England-PractitionerRole)\n\n Who/what is requesting service\n\n The individual who initiated the request and has responsibility for its activation."
+                    },
+                    "performer": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/HealthcareService](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/HealthcareService)\n - [http://hl7.org/fhir/StructureDefinition/Device](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/Device)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-Practitioner](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-Practitioner)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-CareTeam](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-CareTeam)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-RelatedPerson)\n\n Requested performer\n\n The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "identifier": {
+                                    "minimum": 0,
+                                    "type": "object",
+                                    "properties": {
+                                        "system": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                        },
+                                        "value": {
+                                            "minimum": 1,
+                                            "type": "string",
+                                            "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                        }
+                                    },
+                                    "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                                }
+                            }
+                        }
+                    },
+                    "reasonCode": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Explanation/Justification for procedure or service\n\n An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.\n `Example` [http://hl7.org/fhir/ValueSet/procedure-reason](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/procedure-reason)Diagnosis or problem codes justifying the reason for requesting the service investigation. ",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [ServiceRequest](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/ServiceRequest).. HL7 FHIR Documentation [ServiceRequest](\"https://www.hl7.org/fhir/ServiceRequest.html\")",
                 "externalDocs": {
                     "description": "ServiceRequest",
@@ -2754,6 +2965,90 @@
             },
             "Task": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Task Instance Identifier\n\n The business identifier for this task.",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n draft | requested | received | accepted | +\n\n The current status of the task.\n `Required` [http://hl7.org/fhir/ValueSet/task-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/task-status|4.0.1)The current status of the task. "
+                    },
+                    "intent": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n unknown | proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option\n\n Indicates the \"level\" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.\n `Required` [http://hl7.org/fhir/ValueSet/task-intent|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/task-intent|4.0.1)Distinguishes whether the task is a proposal, plan or full order. "
+                    },
+                    "code": {
+                        "minimum": 0,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Task Type\n\n A name or code (or both) briefly describing what the task involves.\n `Extensible` [https://fhir.nhs.uk/ValueSet/England-task-code](https://simplifier.net/search?canonical=https://fhir.nhs.uk/ValueSet/England-task-code)"
+                    },
+                    "for": {
+                        "minimum": 1,
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "minimum": 1,
+                                "type": "object",
+                                "properties": {
+                                    "system": {
+                                        "minimum": 1,
+                                        "type": "string",
+                                        "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                    },
+                                    "value": {
+                                        "minimum": 1,
+                                        "type": "string",
+                                        "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                    }
+                                },
+                                "description": "\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                            }
+                        },
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/Resource](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/Resource)\n\n Beneficiary of the Task\n\n The entity who benefits from the performance of the service specified in the task (e.g., the patient)."
+                    },
+                    "requester": {
+                        "minimum": 0,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization)\n - [https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/UKCore-PractitionerRole)\n\n Who is asking for task to be done\n\n The creator of the task."
+                    },
+                    "owner": {
+                        "minimum": 0,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization)\n\n Responsible individual\n\n Individual organization or Device currently responsible for task execution."
+                    },
+                    "reasonCode": {
+                        "minimum": 0,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Why task is needed\n\n A description or code indicating why this task needs to be performed.\n `Example` Indicates why the task is needed.  E.g. Suspended because patient admitted to hospital. "
+                    },
+                    "input": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Information used to perform task\n\n Additional information that may be needed in the execution of the task.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "minimum": 1,
+                                    "type": "object",
+                                    "description": "\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Label for the input\n\n A code or description indicating how the input is intended to be used as part of the task execution.\n `Example` Codes to identify types of input parameters.  These will typically be specific to a particular workflow.  E.g. \"Comparison source\", \"Applicable consent\", \"Concomitent Medications\", etc. "
+                                },
+                                "value[x]": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [base64Binary](https://www.hl7.org/fhir/datatypes.html) \n\n\n [boolean](https://www.hl7.org/fhir/datatypes.html) \n\n\n [canonical](https://www.hl7.org/fhir/datatypes.html) \n\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n [date](https://www.hl7.org/fhir/datatypes.html) \n\n\n [dateTime](https://www.hl7.org/fhir/datatypes.html) \n\n\n [decimal](https://www.hl7.org/fhir/datatypes.html) \n\n\n [id](https://www.hl7.org/fhir/datatypes.html) \n\n\n [instant](https://www.hl7.org/fhir/datatypes.html) \n\n\n [integer](https://www.hl7.org/fhir/datatypes.html) \n\n\n [markdown](https://www.hl7.org/fhir/datatypes.html) \n\n\n [oid](https://www.hl7.org/fhir/datatypes.html) \n\n\n [positiveInt](https://www.hl7.org/fhir/datatypes.html) \n\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n [time](https://www.hl7.org/fhir/datatypes.html) \n\n\n [unsignedInt](https://www.hl7.org/fhir/datatypes.html) \n\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n [url](https://www.hl7.org/fhir/datatypes.html) \n\n\n [uuid](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Address](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Age](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Annotation](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Attachment](https://www.hl7.org/fhir/datatypes.html) \n\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Coding](https://www.hl7.org/fhir/datatypes.html) \n\n\n [ContactPoint](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Count](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Distance](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Duration](https://www.hl7.org/fhir/datatypes.html) \n\n\n [HumanName](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Money](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Period](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Quantity](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Range](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Ratio](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n\n [SampledData](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Signature](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Timing](https://www.hl7.org/fhir/datatypes.html) \n\n\n [ContactDetail](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Contributor](https://www.hl7.org/fhir/datatypes.html) \n\n\n [DataRequirement](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Expression](https://www.hl7.org/fhir/datatypes.html) \n\n\n [ParameterDefinition](https://www.hl7.org/fhir/datatypes.html) \n\n\n [RelatedArtifact](https://www.hl7.org/fhir/datatypes.html) \n\n\n [TriggerDefinition](https://www.hl7.org/fhir/datatypes.html) \n\n\n [UsageContext](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Dosage](https://www.hl7.org/fhir/datatypes.html) \n\n\n [Meta](https://www.hl7.org/fhir/datatypes.html) \n\n\n Content to use in performing the task\n\n The value of the input parameter as a basic type."
+                                }
+                            }
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [Task](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Task).. HL7 FHIR Documentation [Task](\"https://www.hl7.org/fhir/Task.html\")",
                 "externalDocs": {
                     "description": "Task",
@@ -2762,14 +3057,184 @@
             },
             "Slot": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n External Ids for this item\n\n External Ids for this item.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                }
+                            }
+                        }
+                    },
+                    "schedule": {
+                        "minimum": 1,
+                        "type": "object",
+                        "description": "\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/Schedule](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/Schedule)\n\n The schedule resource that this slot defines an interval of status information\n\n The schedule resource that this slot defines an interval of status information."
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n busy | free | busy-unavailable | busy-tentative | entered-in-error\n\n busy | free | busy-unavailable | busy-tentative | entered-in-error.\n `Required` [http://hl7.org/fhir/ValueSet/slotstatus|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/slotstatus|4.0.1)The free/busy status of the slot. "
+                    },
+                    "start": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [instant](https://www.hl7.org/fhir/datatypes.html) \n\n\n Date/Time that the slot is to begin\n\n Date/Time that the slot is to begin."
+                    },
+                    "end": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [instant](https://www.hl7.org/fhir/datatypes.html) \n\n\n Date/Time that the slot is to conclude\n\n Date/Time that the slot is to conclude."
+                    }
+                },
                 "description": "HL7 FHIR Schema [Slot](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Slot).. HL7 FHIR Documentation [Slot](\"https://www.hl7.org/fhir/Slot.html\")",
                 "externalDocs": {
                     "description": "Slot",
                     "url": "https://www.hl7.org/fhir/Slot.html"
                 }
             },
+            "Questionnaire": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n Canonical identifier for this questionnaire, represented as a URI (globally unique)\n\n An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this questionnaire is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the questionnaire is stored on different servers."
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n draft | active | retired | unknown\n\n The status of this questionnaire. Enables tracking the life-cycle of the content.\n `Required` [http://hl7.org/fhir/ValueSet/publication-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/publication-status|4.0.1)The lifecycle status of an artifact. "
+                    },
+                    "subjectType": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = *`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n Resource that can be subject of QuestionnaireResponse\n\n The types of subjects that can be the subject of responses created for the questionnaire.\n `Required` [http://hl7.org/fhir/ValueSet/resource-types|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/resource-types|4.0.1)One of the resource types defined as part of this version of FHIR. ",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "item": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Questions and sections within the Questionnaire\n\n A particular question, question grouping or display text that is part of the questionnaire.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "linkId": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Unique id for item in questionnaire\n\n An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource."
+                                },
+                                "type": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n group | display | boolean | decimal | integer | date | dateTime +\n\n The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).\n `Required` [http://hl7.org/fhir/ValueSet/item-type|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/item-type|4.0.1)Distinguishes groups from questions and display text and indicates data type for questions. "
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "HL7 FHIR Schema [Questionnaire](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Questionnaire).. HL7 FHIR Documentation [Questionnaire](\"https://www.hl7.org/fhir/Questionnaire.html\")",
+                "externalDocs": {
+                    "description": "Questionnaire",
+                    "url": "https://www.hl7.org/fhir/Questionnaire.html"
+                }
+            },
             "QuestionnaireResponse": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 0,
+                        "type": "object",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Unique id for this set of answers\n\n A business identifier assigned to a particular completed (or partially completed) questionnaire."
+                    },
+                    "questionnaire": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [canonical](https://www.hl7.org/fhir/datatypes.html) \n\n - [http://hl7.org/fhir/StructureDefinition/Questionnaire](https://simplifier.net/search?canonical=http://hl7.org/fhir/StructureDefinition/Questionnaire)\n\n Form being answered\n\n The Questionnaire that defines and organizes the questions for which answers are being provided."
+                    },
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n in-progress | completed | amended | entered-in-error | stopped\n\n The position of the questionnaire response within its overall lifecycle.\n `Required` [http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1)Lifecycle status of the questionnaire response. "
+                    },
+                    "subject": {
+                        "minimum": 1,
+                        "type": "object",
+                        "properties": {
+                            "display": {
+                                "minimum": 0,
+                                "type": "string",
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Text alternative for the resource\n\n Plain text narrative that identifies the resource in addition to the resource reference."
+                            }
+                        },
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Patient)\n\n The subject of the questions\n\n The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information."
+                    },
+                    "authored": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [dateTime](https://www.hl7.org/fhir/datatypes.html) \n\n\n Date the answers were gathered\n\n The date and/or time that this set of answers were last changed."
+                    },
+                    "author": {
+                        "minimum": 0,
+                        "type": "object",
+                        "properties": {
+                            "display": {
+                                "minimum": 0,
+                                "type": "string",
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Text alternative for the resource\n\n Plain text narrative that identifies the resource in addition to the resource reference."
+                            }
+                        },
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization)\n\n Person who received and recorded the answers\n\n Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system."
+                    },
+                    "source": {
+                        "minimum": 0,
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "minimum": 1,
+                                "type": "object",
+                                "properties": {
+                                    "value": {
+                                        "minimum": 1,
+                                        "type": "string",
+                                        "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                    }
+                                },
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                            },
+                            "display": {
+                                "minimum": 0,
+                                "type": "string",
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Text alternative for the resource\n\n Plain text narrative that identifies the resource in addition to the resource reference."
+                            }
+                        },
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole)\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Practitioner)\n\n The person who answered the questions\n\n The person who answered the questions about the subject."
+                    },
+                    "item": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Groups and questions\n\n A group or question item from the original questionnaire for which answers are provided.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "linkId": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Pointer to specific item from Questionnaire\n\n The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource."
+                                }
+                            }
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [QuestionnaireResponse](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse).. HL7 FHIR Documentation [QuestionnaireResponse](\"https://www.hl7.org/fhir/QuestionnaireResponse.html\")",
                 "externalDocs": {
                     "description": "QuestionnaireResponse",
@@ -2778,7 +3243,19 @@
             },
             "CodeSystem": {
                 "type": "object",
-                "description": "HL7 FHIR Schema [CodeSystem](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CodeSystem).. HL7 FHIR Documentation [CodeSystem](\"https://www.hl7.org/fhir/CodeSystem.html\")",
+                "properties": {
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n draft | active | retired | unknown\n\n The date (and optionally time) when the code system resource was created or revised.\n `Required` [http://hl7.org/fhir/ValueSet/publication-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/publication-status|4.0.1)The lifecycle status of an artifact. "
+                    },
+                    "content": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n not-present | example | fragment | complete | supplement\n\n The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.\n `Required` [http://hl7.org/fhir/ValueSet/codesystem-content-mode|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/codesystem-content-mode|4.0.1)The extent of the content of the code system (the concepts and codes it defines) are represented in a code system resource. "
+                    }
+                },
+                "description": "HL7 FHIR Schema [CodeSystem](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CodeSystem).. HL7 FHIR Documentation [CodeSystem](\"https://www.hl7.org/fhir/CodeSystem.html\")\n\n The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.",
                 "externalDocs": {
                     "description": "CodeSystem",
                     "url": "https://www.hl7.org/fhir/CodeSystem.html"
@@ -2786,6 +3263,97 @@
             },
             "HealthcareService": {
                 "type": "object",
+                "properties": {
+                    "identifier": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n External identifiers for this item\n\n External identifiers for this item.",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "providedBy": {
+                        "minimum": 0,
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "minimum": 1,
+                                "type": "object",
+                                "properties": {
+                                    "system": {
+                                        "minimum": 1,
+                                        "type": "string",
+                                        "description": "\n `max = 1`\n\n [uri](https://www.hl7.org/fhir/datatypes.html) \n\n\n The namespace for the identifier value\n\n Establishes the namespace for the value - that is, a URL that describes a set values that are unique."
+                                    },
+                                    "value": {
+                                        "minimum": 1,
+                                        "type": "string",
+                                        "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
+                                    }
+                                },
+                                "description": "\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Logical reference, when literal reference is not known\n\n An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference."
+                            }
+                        },
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Organization)\n\n Organization that provides this service\n\n The organization that provides this healthcare service."
+                    },
+                    "type": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Type of service that may be delivered or performed\n\n The specific type of service that may be delivered or performed.\n `Preferred` [https://fhir.hl7.org.uk/ValueSet/UKCore-CareSettingType](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/ValueSet/UKCore-CareSettingType)",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "specialty": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Specialties handled by the HealthcareService\n\n Collection of specialties handled by the service site. This is more of a medical term.\n `Preferred` [http://hl7.org/fhir/ValueSet/c80-practice-codes](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/c80-practice-codes)A specialty that a healthcare service may provide. ",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "location": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-Location](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-Location)\n\n Location(s) where service may be provided\n\n The location(s) where this healthcare service may be provided.",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "name": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Description of service as presented to a consumer while searching\n\n Further description of the service as it would be presented to a consumer while searching."
+                    },
+                    "telecom": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [ContactPoint](https://www.hl7.org/fhir/datatypes.html) \n\n\n Contacts related to the healthcare service\n\n List of contacts related to this specific healthcare service.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The actual contact point details\n\n The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address)."
+                                },
+                                "use": {
+                                    "minimum": 1,
+                                    "type": "string",
+                                    "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n home | work | temp | old | mobile - purpose of this contact point\n\n Identifies the purpose for the contact point.\n `Required` [http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1)Use of contact point. "
+                                }
+                            }
+                        }
+                    },
+                    "availableTime": {
+                        "minimum": 0,
+                        "type": "array",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Times the Service Site is available\n\n A collection of times that the Service Site is available.",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [HealthcareService](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/HealthcareService).. HL7 FHIR Documentation [HealthcareService](\"https://www.hl7.org/fhir/HealthcareService.html\")",
                 "externalDocs": {
                     "description": "HealthcareService",
@@ -2794,6 +3362,28 @@
             },
             "DocumentReference": {
                 "type": "object",
+                "properties": {
+                    "status": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n current | superseded | entered-in-error\n\n The status of this document reference.\n `Required` [http://hl7.org/fhir/ValueSet/document-reference-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/document-reference-status|4.0.1)The status of the document reference. "
+                    },
+                    "content": {
+                        "minimum": 1,
+                        "type": "array",
+                        "description": "\n `max = *`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Document referenced\n\n The document and format referenced. There may be multiple content element repetitions, each with a different format.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "attachment": {
+                                    "minimum": 1,
+                                    "type": "object",
+                                    "description": "\n `max = 1`\n\n [Attachment](https://www.hl7.org/fhir/datatypes.html) \n\n\n Where to access the document\n\n The document or URL of the document along with critical metadata to prove content has integrity."
+                                }
+                            }
+                        }
+                    }
+                },
                 "description": "HL7 FHIR Schema [DocumentReference](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/DocumentReference).. HL7 FHIR Documentation [DocumentReference](\"https://www.hl7.org/fhir/DocumentReference.html\")",
                 "externalDocs": {
                     "description": "DocumentReference",
@@ -2802,6 +3392,18 @@
             },
             "Binary": {
                 "type": "object",
+                "properties": {
+                    "contentType": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n MimeType of the binary content\n\n MimeType of the binary content represented as a standard MimeType (BCP 13).\n `Required` [http://hl7.org/fhir/ValueSet/mimetypes|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/mimetypes|4.0.1)The mime type of an attachment. Any valid mime type is allowed. "
+                    },
+                    "data": {
+                        "minimum": 1,
+                        "type": "string",
+                        "description": "\n `max = 1`\n\n [base64Binary](https://www.hl7.org/fhir/datatypes.html) \n\n\n The actual content\n\n The actual content, base64 encoded."
+                    }
+                },
                 "description": "HL7 FHIR Schema [Binary](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Binary).. HL7 FHIR Documentation [Binary](\"https://www.hl7.org/fhir/Binary.html\")",
                 "externalDocs": {
                     "description": "Binary",
