@@ -1099,7 +1099,7 @@
                     "extension:medicationRepeatInformation": {
                         "minimum": 0,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation)\n\n Medication repeat information\n\n Medication repeat information.",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicationRepeatInformation)\n\n Continous and Continuous Repeat Dispensing\n\n This extension <b>MUST</b> be present for  `continuous` and `continuous-repeat-dispensing` therapy types. \r\n\r\n| Field | Description |\r\n|--\r\n| numberOfRepeatPrescriptionsIssued |  Running total of number of issues made against a repeat authorisation.   |\r\n| numberOfRepeatPrescriptionsAllowed | Retired. See <a href=\"#numberOfRepeatsAllowed\">numberOfRepeatsAllowed</a> | \r\n| authorisationExpiryDate | The date a repeat prescription authorisation will expire. |",
                         "items": {
                             "type": "object"
                         }
@@ -1107,7 +1107,7 @@
                     "extension:responsiblePractitioner": {
                         "minimum": 0,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-ResponsiblePractitioner](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-ResponsiblePractitioner)\n\n practitioner responsible for the patient\n\n Must only be populated if the  `requester` can not be responsible for the prescription, i.e. they would not be named as the prescriber on the FP10.",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-ResponsiblePractitioner](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-ResponsiblePractitioner)\n\n Responsible Practitioner for the prescription\n\n Must only be populated if the  `requester` can not be responsible for the prescription, i.e. they would not be named as the prescriber on the FP10.",
                         "items": {
                             "type": "object"
                         }
@@ -1115,7 +1115,7 @@
                     "extension:prescriptionEndorsement": {
                         "minimum": 0,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionEndorsement](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionEndorsement)\n\n Optional Extensions Element\n\n Optional Extension Element - found in all resources.",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionEndorsement](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionEndorsement)\n\n NHS BSA Prescription Endorsements\n\n The codes are contained in the valueset\r\n\r\n| Code | Display |\r\n|--\r\n| CC |  Contraceptive |\r\n| FS |  Sexual Health| \r\n| ACBS |  Advisory Committee on Borderline Substances. Part XV Drug Tariff | \r\n| SLS |  Selected List Scheme. Part XVIIIB Drug Tariff | \r\n| AF |  Food replacement/food supplement products|",
                         "items": {
                             "type": "object"
                         }
@@ -1123,7 +1123,7 @@
                     "extension:NHSBSAprescriptionType": {
                         "minimum": 1,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionType](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionType)\n\n Setting and HCP type for the prescrption\n\n The vocabulary for the ‘PrescriptionType’ vocabulary is defined within the NHSBSA Overprint Specification. \n\n The System must populate the ‘PrescriptionType’ attribute for the appropriate combination of prescriber and care setting. Retired codes within this vocabulary must not be used",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionType](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionType)\n\n NHS BSA Prescription Type\n\n The vocabulary for the ‘PrescriptionType’ vocabulary is defined within the NHSBSA Overprint Specification. \r\n\r\nThe System must populate the ‘PrescriptionType’ attribute for the appropriate combination of prescriber and care setting. Retired codes within this vocabulary must not be used",
                         "items": {
                             "type": "object"
                         }
@@ -1131,7 +1131,7 @@
                     "extension:controlledDrug": {
                         "minimum": 0,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-ControlledDrug](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-ControlledDrug)\n\n Optional Extensions Element\n\n Controlled drugs are recorded in the category section alongside the episode class (if applicable). \n\n It is a legal requirement to state the prescribed quantity as words in the `quantityWords` elemen",
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-ControlledDrug](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-ControlledDrug)\n\n Optional Controlled Drug Extensions\n\n The table below summarises the EPS requirements for the CD schedules. The terms “Hand signature” and “Electronic signature” expressed in the table are shortened references to the legal definition of signature requirements within government legislation.\r\n\r\n| Sch. | Code | Signing Legal Requirement | EPS Scope | Expiry Date | Quantity Representation | Repeat Dispensing Allowed | RD 1st Issue Expiry | RD Subsequent Expiry |\r\n|--\r\n| 1 | CD1 | Invalid to prescribe | Out of scope | N/A | N/A | N/A | N/A |\r\n| 2 | CD2 | Hand signature or electronic signature | In scope | 28 days | Words and Figures | No | N/A | N/A |\r\n| 3 | CD3 | Hand signature or electronic signature | In scope | 28 days | Words and Figures | No | N/A | N/A |\r\n| 4 | CD4-1 CD4-2 | Hand signature or electronic signature | In scope | 28 days | Figures | Yes | 28 days | Up to 12 months\r\n| 5 | CD5 | Hand signature or electronic signature | In scope | 6 Months | Figures | Yes | 6 months | Up to 12 months\r\n\r\nIt is a legal requirement to state the prescribed quantity as words in the `quantityWords`",
                         "items": {
                             "type": "object"
                         }
@@ -1139,7 +1139,7 @@
                     "identifier": {
                         "minimum": 1,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n External ids for this request\n\n Identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n Each MedicationRequest MUST be identified by an Universal Unique Identifiers (UUIDs) with a system of https://fhir.nhs.uk/Id/prescription-order-item-number\n\n UUID example (for illustration purposes only);\r\n\r\na54219b8-f741-4c47-b662-e4f8dfa49ab6",
                         "items": {
                             "type": "object"
                         }
@@ -1167,7 +1167,7 @@
                     "status": {
                         "minimum": 1,
                         "type": "string",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown\n\n A code specifying the current state of the order. Generally, this will be active or completed state. \n\n| code | Definition |\n|--|--|\n| active | The prescription is 'actionable', but not all actions that are implied by it have occurred yet. It has not been dispensed or filled. |\n| cancelled | The prescription is to be cancelled or it has been cancelled been withdrawn before any administrations have occurred. Prescriptions in the process of being cancelled will be regarded as active until all actions are complete. |\n| stopped |\n `Required` [http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1)A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription. "
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n active | cancelled | stopped\n\n A code specifying the current state of the order. Generally, this will be active or completed state. \r\n\r\n| code | Definition |\r\n|--|--|\r\n| active | The prescription is 'actionable', but not all actions that are implied by it have occurred yet. It has not been dispensed or filled. |\r\n| cancelled | The prescription is to be cancelled or it has been cancelled been withdrawn before any administrations have occurred. Prescriptions in the process of being cancelled will be regarded as active until all actions are complete. |\r\n| stopped | Actions implied by the prescription are to be permanently halted, before all of the administrations occurred. This should not be used if the original order was entered in error|\r\n|completed|All actions that are implied by the prescription have occurred.|\n `Required` [http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1](https://simplifier.net/search?canonical=http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1)A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription. "
                     },
                     "statusReason": {
                         "minimum": 0,
@@ -1199,7 +1199,7 @@
                                 }
                             }
                         },
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Reason for current status\n\n This is generally only used for exception statuses such as `suspended` or `cancelled`. It is the clinical status reason for the cancellation.\n `Required` [https://fhir.nhs.uk/ValueSet/DM-medicationrequest-status-reason](https://simplifier.net/search?canonical=https://fhir.nhs.uk/ValueSet/DM-medicationrequest-status-reason)"
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Reason for current status\n\n This is generally only used for exception statuses such as `suspended` or `cancelled`. It is the clinical status reason for the cancellation.\r\n\r\nThis is mandatory for 'prescription-order-update' messages.\n `Required` [https://fhir.nhs.uk/ValueSet/DM-medicationrequest-status-reason](https://simplifier.net/search?canonical=https://fhir.nhs.uk/ValueSet/DM-medicationrequest-status-reason)"
                     },
                     "intent": {
                         "minimum": 1,
@@ -1209,7 +1209,7 @@
                     "category": {
                         "minimum": 1,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Type of medication usage\n\n Indicates the type of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).\n `Extensible` [https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationRequestCategory](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationRequestCategory)",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n\n Type of medication usage\n\n In primary care the code of `community` should be used. In secondary care the category will often match the Episode/Spell type.\r\n\r\n| Code | System | Display |\r\n|--\r\n| leave | https://fhir.nhs.uk/CodeSystem/medicationrequest-category | Leave |\r\n|outpatient | http://terminology.hl7.org/CodeSystem/medicationrequest-category |Outpatient |\r\n| discharge | http://terminology.hl7.org/CodeSystem/medicationrequest-category | Discharge |\r\n| community |http://terminology.hl7.org/CodeSystem/medicationrequest-category | Community |\r\n| inpatient  |http://terminology.hl7.org/CodeSystem/medicationrequest-category | Inpatient |\n `Extensible` [https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationRequestCategory](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationRequestCategory)",
                         "items": {
                             "type": "object",
                             "properties": {
@@ -1227,7 +1227,7 @@
                     "medication[x]": {
                         "minimum": 1,
                         "type": "object",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-CodeableConcept](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-CodeableConcept)\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Medication](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Medication)\n\n Medication to be taken\n\n Identifies the medication being requested. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications.\n `Extensible` [https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationCode](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationCode)"
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [CodeableConcept](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-CodeableConcept](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-CodeableConcept)\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Medication](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-MedicationRequest-Medication)\n\n Medication to be taken\n\n Only Virtual Medical Products (VMP) and Actual Medical Products (AMP) can be used.\n `Extensible` [https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationCode](https://simplifier.net/search?canonical=https://fhir.hl7.org.uk/ValueSet/UKCore-MedicationCode)"
                     },
                     "subject": {
                         "minimum": 1,
@@ -1239,7 +1239,7 @@
                                 "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n Literal reference, Relative, internal or absolute URL\n\n A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources."
                             }
                         },
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n\n Who or group medication request is for\n\n A resource reference to a Patient with a traced NHS Number is required, an untraced NHS Number MUST NOT be used."
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n\n Who or group medication request is for\n\n A resource reference to a Patient with a traced NHS Number is required, an untraced NHS Number **MUST NOT** be used."
                     },
                     "authoredOn": {
                         "minimum": 1,
@@ -1249,7 +1249,7 @@
                     "requester": {
                         "minimum": 1,
                         "type": "object",
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole-Message](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole-Message)\n\n Who/What requested the Request\n\n The individual, organization, or device that initiated the request and has responsibility for its activation."
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Reference](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole-Message](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/NHSDigital-PractitionerRole-Message)\n\n Who/What requested the Request\n\n The requester must contain a resource reference to the Practitioner who has electronically signed the prescription.\r\n\r\nIf the `requester` can not take responsibility for the prescription, i.e. they would not be the prescriber on the FP10. Then the **extension responsiblePractitioner** must be populated."
                     },
                     "groupIdentifier": {
                         "minimum": 1,
@@ -1266,7 +1266,7 @@
                             "extension:PrescriptionOrderUUID": {
                                 "minimum": 1,
                                 "type": "array",
-                                "description": "\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId)\n\n UUID order number for grouped MedciationRequests\n\n An Extension",
+                                "description": "\n `max = *`\n\n [Extension](https://www.hl7.org/fhir/datatypes.html) \n\n - [https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId](https://simplifier.net/search?canonical=https://fhir.nhs.uk/StructureDefinition/Extension-DM-PrescriptionId)\n\n UUID order number for grouped MedciationRequests\n\n When UUIDs are used within HL7 messages they must be represented in an upper case human-readable hexadecimal format where hyphen separators are used as per the example below and as defined by the ‘datatype’ schema within the DMS.\r\n\r\nUUID example (for illustration purposes only);\r\n\r\n**34026084-A445-84AD-2D01-97D69ED25865**",
                                 "items": {
                                     "type": "object",
                                     "properties": {
@@ -1289,7 +1289,7 @@
                                 "description": "\n `max = 1`\n\n [string](https://www.hl7.org/fhir/datatypes.html) \n\n\n The value that is unique\n\n The portion of the identifier typically relevant to the user and which is unique within the context of the system."
                             }
                         },
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n order number for grouped MedicationRequests\n\n The purpose of the Short Form Prescription ID is to identify the prescription during its lifecycle within the Spine (i.e. prescribe, dispense and claim). The prescription UUID is retained to provide the link through to the Spine medication record within the PSIS and must be included as the first identifier within the prescription message."
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [Identifier](https://www.hl7.org/fhir/datatypes.html) \n\n\n groupIdentifier (Short Form Prescription ID)\n\n The purpose of the Short Form Prescription ID is to identify the prescription during its lifecycle within the Spine (i.e. prescribe, dispense & claim). The prescription UUID is retained to provide the link through to the Spine medication record within the PSIS and must be included as the first identifier within the prescription message.\r\nThe format of the Short Form Prescription ID is as follows;\r\n\r\n`<RandomNumber>-<PracticeODSCode/ClinicODSCode>-<PracticeSequence/ClinicSequence><CheckDigit>`\r\n\r\nWhere;\r\n\r\n`<RandomNumber>` is a locally generated random number each time a Prescription ID is generated of length 6 hexadecimal characters.\r\n\r\n`<PracticeODSCode/ClinicODSCode>` is the unique ODS code for the practice or clinic code (aka cost centre) as defined within the Spine SDS of length 6 characters. Where the prescriber ODS code is shorter than 6 characters it must be zero-padded up to six characters from the start of the ODS code, e.g. “0A1B2C”.\r\n\r\n`<PracticeSequence/ClinicSequence>` is an incremental sequence number starting from 00000 that is reset after FFFFF back to zero of length 5 hexadecimal characters. For systems that support multiple practices or clinics, a sequence number per practice/clinic is required. This is to ensure uniqueness of prescriptions within the Spine EPS component during the prescription lifecycle.\r\n\r\n`<CheckDigit>` is calculated on the entire ID using the ISO/IEC 7064:2003 MOD 37-2 standard. The check digit algorithm is identical to that using for EPS Release 1.\r\n\r\nNote. Hyphens are always included to separate the ID into 3 blocks of 6 characters.\r\n\r\nNote. The implementation of the MOD 37-2 standard uses a “+” character for char 36 opposed to a “*” character.\r\n\r\nShort Form Prescription ID example (for illustration purposes only);\r\n\r\n**83C40E-A23856-00123W**"
                     },
                     "courseOfTherapyType": {
                         "minimum": 1,
@@ -1321,7 +1321,7 @@
                     "note": {
                         "minimum": 0,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [Annotation](https://www.hl7.org/fhir/datatypes.html) \n\n\n Information about the prescription\n\n Clinical information relating to a prescribed medication item that cannot be conveyed within dosage instructions is populated within `note` field. \n Examples of dispensing notes are: \n\n - To explain changes in dosage, for example, “Dosage has been increased on advice of the hospital”. \n - 'Tell patient to stop their statin whilst on this anitbiotic' \n - 'hospital consultant has confirmed dual treatment' \n\n\n One scenario where `note` must be populated is when the current prescribed medication item is the last authorised repeat of that medication within a repeat prescribing cycle. Appropriate text, such as 'Last authorised repeat' must be included within the `note` to inform the dispenser and to allow the dispenser to communicate to the patient or patient representative. Note that for repeat dispensing, the ‘numberOfRepeatPrescriptionsIssued’ element also conveys this information.",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Annotation](https://www.hl7.org/fhir/datatypes.html) \n\n\n Dispensing Note\n\n Clinical information relating to a prescribed medication item that cannot be conveyed within dosage instructions is populated within `note` field.\r\n\r\nExamples of dispensing notes are:\r\n\r\n- To explain changes in dosage, for example, “Dosage has been increased on advice of the hospital”.\r\n- \"Tell patient to stop their statin whilst on this anitbiotic\"\r\n- \"hospital consultant has confirmed dual treatment\"\r\n\r\nOne scenario where `note` must be populated is when the current prescribed medication item is the last authorised repeat of that medication within a repeat prescribing cycle. Appropriate text, such as “Last authorised repeat” must be included within the `note` to inform the dispenser and to allow the dispenser to communicate to the patient or patient representative. Note that for repeat dispensing, the ‘numberOfRepeatPrescriptionsIssued’ element also conveys this information.",
                         "items": {
                             "type": "object",
                             "properties": {
@@ -1336,7 +1336,7 @@
                     "dosageInstruction": {
                         "minimum": 1,
                         "type": "array",
-                        "description": "\n `mustSupport`\n `max = *`\n\n [Dosage](https://www.hl7.org/fhir/datatypes.html) \n\n\n How the medication should be taken\n\n Indicates how the medication is to be used by the patient.",
+                        "description": "\n `mustSupport`\n `max = *`\n\n [Dosage](https://www.hl7.org/fhir/datatypes.html) \n\n\n How the medication should be taken\n\n The content of the `dosageInstruction` should follow guidance in [Dosage Structure Overview](https://developer.nhs.uk/apis/dose-syntax-implementation/dosage-overview.html). (Note this is based on CareConnect STU3 but the guidance is still valid in UKCore R4)\r\n\r\n`dosageInstruction.text` **MUST** be supplied and is a human readable version of the structured dose as would be printed on a paper prescription. The prescriber is required to enter a medication item dosage. The use of a generic default value, for example “Use as directed”, if a value is not entered, is not acceptable from a clinical perspective.\r\n\r\nThe prescriber is required to enter a medication item dosage. The use of a generic default value, for example “Use as directed”, if a value is not entered, is not acceptable from a clinical perspective. The user must be asked to select a dosage instruction from a pick list, type by hand or have the system populate with a valid and clinically safe dosage instruction relevant to the prescribed medication or clinical circumstances.\r\n\r\nAs per BNF guidelines, the dosage must be presented to the user without abbreviation although it may be entered and stored within the PMR in an abbreviated form. Within HL7 messaging, the dosage instruction must be represented without abbreviation.",
                         "items": {
                             "type": "object",
                             "properties": {
@@ -1378,12 +1378,12 @@
                                         "description": "\n `max = 1`\n\n [dateTime](https://www.hl7.org/fhir/datatypes.html) \n\n\n Starting time with inclusive boundary\n\n The start of the period. The boundary is inclusive."
                                     }
                                 },
-                                "description": "\n `mustSupport`\n `max = 1`\n\n [Period](https://www.hl7.org/fhir/datatypes.html) \n\n\n Time period supply is authorized for\n\n This indicates the validity period of a prescription (stale dating the Prescription)."
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [Period](https://www.hl7.org/fhir/datatypes.html) \n\n\n Time period supply is authorized for\n\n The `validityPeriod` attribute defines the validity period for the prescription authorisation. This period must start (the `validityPeriod.start`) at the date of prescribing and cannot exceed 12 months (the `validityPeriod.end`). Typically, most repeatable prescriptions will be authorised for a validity period of either 6 or 12 months."
                             },
                             "numberOfRepeatsAllowed": {
                                 "minimum": 0,
                                 "type": "string",
-                                "description": "\n `mustSupport`\n `max = 1`\n\n [unsignedInt](https://www.hl7.org/fhir/datatypes.html) \n\n\n Number of refills authorized\n\n The number of repeat issues authorised if specified. \n **MUST** be present where a `continuous` or `continuous-repeat-dispensing` is authorised for a defined number of issues. \n **MUST** NOT be specified where the number of repeat issues has not been defined. Therefore, the numberOfRepeats allowed is the total number of allowed issues. \n\n For `continuous` orders and `continuous-repeat-dispensing` with intent=`reflex-order` (i.e., orders sent from EPS to pharmacists) this **MUST** be zero. The `numberOfRepeatsAllowed` in the extension to `basedOn` can be used to convey this information to inform patients that they need to re-order the medication."
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [unsignedInt](https://www.hl7.org/fhir/datatypes.html) \n\n\n Number of refills authorized\n\n The number of repeat issues authorised if specified. <br> <b>MUST</b> be present where a `continuous` or `continuous-repeat-dispensing` is authorised for a defined number of issues. <br> <b>MUST</b> NOT be specified where the number of repeat issues has not been defined. Therefore, the numberOfRepeats allowed is the total number of allowed issues. See also <a href=\"#repeatInformation\">extension repeatInformation</a>\r\n\r\nFor `continuous` orders and `continuous-repeat-dispensing` with intent=`reflex-order` (i.e., orders sent from EPS to pharmacists) this <b>MUST</b> be zero. The `numberOfRepeatsAllowed` in the extension to `basedOn` can be used to convey this information to inform patients that they need to re-order the medication."
                             },
                             "quantity": {
                                 "minimum": 1,
@@ -1422,7 +1422,7 @@
                                         "description": "\n `max = 1`\n `fixed value = d`\n\n [code](https://www.hl7.org/fhir/datatypes.html) \n\n\n Coded form of the unit\n\n A computer processable form of the unit in some unit representation system."
                                     }
                                 },
-                                "description": "\n `mustSupport`\n `max = 1`\n\n [Duration](https://www.hl7.org/fhir/datatypes.html) \n\n\n Number of days supply per dispense\n\n Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last."
+                                "description": "\n `mustSupport`\n `max = 1`\n\n [Duration](https://www.hl7.org/fhir/datatypes.html) \n\n\n Days Supply\n\n The `expectedSupplyDuration` entity is required for repeat dispensing (repeatable) prescriptions only.\r\n\r\nThe `expectedSupplyDuration` element defines the expected duration, in days, of each issue of the prescription. A default value of 28 can be used which must be amendable by the prescriber when required. The value must be an integer value greater than zero. A sensible upper limit validation should be included within the System. If this value is omitted, the Spine will assume a value of 28."
                             },
                             "performer": {
                                 "minimum": 0,
@@ -1461,7 +1461,7 @@
                                 "description": "\n `max = 1`\n\n [boolean](https://www.hl7.org/fhir/datatypes.html) \n\n\n Whether substitution is allowed or not\n\n The purpose of this element is to allow the prescriber to dispense a different drug from what was prescribed."
                             }
                         },
-                        "description": "\n `mustSupport`\n `max = 1`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Any restrictions on medication substitution\n\n Indicates whether or not substitution can or should be part of the dispense. In some cases, substitution must happen, in other cases substitution must not happen. This block explains the prescriber's intent. If nothing is specified substitution may be done. In most cases this should default to false."
+                        "description": "\n `mustSupport`\n `max = 1`\n\n [BackboneElement](https://www.hl7.org/fhir/datatypes.html) \n\n\n Any restrictions on medication substitution\n\n Within UK healthcare, substitution is not the norm and so this element will normally be set to a default of `false`.\r\n\r\nSubstitution being set to false is a mandatory requirement for EPS.."
                     }
                 },
                 "description": "HL7 FHIR Schema [MedicationRequest](https://hl7.org/fhir/R4/fhir.schema.json#/definitions/MedicationRequest).. HL7 FHIR Documentation [MedicationRequest](\"https://www.hl7.org/fhir/MedicationRequest.html\")",
