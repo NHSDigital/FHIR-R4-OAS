@@ -15,7 +15,7 @@ export class BodyComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router) { }
 
-  url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/eRS-Futures.json'
+  url = 'https://raw.githubusercontent.com/NHSDigital/FHIR-R4-OAS/main/oas/fhirrest.json';
 
 
   ngOnInit(): void {
